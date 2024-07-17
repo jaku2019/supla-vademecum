@@ -5,7 +5,18 @@ Możesz przyczynić się do rozwoju dokumentacji Supli na różne sposoby.
 Aby edytować istniejącą stronę kliknij przycisk `Edytuj stronę na GitHubie` (dostępny na dole każdego rozdziału strony). Link przeniesie Cię do widoku wybranego pliku na tym repozytorium. Dokonaj edycji pliku i wybierz `Commit changes...`, a następnie krótko opisz wprowadzone zmiany. Następnie kliknij `Propose changes`. Twoja edycja zostanie zweryfikowana i opublikowana na stronie.
 
 ## 2 - dodanie nowego rozdziału strony
-Aby dodać do strony coś zupełnie nowego, utwórz Forka tego repozytorium - GitHub stworzy jego kopię na Twoim koncie. Dzięki temu możesz dodać tekst. Pliki z tekstem zapisane są w formacie markdown `.md` i przechowywane są w lokalizacji `/docs/img/pl/cloud`. Po dodaniu pliku wybierz `Contribute` &rarr; `Open Pull request`. Twoje zmiany zostaną sprawdzone i opublikowane na stronie.
+Aby dodać do strony coś zupełnie nowego, utwórz Forka tego repozytorium - GitHub stworzy jego kopię na Twoim koncie. Dzięki temu możesz dodać tekst. Pliki z tekstem zapisane są w formacie markdown `.md` i przechowywane są w lokalizacji `/docs/img/pl/cloud`. 
+Każdy plik powinien zaczynać się od
+````
+---
+layout: doc
+lastupdated: true
+next:
+  text: 'Moja Supla'
+  link: '/pl/cloud/moja-supla'
+---
+````
+Po dodaniu pliku wybierz `Contribute` &rarr; `Open Pull request`. Twoje zmiany zostaną sprawdzone i opublikowane na stronie.
 
 ## Jak dodać zdjęcie
 Zdjęcia przechowywane są w lokalizacji `/docs/public/pl/cloud`. Po wgraniu pliku do wskazanego folderu, możesz umieścić je w tekście, np. `![nazwa_zdj](/img/pl/cloud/wprowadzenie/supla_diagram_2.png)`. W nawiasie kwadratowym znajduje się nazwa zdjęcia, a w okrągłym - jego dokładna lokalizacja wraz z nazwą pliku (począwszy od /img/.). Jeśli chcesz, aby zdjęcie dało się powiększyć, dodaj `{data-zoomable}` na końcu, np.`![nazwa_zdj](/img/pl/cloud/wprowadzenie/supla_diagram_2.png){data-zoomable}`.
