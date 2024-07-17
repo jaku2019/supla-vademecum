@@ -6,6 +6,7 @@ export default defineConfig({
   title: "Vademecum Supla",
   description: "Testowa wersja podręcznika Supla Cloud",
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  cleanUrls: true,
   base: '/supla-vademecum/',
 
   themeConfig: {
