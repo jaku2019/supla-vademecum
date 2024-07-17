@@ -11,9 +11,6 @@ Każdy plik powinien zaczynać się od
 ---
 layout: doc
 lastupdated: true
-next:
-  text: 'Moja Supla'
-  link: '/pl/cloud/moja-supla'
 ---
 ````
 Po dodaniu pliku wybierz `Contribute` &rarr; `Open Pull request`. Twoje zmiany zostaną sprawdzone i opublikowane na stronie.
