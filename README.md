@@ -11,6 +11,5 @@ Aby dodać do strony coś zupełnie nowego, utwórz Forka tego repozytorium - Gi
 Zdjęcia przechowywane są w lokalizacji `/docs/public/pl/cloud`. Po wgraniu pliku do wskazanego folderu, możesz umieścić je w tekście, np. `![nazwa_zdj](/img/pl/cloud/wprowadzenie/supla_diagram_2.png)`. W nawiasie kwadratowym znajduje się nazwa zdjęcia, a w okrągłym - jego dokładna lokalizacja wraz z nazwą pliku (począwszy od /img/.).
 
 # Uruchomienie testowe
-Możesz pobrać to repozytorium i uruchomić stronę na własnym komputerze.
-`npm run docs:dev`
+Możesz pobrać to repozytorium i uruchomić stronę na własnym komputerze poleceniem`npm run docs:dev`.
 Strona powinna być dostępna na `http://localhost:5173`.
