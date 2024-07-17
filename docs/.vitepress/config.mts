@@ -14,7 +14,7 @@ export default defineConfig({
     logo: '/logo.svg',
 //tłumaczenia por.: https://github.com/vuejs/vitepress/blob/main/docs/.vitepress/config/es.ts
     editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+      pattern: 'https://github.com/jaku2019/supla-vademecum/edit/main/docs/:path',
       text: 'Edytuj na GitHubie'
     },
     footer: {
