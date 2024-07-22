@@ -15,14 +15,14 @@ Widok kanału składa się zazwyczaj z czterech lub pięciu sekcji (4 dla sensor
 3. **Stan** - ikona kanału, zmienia się zależnie od jego stanu. W przypadku kanałów pomiarowych prezentowane są tam aktualne odczyty. 
 
 :::tip <i/>
-Więcej na temat zmiany ikon w dziale Funkcje Clouda
+Więcej na temat zmiany ikon w dziale Funkcje Clouda.
 :::
 
 4. **Konfiguracja** - sekcja, w której konfiguruje się zachowanie urządzenia. Różni się w zależności od rodzaju kanału - poszczególne możliwości konfiguracji zostały omówione w dalszej części vademecum
 5. **Akcje** - lista akcji, jakie może wykonać urządzenie - widoczna tylko dla urządzeń wykonawczych. Różni się w zależności od rodzaju kanału.
 
 :::danger <i/>
-Po zapisaniu zmiany któregoś z ustawień kanału urządzenie zresetuje swoje połączenie z Cloudem..
+Po zapisaniu zmiany któregoś z ustawień kanału urządzenie zresetuje swoje połączenie z Cloudem.
 :::
 
 Pod wymienionymi sekcjami w zależności od rodzaju kanału znajdują się odpowiednie karty. Poniżej zamieszczono spis dostępnych kart i ich funkcji.
