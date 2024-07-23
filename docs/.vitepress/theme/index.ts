@@ -4,6 +4,8 @@ import { Theme, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { onMounted, watch, nextTick } from 'vue';
 import mediumZoom from 'medium-zoom';
+import 'many-pictures/es/style.css'
+import manyPictures from 'many-pictures';
 
 import './index.css'
 import './style.css'
@@ -17,6 +19,7 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     // ...
+    app.use(manyPictures); // many-pictures
   },
   setup() {
     const route = useRoute();

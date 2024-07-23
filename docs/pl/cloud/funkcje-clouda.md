@@ -73,3 +73,21 @@ Supla może być zintegrowana z różnymi systemami, w tym z Alexą Amazona i Ho
 :::tip <i/>
 Domyślnie `Potwierdzenie akcji` jest wyłączone.
 :::
+
+<script setup>
+import { useData } from 'vitepress'
+const base = 'https://github.com/jaku2019/supla-vademecum/docs/public'
+const srcImgs = [
+  {
+    link: 'img/pl/cloud/wprowadzenie/supla_diagram_2.png'
+  },
+  {
+    title: 'Tytuł',
+    description: 'przykładowy opis',
+    link: `img/pl/cloud/wprowadzenie/supla_diagram_2.png`
+  },
+]
+
+</script>
+
+<many-pictures :srcImgs='srcImgs' :lazy='true' />
