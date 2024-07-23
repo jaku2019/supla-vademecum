@@ -76,7 +76,7 @@ Domyślnie `Potwierdzenie akcji` jest wyłączone.
 
 <script setup>
 import { useData } from 'vitepress'
-const base = 'https://github.com/jaku2019/supla-vademecum/docs/public/'
+const base = 'https://github.com/jaku2019/supla-vademecum/tree/main/docs/public/'
 const srcImgs = [
   {
     link: 'img/pl/cloud/wprowadzenie/supla_diagram_2.png'
