@@ -17,7 +17,7 @@ Aby zacząć przygodę z Suplą, należy założyć darmowe konto na cloud.supla
 Temat aplikacji został szerzej poruszony w odpowiednim dziale strony.
 <script setup>
 import { useData } from 'vitepress'
-const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/9f82437cd980b9811cd9550e8a9f0054bebdba9c/docs/public/'
+const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
 const srcImgs = [
   {
     link: `${base}img/pl/cloud/wstep/app_rejestr1.png`,
