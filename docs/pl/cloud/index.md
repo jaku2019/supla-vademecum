@@ -25,7 +25,7 @@ const srcImgs = [
   },
   {
     description: 'Zarejestrowane urządzenie mobilne',
-    link: `${base}img/pl/cloud/wprowadzenie/app_klik.png`
+    link: `${base}img/pl/cloud/wstep/app_klik.png`
   },
 ]
 
