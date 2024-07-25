@@ -19,4 +19,4 @@ Nowy harmonogram można utworzyć klikając przycisk `Utwórz nowy harmonogram` 
 * Wyłącz - dezaktywacja harmonogramu. Harmonogram nie zadziała aż do jego włączenia.
 
 Dokonane zmiany należy zatwierdzić przyciskiem `Zapisz zmiany`.
-![Harmonogramy](/img/pl/cloud/automatyka/karmonogramy.png){data-zoomable}
+![Harmonogramy](/img/pl/cloud/automatyka/harmonogramy.png){data-zoomable}
