@@ -18,7 +18,10 @@ Nowy link bezpośredni można utworzyć klikając przycisk `Utwórz nowy link be
 Dokonane zmiany należy zatwierdzić przyciskiem `Zapisz zmiany`.
 
 Dodatkowo istnieje możliwość podglądu, z jakim kanałem powiązany jest link oraz historia wykonań akcji linku.
-
-! Po utworzeniu linku i opuszczeniu strony zostanie on ukryty. Każdy kto zdobędzie do niego dostęp, będzie mógł wykonać zdefiniowane akcje. Usunięcie linku odbiera możliwość jego użycia.
-
-*dla akcji **Skopiuj stan z innego kanału** w ścieżce `copy?sourceChannelId=` po `=` należy podać ID kanału źródłowego, np. `copy?sourceChannelId=2789`.
+![Linki bezpośrednie](/img/pl/cloud/automatyka/link_bezp.png){data-zoomable}
+:::danger <i/>
+Po utworzeniu linku i opuszczeniu strony zostanie on ukryty. Każdy kto zdobędzie do niego dostęp, będzie mógł wykonać zdefiniowane akcje. Usunięcie linku odbiera możliwość jego użycia.
+:::
+:::info *
+dla akcji **Skopiuj stan z innego kanału** w ścieżce `copy?sourceChannelId=` po `=` należy podać ID kanału źródłowego, np. `copy?sourceChannelId=2789`.
+:::

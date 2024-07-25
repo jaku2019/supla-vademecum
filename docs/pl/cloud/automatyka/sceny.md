@@ -21,3 +21,4 @@ Dodatkowo istnieje możliwość dostosowania następujących opcji:
 * **Pokaż w urządzeniach klienckich** - włączenie lub wyłączenie widoczności sceny w zakładce Sceny w aplikacji SUPLA
 * **Ustawienia integracji** - ustawienie widoczności i działania bramy w Google Home i Alexie, więcej na ten temat w dziale Funkcje Clouda.
 * **Ikona** - użytkownik może zmienić ikonę.
+![Sceny](/img/pl/cloud/automatyka/sceny.png){data-zoomable}

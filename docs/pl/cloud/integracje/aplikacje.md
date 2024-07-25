@@ -4,6 +4,7 @@ lastupdated: true
 ---
 # Aplikacje
 W sekcji aplikacje przedstawione są aplkacje, które są natywnie wyposażone w możliwość integracji z Suplą. Instrukcje dotyczące integracji poszczgólnych z nich znajdziesz poniżej.
+![Aplikacje](/img/pl/cloud/automatyka/aplikacje.png)
 
 ## Call Supla
 Serwis call.supla.io umożliwia wykonananie wybranych akcji na kanałach poprzez wykonanie połączenia na zdefiniowany numer. Aby połączyć konto Supla z call.supla.io należy:
