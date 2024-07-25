@@ -11,8 +11,9 @@ Wyzwalacz akcji umożliwia wykorzystanie przycisku lub stanu wybranego urządzen
 
 :::warning <i/>
 Wyzwalacze mogą występować jako niezależne kanały lub być podpięte pod kanały przekaźników. Zależy to od wewnętrznych ustawień urządzenia. 
-:::
+
 ![język](/img/pl/cloud/funkcje/wyzwalacze.png)
+:::
 
 Wyzwalacz akcji pojawia się w kartach w menu kanałów, który go obsługują. Istnieje możliwość jego konfiguracji dla następujących akcji:
 
