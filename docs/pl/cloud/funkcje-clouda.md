@@ -10,7 +10,7 @@ lastupdated: true
 Wyzwalacz akcji umożliwia wykorzystanie przycisku lub stanu wybranego urządzenia do uruchomienia akcji związanej z dowolnym urządzeniem podłączonym do Clouda. Przykładowo użytkownik może ustawić, że dwukrotne kliknięcie przycisku podłączonego do urządzenia A (np. ROW-01) wyzwoli akcję na urządzeniu B (np. otwarcie bramy podłączonej do SBW-02).
 
 :::warning <i/>
-_Wyzwalacze mogą występować jako niezależne kanały lub być podpięte pod kanały przekaźników. Zależy to od wewnętrznych ustawień urządzenia [ZDJĘCIE]._
+Wyzwalacze mogą występować jako niezależne kanały lub być podpięte pod kanały przekaźników. Zależy to od wewnętrznych ustawień urządzenia ![język](/img/pl/cloud/funkcje/wyzwalacze.png)
 :::
 
 Wyzwalacz akcji pojawia się w kartach w menu kanałów, który go obsługują. Istnieje możliwość jego konfiguracji dla następujących akcji:
