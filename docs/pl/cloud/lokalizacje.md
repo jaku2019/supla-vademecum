@@ -22,7 +22,7 @@ const srcImgs = [
   {
     link: `${base}img/pl/cloud/lokalizacje/utworz.png`,
     description: 'Utwórz nową lokalizację',
-    config: configI;
+    config: configI,
   },
   {
     description: 'Szczegóły - edycja',
