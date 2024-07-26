@@ -181,10 +181,17 @@ Hasło do brokera znika po opuszczeniu strony.
 ![Tryb zaawansowany HA](/img/pl/cloud/integracje/HA/HA_A2.png){data-zoomable}
 
 3. Dodać integrację MQTT (`Ustawienia` -> `Urządzenia oraz usługi` -> `Dodaj integrację` -> `MQTT` -> `MQTT`)
+<many-pictures :srcImgs='ha_a' :lazy='true' />
+
 4. Uzupełnić dane MQTT z Clouda
+![Uzupełnić dane MQTT](/img/pl/cloud/integracje/HA/HA_A5.png){data-zoomable}
+
 5. Włączyć `Opcje zaawansowane` i kliknąć `Zatwierdź`
+![Opcje MQTT](/img/pl/cloud/integracje/HA/HA_A6.png){data-zoomable}
+
 6. Ustawić Sprawdzanie certyfikatu brokera na `Automatyczny` i kliknąć `Zatwierdź`
 7. Po zapisaniu ustawień Home Assistant powinien od razu połączyć się z brokerem i zaimportować listę urządzeń.
+![Supla w HA](/img/pl/cloud/integracje/HA/HA_A7.png){data-zoomable}
 
 
 ### B - W przypadku posiadania już skonfigurowanego brokera MQTT proces integracji wygląda odmiennie:
@@ -195,14 +202,17 @@ active: true
 folder: mosquitto
 ````
 i zapisać zmiany.
-
+![Konfiguracja MQTT](/img/pl/cloud/integracje/HA/HA_B1.png){data-zoomable}
 
 3. Zainstalować i otworzyć Terminal & SSH (`Ustawienia` -> `Dodatki` -> `Sklep z dodatkami` -> `“Terminal & SSH”` -> `Zainstaluj`)
+![Terminal & SSH](/img/pl/cloud/integracje/HA/HA_B2.png){data-zoomable}
+
 4. Przejść do folderu _/share/mosquitto_ `cd /share/mosquitto`
 
 :::tip <i/>
 Jeśli folder nie istnieje utworzyć go najpierw poleceniem `mkdir -p /share/mosquitto`
 :::
+![Folder /mosquitto](/img/pl/cloud/integracje/HA/HA_B3.png){data-zoomable}
 
 5. Otworzyć plik _mosquitto.conf_ (`nano mosquitto.conf`) i wprowadzić poniższą konfigurację:
 :::warning <i/>
@@ -226,27 +236,40 @@ W `ADRES` należy wpisać adres serwera odczytany z pola `Host` na cloud.supla.o
 W miejsce `UŻYTKOWNIK` nazwę użytkownika logowania do brokera MQTT, którą należy odczytać z cloud.supla.org
 
 W miejsce `HASŁO` należy wpisać hasło, które zostało wygenerowane podczas włączania brokera mqtt na cloud.supla.org.
+
+![mosquitto.conf](/img/pl/cloud/integracje/HA/HA_B4.png){data-zoomable}
 :::
 
 6. Zapisać konfigurację
 7. Wyjść z SSH
 8. Zrestartować Home Assistanta (`Ustawienia` -> `Trzy kropki` -> `Uruchom ponownie Home Assistanta` -> `Uruchom ponownie system`)
-9. Urządzenia podłączone do Clouda powinny pojawić się w Home Assistatncie. Można to sprawdzić w zakładce `Ustawienia` -> `Urządzenia oraz usługi` -> `MQTT` -> `Urządzenia`
+![Restart HA](/img/pl/cloud/integracje/HA/HA_B5.png){data-zoomable}
 
+9. Urządzenia podłączone do Clouda powinny pojawić się w Home Assistatncie. Można to sprawdzić w zakładce `Ustawienia` -> `Urządzenia oraz usługi` -> `MQTT` -> `Urządzenia`
+![Supla w HA](/img/pl/cloud/integracje/HA/HA_B6.png){data-zoomable}
 
 ### Integracja MQTT dla prywatnych instancji serwera Supla
 
 W przypadku prywatnych instancji należy zapewnić broker we własnym zakresie. Najprostszą metodą jest uruchomienie Mosquitto na Home Assistancie. W tym celu należy:
 1. Zainstalować Mosquitto, czyli broker MQTT (`Ustawienia` -> `Dodatki` -> `Sklep z dodatkami` -> `“Mosquitto broker”` -> `Zainstaluj`) i go uruchomić
+<many-pictures :srcImgs='ha_p1' :lazy='true' />
+
 2. Utworzyć użytkownika mqtt-user, którego dane będą potrzebne przy łączeniu się z brokerem (`Ustawienia` -> `Osoby` -> `Dodaj osobę`). Jego hasło będzie jednocześnie hasłem do Brokera.
 
 :::tip <i/>
 Jeśli Home Assistant działa w tej samej sieci LAN, co kontenery Supli, to warto ograniczyć logowanie użytkownika mqtt-user do sieci lokalnej.
 :::
+<many-pictures :srcImgs='ha_p2' :lazy='true' />
 
 3. Zrestartować Home Assistanta (`Ustawienia` -> `Trzy kropki` -> `Uruchom ponownie Home Assistanta` -> `Uruchom ponownie system`)
+![Restart HA](/img/pl/cloud/integracje/HA/P/HA_P6.png){data-zoomable}
+
 4. Dodać integrację MQTT (powinna zostać wykryta automatycznie)
+![Dodać MQTT](/img/pl/cloud/integracje/HA/P/HA_P7.png){data-zoomable}
+
 5. Dalej należy otworzyć plik konfiguracyjny Supli .env i ustawić w nim dane brokera MQTT
+![Plik .env](/img/pl/cloud/integracje/HA/P/HA_P8.png){data-zoomable}
+
 6. Zrestartować Suplę `./supla.sh restart`
 7. Urządzenia podłączone do Clouda powinny pojawić się w Home Assistatncie. Można to sprawdzić w zakładce `Ustawienia` -> `Urządzenia oraz usługi` -> `MQTT` -> `Urządzenia`
 
@@ -257,3 +280,4 @@ Jeśli urządzenia nie są widoczne warto sprawdzić z poziomu Clouda czy MQTT j
 :::info <i/>	
 Home Assistant może potrzebować kilku minut na wyświetlenie urządzeń - cierpliwość zalecana.
 :::
+![Supla w HA](/img/pl/cloud/integracje/HA/P/HA_P9.png){data-zoomable}
