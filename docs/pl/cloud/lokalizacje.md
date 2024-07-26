@@ -33,9 +33,6 @@ const srcImgs = [
     link: `${base}img/pl/cloud/lokalizacje/zapisz.png`
   },
 ]
-interface configI {
-	height: 210; // 图片的高度，默认300px
-}
 </script>
 
 <many-pictures :srcImgs='srcImgs' :lazy='true' />
