@@ -30,6 +30,7 @@ Wyzwalacz akcji pojawia się w kartach w menu kanałów, który go obsługują. 
 :::tip <i/>
 Wyzwalacze oznaczone żółtym wykrzyknikiem mają przypisaną akcję wynikającą z funkcji urządzenia. Przypisanie im innej akcji wiąże się z wyłączeniem ich lokalnej funkcji.
 :::
+![Wyzwalacz akcji](/img/pl/cloud/funkcje/wyzwalacz.png){data-zoomable}
 
 Po wybraniu wyzwalacza należy ustawić, na czym ma zostać wykonana akcja. Mogą to być:
 * **Kanały** - wykonaj wybraną akcję, na jaką pozwala dany kanał (np. włącz, wyłącz, przełącz, otwórz, zamknij itd.)
@@ -46,7 +47,7 @@ Wyzwalacze akcji działają w oparciu o Clouda. Jeśli urządzenie nie będzie m
 ## Szczegółowe dane serwera
 
 Szczegółowe dane konta potrzebne przy manualnej rejestracji niektórych urządzeń można sprawdzić klikając na logo Supli w lewym górnym rogu.
-
+![Moja Supla](/img/pl/cloud/funkcje/moja_supla.png){data-zoomable}
 
 ## Zmiana ikony
 
@@ -59,10 +60,11 @@ Zestawy ikon zapisywane są w Cloudzie. Istnieje możliwość ich ponownego uży
 :::info <i/>
 Istnieje też możliwość dodania do konta ikon stworzonych przez innych użytkowników za pomocą aplikacji SUPLA Icons.
 :::
+![Dodaj ikonę](/img/pl/cloud/funkcje/ikona.png){data-zoomable}
 
 ## Ustawienia integracji
 Supla może być zintegrowana z różnymi systemami, w tym z Alexą Amazona i Home’em Google’a. Kanały, które są obsługiwane przez powyżej wymienione integracje w polu konfiguracji wyświetlają pasek `Ustawienia integracji`. Jeśli nie ma włączonej żadnej integracji, możesz zignorować ten fragment. W przypadku, gdy jest ustawiona integracja:
-
+![Ustawienia integracji](/img/pl/cloud/funkcje/gh_alexa.png)
 ### Alexa
 * można ukryć wybrane kanały tak, by nie były widoczne dla Alexy
 
@@ -76,20 +78,4 @@ Supla może być zintegrowana z różnymi systemami, w tym z Alexą Amazona i Ho
 Domyślnie `Potwierdzenie akcji` jest wyłączone.
 :::
 
-<script setup>
-import { useData } from 'vitepress'
-const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
-const srcImgs = [
-  {
-    link: `${base}img/pl/cloud/wprowadzenie/supla_diagram_2.png`
-  },
-  {
-    title: 'Tytuł',
-    description: 'przykładowy opis',
-    link: `${base}img/pl/cloud/wprowadzenie/supla_diagram_2.png`
-  },
-]
-
-</script>
-
-<many-pictures :srcImgs='srcImgs' :lazy='false' />
+![GH Potwierdzenie i PIN](/img/pl/cloud/funkcje/gh_pin.png){data-zoomable}

@@ -8,11 +8,11 @@ W tej sekcji można skonfigurować aplikację komunikującą się z kontem Supla
 :::info <i/>
 link  do dokumentacji API: [https://svr1.supla.org/api-docs/docs.html](https://svr1.supla.org/api-docs/docs.html)
 :::
-
+![Integracje](/img/pl/cloud/funkcje/integracje.png){data-zoomable}
 ## Bezpieczeństwo
 
-Na stronie Bezpieczeństwo można sprawdzić aktywność związaną z kontem, listę aplikacji z dostępem do Clouda oraz wygenerować osobiste tokeny dostępowe. Ponadto istnieje możliwość zmiany hasła. 
-
+Na stronie `Bezpieczeństwo` można sprawdzić aktywność związaną z kontem, listę aplikacji z dostępem do Clouda oraz wygenerować osobiste tokeny dostępowe. Ponadto istnieje możliwość zmiany hasła. 
+![Bezpieczeństwo](/img/pl/cloud/funkcje/bezpieczenstwo.png){data-zoomable}
 
 ## Ustawienia konta
 
@@ -25,3 +25,4 @@ Ostatnią akcją dostępną w tej zakładce jest usunięcie konta.
 ::: danger <i/>
 Ta czynność jest nieodwracalna.
 :::
+![Ustawienia konta](/img/pl/cloud/funkcje/bezpieczenstwo.png){data-zoomable}

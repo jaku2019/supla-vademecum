@@ -22,7 +22,7 @@ Więcej na temat zmiany ikon w dziale Funkcje Clouda.
 5. **Akcje** - lista akcji, jakie może wykonać urządzenie - widoczna tylko dla urządzeń wykonawczych. Różni się w zależności od rodzaju kanału.
 
 :::danger <i/>
-Po zapisaniu zmiany któregoś z ustawień kanału urządzenie zresetuje swoje połączenie z Cloudem.
+Po zapisaniu zmiany któregoś z ustawień kanału urządzenia zresetują swoje połączenie z Cloudem.
 :::
 
 Pod wymienionymi sekcjami w zależności od rodzaju kanału znajdują się odpowiednie karty. Poniżej zamieszczono spis dostępnych kart i ich funkcji.
