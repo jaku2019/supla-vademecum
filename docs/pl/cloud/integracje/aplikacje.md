@@ -61,6 +61,40 @@ const scripts = [
     link: `${base}img/pl/cloud/integracje/scripts4.png`
   },
 ]
+const ha_a = [
+  {
+    description: 'Urządzenia oraz usługi',
+    link: `${base}img/pl/cloud/integracje/HA/HA_A3.png`,
+  },
+  {
+    description: 'Dodaj integrację MQTT',
+    link: `${base}img/pl/cloud/integracje/HA/P/HA_A4.png`
+  },
+]
+const ha_p1 = [
+  {
+    description: 'Sklep z dodatkami',
+    link: `${base}img/pl/cloud/integracje/HA/HA_P1.png`,
+  },
+  {
+    description: 'Mosquitto',
+    link: `${base}img/pl/cloud/integracje/HA/P/HA_P2.png`
+  },
+]
+const ha_p2 = [
+  {
+    description: 'Osoby',
+    link: `${base}img/pl/cloud/integracje/HA/P/HA_P3.png`,
+  },
+  {
+    description: 'Dodaj osobę',
+    link: `${base}img/pl/cloud/integracje/HA/P/HA_P4.png`
+  },
+  {
+    description: 'Utwórz użytkownika',
+    link: `${base}img/pl/cloud/integracje/HA/P/HA_P5.png`
+  },
+]
 </script>
 # Aplikacje
 W sekcji aplikacje przedstawione są aplkacje, które są natywnie wyposażone w możliwość integracji z Suplą. Instrukcje dotyczące integracji poszczgólnych z nich znajdziesz poniżej.
@@ -136,14 +170,16 @@ Proces integracji zależy od posiadanej konfiguracji. Instrukcja A przeznaczona 
 
 
 ### A - Aby podłączyć Home Assistanta do konta Supli należy:
-
 1. Włączyć broker MQTT w Supla Cloud (`Integracje` -> `Broker MQTT` -> `Włącz`) 
 
 :::warning Uwaga! 
 Hasło do brokera znika po opuszczeniu strony.
 :::
+![Włączenie MQTT](/img/pl/cloud/integracje/HA/HA_A1.png){data-zoomable}
 
 2. Włączyć `Tryb zaawansowany` w Home Assistancie (`Profil` -> `Tryb zaawansowany`) - umożliwi on  odpowiednią konfigurację MQTT
+![Tryb zaawansowany HA](/img/pl/cloud/integracje/HA/HA_A2.png){data-zoomable}
+
 3. Dodać integrację MQTT (`Ustawienia` -> `Urządzenia oraz usługi` -> `Dodaj integrację` -> `MQTT` -> `MQTT`)
 4. Uzupełnić dane MQTT z Clouda
 5. Włączyć `Opcje zaawansowane` i kliknąć `Zatwierdź`
@@ -152,9 +188,6 @@ Hasło do brokera znika po opuszczeniu strony.
 
 
 ### B - W przypadku posiadania już skonfigurowanego brokera MQTT proces integracji wygląda odmiennie:
-
-
-
 1. Wejść w konfigurację brokera Mosquitto (`Ustawienia` -> `Dodatki` -> `Mosquitto broker` -> `Konfiguracja`)
 2. Dopisać do konfiguracji:
 ````
