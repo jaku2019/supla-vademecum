@@ -11,14 +11,11 @@ next:
 # Moja Supla
 
 W sekcji `Moja Supla` wyświetlają się wszystkie urządzenia przypisane do konta Supla (urządzenie może być przypisane do jednego konta jednocześnie).
-
+![Moja Supla](/img/pl/cloud/moja-supla/moja_supla.png)
 
 ## Rejestracja urządzeń
 
 Urządzenie można dodać do konta Supla na dwa sposoby: manualnie lub za pomocą kreatora w aplikacji mobilnej SUPLA. W przypadku tego pierwszego należy
-
-
-
 1. Włączyć rejestrację urządzeń w Cloud
 2. Uzupełnić dane na urządzeniu, które ma zostać dodane (adres serwera i inne potrzebne informacje można wyświetlić klikając logo Supla w lewym górnym rogu)
 3. Uruchomić ponownie urządzenie
@@ -43,20 +40,15 @@ Większość urządzeń można jednak dodać za pomocą kreatora dodawania urzą
 ## Dane urządzenia
 
 Przypisane do konta urządzenia wyświetlają się w formie kafelków, na których prezentują podstawowe informacje; są to:
-
-
-
 1. **Nazwa urządzenia**
 2. **GUID** - unikalny numer urządzenia
 3. **AUTHKEY** - unikalny numer identyfikacyjny urządzenia
 4. **WerOpr** - wersja software’u na urządzeniu 
 5. **Lokalizacja**, do której przypisane jest urządzenie
 6. **Stan urządzenia** - Online/Offline.
+![Kafelki](/img/pl/cloud/moja-supla/kafelki.png)
 
 Po kliknięciu w wybrany kafelek wyświetlają się szczegółowe dane urządzenia. W górnej, zielonej sekcji planszy zawarte są podstawowe informacje dostępne na każdym urządzeniu, bez względu na funkcje jego kanałów:
-
-
-
 1. Nazwa i status urządzenia
 2. Pole do ustawienia spersonalizowanej nazwy urządzenia (zmienia nazwę urządzenia widoczną w Cloudzie)
 3. GUID - unikalny numer urządzenia
@@ -66,12 +58,18 @@ Po kliknięciu w wybrany kafelek wyświetlają się szczegółowe dane urządzen
 7. Lokalizację urządzenia - można ją zmienić klikając w kafelek i wybierając pożądaną; wybrana lokalizacja jest również domyślną lokalizacją kanałów urządzenia
 8. ID dostępu, które mają przypisany dostęp do urządzenia
 9. Przycisk do przełączania urządzenia w tryb konfiguracyjny - urządzenie zacznie rozgłaszać sieć Wi-Fi
+![Dane urządzenia](/img/pl/cloud/moja-supla/plansza.png)
+
+Dalej w białej sekcji strony, oprócz omówionych poniżej kanałów, niektóre urządzenia wyświetlają zakładkę `Ustawienia`. Odnosi się ona do wewnętrznych ustawień urządzenia (np. pracy diody status LED czy pobierania godziny z serwera) i może się różnić w zależności od możliwości sprzętu.
 
 ## Kanały
 
 Wszystko co wyświetla się na liście poniżej zielonej sekcji jest nazywane w Supli kanałami. Przekaźniki, czujniki temperatury, liczniki energii… - wszystko. Każdy kanał jest widoczny jako osobny kafelek i w zależności od możliwości urządzenia ma przypisaną odpowiednią funkcję. Przykładowo urządzenie posiadające dwa przekaźniki wyświetli w Cloudzie w swoim widoku dwa kanały przekaźnika, którym można przypisać wybrane funkcje (np. włącznik zasilania czy otwieranie bramy). Analogicznie inne rodzaje kanałów mogą mieć ustawione różne, zależne od ich konfiguracji, funkcje. 
-
+![Przykładowe kanały](/img/pl/cloud/moja-supla/kanaly_urzadzenie.png)
 
 ## ID i zmiana konfiguracji kanałów
 
 Każdy kanał posiada niepowtarzalny numer identyfikacyjny (ID), który można sprawdzić w Cloudzie. Po wejściu w szczegóły widać też numer kanału - jest to identyfikacja kolejności kanałów w danym urządzeniu. Jeśli zmieni się rodzaj danego numeru kanału, to Cloud powiadomi o konflikcie kanałów. Aby urządzenie dalej łączyło się z Cloudem, należy usunąć problematyczny kanał. W jego miejsce pojawi się nowy. Alternatywnie można usunąć całe urządzenie i zarejestrować je ponownie. W takim wypadku zostanie utracona konfiguracja historii, nazw oraz ikon kanałów wybranego urządzenia.
+![Konflikt kanałów](/img/pl/cloud/moja-supla/konflikt.png)
+
+Więcej o kanałach i ich konkretnych typach w dziale [Kanały - lista](../kanaly/kanaly).

@@ -28,13 +28,13 @@ Po zapisaniu zmiany któregoś z ustawień kanału urządzenia zresetują swoje 
 
 Pod wymienionymi sekcjami w zależności od rodzaju kanału znajdują się odpowiednie karty. Poniżej zamieszczono spis dostępnych kart i ich funkcji.
 
-1. **Wyzwalacze akcji** - umożliwiają wykonanie wybranej akcji po określonym zachowaniu elementu sterującego. Więcej na ten temat w dziale Funkcje Clouda.
-2. **Harmonogramy** - wyświetla harmonogramy z wybranym kanałem
-3. **Grupy kanałów** - wyświetla Grupy kanałów z wybranym kanałem
-4. **Sceny** - wyświetla Sceny zawierające wybrany kanał
-5. **Linki bezpośrednie** - wyświetla Linki bezpośrednie zawierające wybrany kanał
-6. **Reakcje** - wyświetla Reakcje zawierające wybrany kanał
-7. **Historia pomiarów** - wyświetla historię pomiarów kanału
-8. **Aberracje napięcia** - wyświetla historię zmierzonych aberracji napięcia.
+- **Wyzwalacze akcji** - umożliwiają wykonanie wybranej akcji po określonym zachowaniu elementu sterującego. Więcej na ten temat w dziale Funkcje Clouda.
+- **Harmonogramy** - wyświetla harmonogramy z wybranym kanałem
+- **Grupy kanałów** - wyświetla Grupy kanałów z wybranym kanałem
+- **Sceny** - wyświetla Sceny zawierające wybrany kanał
+- **Linki bezpośrednie** - wyświetla Linki bezpośrednie zawierające wybrany kanał
+- **Reakcje** - wyświetla Reakcje zawierające wybrany kanał
+- **Historia pomiarów** - wyświetla historię pomiarów kanału
+- **Aberracje napięcia** - wyświetla historię zmierzonych aberracji napięcia.
 
 ![Karty](/img/pl/cloud/kanaly/kanal_karty.png){data-zoomable}
