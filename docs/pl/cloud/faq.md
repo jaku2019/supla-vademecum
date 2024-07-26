@@ -38,7 +38,7 @@ przez 5 sekund, do wygaszenia wyświetlacza
 cloud.supla.org *
 
 :::warning *
-Od wersji firmware-u >=2.8.48 możliwe jest przełączenie modułu w tryb konfiguracji z poziomu cloud.supla.org
+Od wersji firmware-u >=2.8.48 możliwe jest przełączenie modułu w tryb konfiguracji z poziomu cloud.supla.org. :::
 :::
 
 ## Jak uaktualnić moduł firmy Zamel/Nice/Varilight/Heatpol
@@ -55,7 +55,8 @@ Procedura aktualizacji:
 W przypadku SRW-01 zapoznaj się z poniższym materiałem video.
 [ZAMEL SRW-01 Aktualizacja oprogramowania](https://youtu.be/al6R-Q65aP4)
 
-*) jeśli aktualizacja z jakiegoś powodu nie przeszła to kolejną próbę możesz wykonać dopiero po odczekaniu minimum 30 min.
+:::danger *
+Jeśli aktualizacja z jakiegoś powodu nie przeszła, to kolejną próbę możesz wykonać dopiero po odczekaniu minimum 30 min.
 :::
 
 ## Jak sterować centralnie roletami
@@ -71,5 +72,26 @@ Ustawiając odpowiednie akcje na cloud.supla.org można wskazać grupę rolet, k
 
 ## Dlaczego nie mogę otworzyć bramy z Google Home
 :::details Odpowiedź
-Aby sterowanie modułem bramowym z Supli w Google Home działało poprawnie, kanał sterujący bramą musi być powiązany z prawidłowo działającym czujnikiem otwarcia. Więcej informacji znajdziesz w rozdziale Kanał otwierania bramy.
+Aby sterowanie modułem bramowym z Supli w Google Home działało poprawnie, kanał sterujący bramą musi być powiązany z prawidłowo działającym czujnikiem otwarcia. Więcej informacji znajdziesz w sekcji Otwieranie/zamykanie bramy wjazdowej.
+:::
+
+## Jak przesiąść się na nowy router ?
+:::details Odpowiedź
+Przy zmianie routera najwygodniej jest ustawić taką samą nazwę sieci WiFi i hasło jak w poprzednim.
+Dzięki temu nie trzeba będzie zmieniać ustawień WiFi w żadnych urządzeniach jakie dotychczas korzystały z sieci WiFi.
+Jeśli jednak nazwa sieci i hasło nie mogą pozostać jak poprzednio to należy zmienić ustawienia WiFi wszystkich Suplowych i niesuplowych urządzeń. Zmianę ustawień można dokonać na dwa sposoby.
+
+Sposób 1.
+- Przełącz moduł w tryb konfiguracji *
+- Uruchom aplikację Supla i dodaj jeszcze raz moduł za pomocą kreatora dodawania. Pamiętaj aby nie usuwać modułu/urządzenia z cloud-a.
+
+Sposób 2.
+- Przełącz moduł w tryb konfiguracji*
+- Połącz się z siecią WiFi rozgłaszaną przez moduł
+- Otwórz stronę http://192.168.4.1
+- Zmień nazwę sieci i hasło WiFi
+- Zapisz i zrestartuj moduł
+
+:::warning * 
+Jak przełączyć moduł w tryb konfiguracji:
 :::
