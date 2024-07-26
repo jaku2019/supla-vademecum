@@ -2,23 +2,10 @@
 layout: doc
 lastupdated: true
 ---
-# Aplikacje
-W sekcji aplikacje przedstawione są aplkacje, które są natywnie wyposażone w możliwość integracji z Suplą. Instrukcje dotyczące integracji poszczgólnych z nich znajdziesz poniżej.
-:::warning <i/>
-Jeśli chcesz stworzyć własną integrację, [poczytaj więcej o API](./pl/cloud/moje-konto#integracje).
-:::
-![Aplikacje](/img/pl/cloud/automatyka/aplikacje.png)
-
-## Call Supla
-Serwis [call.supla.io](https://call.supla.io) umożliwia wykonananie wybranych akcji na kanałach poprzez wykonanie połączenia na zdefiniowany numer. Aby połączyć konto Supla z call.supla.io należy:
-1. Wejść na stronę call.supla.io i kliknąć przycisk `Zaloguj z SUPLA`
-2. Zalogować się na konto Supla
-3. Zezwolić aplikacji na dostęp do określonych uprawnień.
-
 <script setup>
 import { useData } from 'vitepress'
 const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
-const srcImgs = [
+const call_supla = [
   {
     description: 'Call supla',
     link: `${base}img/pl/cloud/integracje/call_supla1.png`,
@@ -32,9 +19,63 @@ const srcImgs = [
     link: `${base}img/pl/cloud/integracje/call_supla3.png`
   },
 ]
+const gh = [
+  {
+    description: 'Kroki w Home',
+    link: `${base}img/pl/cloud/integracje/gh123.png`,
+  },
+  {
+    description: 'Autoyzacja w Supli',
+    link: `${base}img/pl/cloud/integracje/gh45.png`
+  },
+]
+const supla_icons = [
+  {
+    description: 'Supla icons',
+    link: `${base}img/pl/cloud/integracje/icons1.png`,
+  },
+  {
+    description: 'Logowanie w Supli',
+    link: `${base}img/pl/cloud/integracje/icons2.png`
+  },
+  {
+    description: 'Autoyzacja w Supli',
+    link: `${base}img/pl/cloud/integracje/icons3.png`
+  },
+]
+const scripts = [
+  {
+    description: 'Supla Scripts',
+    link: `${base}img/pl/cloud/integracje/scripts1.png`,
+  },
+  {
+    description: 'Logowanie w Supli',
+    link: `${base}img/pl/cloud/integracje/scripts2.png`
+  },
+  {
+    description: 'Autoyzacja w Supli',
+    link: `${base}img/pl/cloud/integracje/scripts3.png`
+  },
+  {
+    description: 'Panel w Scripts',
+    link: `${base}img/pl/cloud/integracje/scripts4.png`
+  },
+]
 </script>
+# Aplikacje
+W sekcji aplikacje przedstawione są aplkacje, które są natywnie wyposażone w możliwość integracji z Suplą. Instrukcje dotyczące integracji poszczgólnych z nich znajdziesz poniżej.
+:::warning <i/>
+Jeśli chcesz stworzyć własną integrację, [poczytaj więcej o API](./pl/cloud/moje-konto#integracje).
+:::
+![Aplikacje](/img/pl/cloud/automatyka/aplikacje.png)
 
-<many-pictures :srcImgs='srcImgs' :lazy='true' />
+## Call Supla
+Serwis [call.supla.io](https://call.supla.io) umożliwia wykonananie wybranych akcji na kanałach poprzez wykonanie połączenia na zdefiniowany numer. Aby połączyć konto Supla z call.supla.io należy:
+1. Wejść na stronę call.supla.io i kliknąć przycisk `Zaloguj z SUPLA`
+2. Zalogować się na konto Supla
+3. Zezwolić aplikacji na dostęp do określonych uprawnień.
+
+<many-pictures :srcImgs='call_supla' :lazy='true' />
 :::info <i/>
 Integrację można usunąć z poziomu zakładki `Konto` &rarr; `Bezpieczeństwo` &rarr; `Aplikacje z dostępem`.
 :::
@@ -55,22 +96,7 @@ Aby połączyć konto Supla z kontem Google Home należy:
 4. Zalogować się na konto Supla
 5. Zezwolić aplikacji na dostęp do określonych uprawnień.
 
-<script setup>
-import { useData } from 'vitepress'
-const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
-const srcImgs = [
-  {
-    description: 'Kroki w Home',
-    link: `${base}img/pl/cloud/integracje/gh123.png`,
-  },
-  {
-    description: 'Autoyzacja w Supli',
-    link: `${base}img/pl/cloud/integracje/gh45.png`
-  },
-]
-</script>
-
-<many-pictures :srcImgs='srcImgs' :lazy='true' />
+<many-pictures :srcImgs='gh' :lazy='true' />
 :::info <i/>
 Integrację można usunąć z poziomu zakładki `Konto` -> `Bezpieczeństwo` -> `Aplikacje z dostępem`.
 :::
@@ -83,26 +109,7 @@ Aby połączyć konto Supla z icons.supla.io należy:
 2. Zalogować się na konto Supla
 3. Zezwolić aplikacji na dostęp do określonych uprawnień.
 
-<script setup>
-import { useData } from 'vitepress'
-const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
-const srcImgs = [
-  {
-    description: 'Supla icons',
-    link: `${base}img/pl/cloud/integracje/icons1.png`,
-  },
-  {
-    description: 'Logowanie w Supli',
-    link: `${base}img/pl/cloud/integracje/icons2.png`
-  },
-  {
-    description: 'Autoyzacja w Supli',
-    link: `${base}img/pl/cloud/integracje/icons3.png`
-  },
-]
-</script>
-
-<many-pictures :srcImgs='srcImgs' :lazy='true' />
+<many-pictures :srcImgs='supla_icons' :lazy='true' />
 :::info <i/>
 Integrację można usunąć z poziomu zakładki `Konto` -> `Bezpieczeństwo` -> `Aplikacje z dostępem`.
 :::
@@ -116,30 +123,7 @@ Aby połączyć Suplę z Suplą Scipts należy:
 2. Zalogować się na konto Supla
 3. Zezwolić aplikacji na dostęp do określonych uprawnień.
 
-<script setup>
-import { useData } from 'vitepress'
-const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
-const srcImgs = [
-  {
-    description: 'Supla Scripts',
-    link: `${base}img/pl/cloud/integracje/scripts1.png`,
-  },
-  {
-    description: 'Logowanie w Supli',
-    link: `${base}img/pl/cloud/integracje/scripts2.png`
-  },
-  {
-    description: 'Autoyzacja w Supli',
-    link: `${base}img/pl/cloud/integracje/scripts3.png`
-  },
-  {
-    description: 'Panel w Scripts',
-    link: `${base}img/pl/cloud/integracje/scripts4.png`
-  },
-]
-</script>
-
-<many-pictures :srcImgs='srcImgs' :lazy='true' />
+<many-pictures :srcImgs='scripts' :lazy='true' />
 :::info <i/>
 Integrację można usunąć z poziomu zakładki `Konto` -> `Bezpieczeństwo` -> `Aplikacje z dostępem`.
 :::
