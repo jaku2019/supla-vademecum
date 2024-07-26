@@ -65,7 +65,7 @@ const scripts = [
 # Aplikacje
 W sekcji aplikacje przedstawione są aplkacje, które są natywnie wyposażone w możliwość integracji z Suplą. Instrukcje dotyczące integracji poszczgólnych z nich znajdziesz poniżej.
 :::warning <i/>
-Jeśli chcesz stworzyć własną integrację, [poczytaj więcej o API](./pl/cloud/moje-konto#integracje).
+Jeśli chcesz stworzyć własną integrację, [poczytaj więcej o API](../moje-konto#integracje/).
 :::
 ![Aplikacje](/img/pl/cloud/automatyka/aplikacje.png)
 
