@@ -5,7 +5,7 @@ prev:
   link: '/pl/cloud/smartfony'
 next:
   text: 'Identyfikatory dostępu'
-  link: '/pl//cloud/identyfikatory-dostepu'
+  link: '/pl/cloud/identyfikatory'
 ---
 # Lokalizacje
 Lokalizacje to zbiory, do których można przypisywać wybrane kanały oraz grupy kanałów. 
@@ -22,6 +22,7 @@ const srcImgs = [
   {
     link: `${base}img/pl/cloud/lokalizacje/utworz.png`,
     description: 'Utwórz nową lokalizację',
+    config: configI;
   },
   {
     description: 'Szczegóły - edycja',
@@ -32,7 +33,9 @@ const srcImgs = [
     link: `${base}img/pl/cloud/lokalizacje/zapisz.png`
   },
 ]
-
+interface configI {
+	height: 210; // 图片的高度，默认300px
+}
 </script>
 
 <many-pictures :srcImgs='srcImgs' :lazy='true' />
