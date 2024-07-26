@@ -68,13 +68,13 @@ const ha_a = [
   },
   {
     description: 'Dodaj integrację MQTT',
-    link: `${base}img/pl/cloud/integracje/HA/P/HA_A4.png`
+    link: `${base}img/pl/cloud/integracje/HA/HA_A4.png`
   },
 ]
 const ha_p1 = [
   {
     description: 'Sklep z dodatkami',
-    link: `${base}img/pl/cloud/integracje/HA/HA_P1.png`,
+    link: `${base}img/pl/cloud/integracje/HA/P/HA_P1.png`,
   },
   {
     description: 'Mosquitto',

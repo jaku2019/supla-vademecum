@@ -53,14 +53,15 @@ Szczegółowe dane konta potrzebne przy manualnej rejestracji niektórych urząd
 
 Aby zmienić ikonę kanału lub sceny należy kliknąć `Zmień ikonę`. Można wybrać istniejący zestaw lub przesłać własny.
 
-Ikony powinny być przesłane w formacie PNG o wymiarach 210x156px (szerokość x wysokość). Domyślnie przysyłane są ikony dla trybu jasnego i działają zarówno w trybie jasnym, jak i ciemnym. Użytkownik ma możliwość dodania osobnych ikon dla trybu ciemnego. W tym celu wystarczy zmienić pozycję górnego suwaka na Tryb ciemny i wgrać odpowiednie pliki.
+Ikony powinny być przesłane w formacie PNG o wymiarach 210x156px (szerokość x wysokość). Domyślnie przysyłane są ikony dla trybu jasnego i działają zarówno w trybie jasnym, jak i ciemnym. Użytkownik ma możliwość dodania osobnych ikon dla trybu ciemnego. W tym celu wystarczy zmienić pozycję górnego suwaka na `Tryb ciemny` i wgrać odpowiednie pliki.
 
+![Dodaj ikonę](/img/pl/cloud/funkcje/ikona.png){data-zoomable}
 Zestawy ikon zapisywane są w Cloudzie. Istnieje możliwość ich ponownego użycia dla innych kanałów o tej samej funkcji.
 
 :::info <i/>
 Istnieje też możliwość dodania do konta ikon stworzonych przez innych użytkowników za pomocą aplikacji SUPLA Icons.
 :::
-![Dodaj ikonę](/img/pl/cloud/funkcje/ikona.png){data-zoomable}
+
 
 ## Ustawienia integracji
 Supla może być zintegrowana z różnymi systemami, w tym z Alexą Amazona i Home’em Google’a. Kanały, które są obsługiwane przez powyżej wymienione integracje w polu konfiguracji wyświetlają pasek `Ustawienia integracji`. Jeśli nie ma włączonej żadnej integracji, możesz zignorować ten fragment. W przypadku, gdy jest ustawiona integracja:
