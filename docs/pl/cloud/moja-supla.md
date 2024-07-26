@@ -72,4 +72,4 @@ Wszystko co wyświetla się na liście poniżej zielonej sekcji jest nazywane w 
 Każdy kanał posiada niepowtarzalny numer identyfikacyjny (ID), który można sprawdzić w Cloudzie. Po wejściu w szczegóły widać też numer kanału - jest to identyfikacja kolejności kanałów w danym urządzeniu. Jeśli zmieni się rodzaj danego numeru kanału, to Cloud powiadomi o konflikcie kanałów. Aby urządzenie dalej łączyło się z Cloudem, należy usunąć problematyczny kanał. W jego miejsce pojawi się nowy. Alternatywnie można usunąć całe urządzenie i zarejestrować je ponownie. W takim wypadku zostanie utracona konfiguracja historii, nazw oraz ikon kanałów wybranego urządzenia.
 ![Konflikt kanałów](/img/pl/cloud/moja-supla/konflikt.png)
 
-Więcej o kanałach i ich konkretnych typach w dziale [Kanały - lista](../kanaly/kanaly).
+Więcej o kanałach i ich konkretnych typach w dziale [Kanały - lista](./kanaly/kanaly/).
