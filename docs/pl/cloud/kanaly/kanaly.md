@@ -5,7 +5,7 @@ lastupdated: true
 # Lista dostępnych kanałów
 
 W tym dziale omówiono działanie wszystkich dostępnych rodzajów kanałów i dostępnych funkcji.
-
+![Kanały](/img/pl/cloud/kanaly/kanaly.png)
 
 ## Kanały - cd.
 
@@ -24,6 +24,7 @@ Więcej na temat zmiany ikon w dziale Funkcje Clouda.
 :::danger <i/>
 Po zapisaniu zmiany któregoś z ustawień kanału urządzenia zresetują swoje połączenie z Cloudem.
 :::
+![Widok kanału](/img/pl/cloud/kanaly/widok_kanalu.png){data-zoomable}
 
 Pod wymienionymi sekcjami w zależności od rodzaju kanału znajdują się odpowiednie karty. Poniżej zamieszczono spis dostępnych kart i ich funkcji.
 
@@ -35,3 +36,5 @@ Pod wymienionymi sekcjami w zależności od rodzaju kanału znajdują się odpow
 6. **Reakcje** - wyświetla Reakcje zawierające wybrany kanał
 7. **Historia pomiarów** - wyświetla historię pomiarów kanału
 8. **Aberracje napięcia** - wyświetla historię zmierzonych aberracji napięcia.
+
+![Karty](/img/pl/cloud/kanaly/kanal_karty.png){data-zoomable}

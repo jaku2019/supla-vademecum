@@ -170,6 +170,7 @@ Proces integracji zależy od posiadanej konfiguracji. Instrukcja A przeznaczona 
 
 
 ### A - Aby podłączyć Home Assistanta do konta Supli należy:
+
 1. Włączyć broker MQTT w Supla Cloud (`Integracje` -> `Broker MQTT` -> `Włącz`) 
 
 :::warning Uwaga! 
@@ -195,6 +196,7 @@ Hasło do brokera znika po opuszczeniu strony.
 
 
 ### B - W przypadku posiadania już skonfigurowanego brokera MQTT proces integracji wygląda odmiennie:
+
 1. Wejść w konfigurację brokera Mosquitto (`Ustawienia` -> `Dodatki` -> `Mosquitto broker` -> `Konfiguracja`)
 2. Dopisać do konfiguracji:
 ````
