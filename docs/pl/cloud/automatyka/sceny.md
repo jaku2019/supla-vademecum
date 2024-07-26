@@ -19,6 +19,6 @@ Dodatkowo istnieje możliwość dostosowania następujących opcji:
 * **Podpis** - nazwa, pod jaką scena wyświetla się w Cloudzie i aplikacji SUPLA
 * **Włączone** - dezaktywacja skutkuje brakiem możliwości uruchomienia sceny i schowaniem jej w aplikacji SUPLA
 * **Pokaż w urządzeniach klienckich** - włączenie lub wyłączenie widoczności sceny w zakładce Sceny w aplikacji SUPLA
-* **Ustawienia integracji** - ustawienie widoczności i działania bramy w Google Home i Alexie, więcej na ten temat w dziale Funkcje Clouda.
+* **Ustawienia integracji** - ustawienie widoczności i działania sceny w Google Home i Alexie, więcej na ten temat w dziale Funkcje Clouda.
 * **Ikona** - użytkownik może zmienić ikonę.
 ![Sceny](/img/pl/cloud/automatyka/sceny.png){data-zoomable}

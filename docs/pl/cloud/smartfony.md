@@ -10,7 +10,8 @@ next:
 
 # Smartfony
 
-W zakładce Smartfony można zarządzać telefonami, które za pomocą aplikacji SUPLA mają dostęp do konta. Po kliknięciu w wybrany kafelek istnieje możliwość edycji wyświetlanej w Cloudzie nazwy telefonu :one:, zmiany przypisanego identyfikatora dostępu^2^ (aby edytować, kliknij w zielony napis), wyłączenia urządzenia^3^ (tymczasowego odbioru dostępu do konta) oraz usunięcia urządzenia z konta^4^. 
+W zakładce Smartfony można zarządzać telefonami, które za pomocą aplikacji SUPLA mają dostęp do konta. Po kliknięciu w wybrany kafelek istnieje możliwość edycji wyświetlanej w Cloudzie nazwy telefonu :one:, zmiany przypisanego identyfikatora dostępu :two: (aby edytować, kliknij w zielony napis), wyłączenia urządzenia :three: (tymczasowego odbioru dostępu do konta) oraz usunięcia urządzenia z konta :four:. 
+
 ![język](/img/pl/cloud/smartfony/app_szczegoly.png){data-zoomable}
 
 Aby zarejestrować nowe urządzenie należy:

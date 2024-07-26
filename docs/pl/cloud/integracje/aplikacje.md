@@ -4,16 +4,40 @@ lastupdated: true
 ---
 # Aplikacje
 W sekcji aplikacje przedstawione są aplkacje, które są natywnie wyposażone w możliwość integracji z Suplą. Instrukcje dotyczące integracji poszczgólnych z nich znajdziesz poniżej.
+:::warning <i/>
+Jeśli chcesz stworzyć własną integrację, [poczytaj więcej o API](./pl/cloud/moje-konto#integracje).
+:::
 ![Aplikacje](/img/pl/cloud/automatyka/aplikacje.png)
 
 ## Call Supla
-Serwis call.supla.io umożliwia wykonananie wybranych akcji na kanałach poprzez wykonanie połączenia na zdefiniowany numer. Aby połączyć konto Supla z call.supla.io należy:
+Serwis [call.supla.io](https://call.supla.io) umożliwia wykonananie wybranych akcji na kanałach poprzez wykonanie połączenia na zdefiniowany numer. Aby połączyć konto Supla z call.supla.io należy:
 1. Wejść na stronę call.supla.io i kliknąć przycisk `Zaloguj z SUPLA`
 2. Zalogować się na konto Supla
 3. Zezwolić aplikacji na dostęp do określonych uprawnień.
 
-Integrację można usunąć z poziomu zakładki Konto &rarr; Bezpieczeństwo &rarr; Aplikacje z dostępem.
+<script setup>
+import { useData } from 'vitepress'
+const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
+const srcImgs = [
+  {
+    description: 'Call supla',
+    link: `${base}img/pl/cloud/integracje/call_supla1.png`,
+  },
+  {
+    description: 'Logowanie w Supli',
+    link: `${base}img/pl/cloud/integracje/call_supla2.png`
+  },
+  {
+    description: 'Autoyzacja w Supli',
+    link: `${base}img/pl/cloud/integracje/call_supla3.png`
+  },
+]
+</script>
 
+<many-pictures :srcImgs='srcImgs' :lazy='true' />
+:::info <i/>
+Integrację można usunąć z poziomu zakładki `Konto` &rarr; `Bezpieczeństwo` &rarr; `Aplikacje z dostępem`.
+:::
 
 ## Google
 Integracja umożliwia wyświetlanie i sterowanie wybranych kanałów w aplikacji Google Home i dostęp do nich za pośrednictwem Asystenta Google. Obecnie integracja umożliwia:
@@ -31,6 +55,22 @@ Aby połączyć konto Supla z kontem Google Home należy:
 4. Zalogować się na konto Supla
 5. Zezwolić aplikacji na dostęp do określonych uprawnień.
 
+<script setup>
+import { useData } from 'vitepress'
+const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
+const srcImgs = [
+  {
+    description: 'Kroki w Home',
+    link: `${base}img/pl/cloud/integracje/gh123.png`,
+  },
+  {
+    description: 'Autoyzacja w Supli',
+    link: `${base}img/pl/cloud/integracje/gh45.png`
+  },
+]
+</script>
+
+<many-pictures :srcImgs='srcImgs' :lazy='true' />
 :::info <i/>
 Integrację można usunąć z poziomu zakładki `Konto` -> `Bezpieczeństwo` -> `Aplikacje z dostępem`.
 :::
@@ -43,6 +83,26 @@ Aby połączyć konto Supla z icons.supla.io należy:
 2. Zalogować się na konto Supla
 3. Zezwolić aplikacji na dostęp do określonych uprawnień.
 
+<script setup>
+import { useData } from 'vitepress'
+const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
+const srcImgs = [
+  {
+    description: 'Supla icons',
+    link: `${base}img/pl/cloud/integracje/icons1.png`,
+  },
+  {
+    description: 'Logowanie w Supli',
+    link: `${base}img/pl/cloud/integracje/icons2.png`
+  },
+  {
+    description: 'Autoyzacja w Supli',
+    link: `${base}img/pl/cloud/integracje/icons3.png`
+  },
+]
+</script>
+
+<many-pictures :srcImgs='srcImgs' :lazy='true' />
 :::info <i/>
 Integrację można usunąć z poziomu zakładki `Konto` -> `Bezpieczeństwo` -> `Aplikacje z dostępem`.
 :::
@@ -56,6 +116,30 @@ Aby połączyć Suplę z Suplą Scipts należy:
 2. Zalogować się na konto Supla
 3. Zezwolić aplikacji na dostęp do określonych uprawnień.
 
+<script setup>
+import { useData } from 'vitepress'
+const base = 'https://raw.githubusercontent.com/jaku2019/supla-vademecum/main/docs/public/'
+const srcImgs = [
+  {
+    description: 'Supla Scripts',
+    link: `${base}img/pl/cloud/integracje/scripts1.png`,
+  },
+  {
+    description: 'Logowanie w Supli',
+    link: `${base}img/pl/cloud/integracje/scripts2.png`
+  },
+  {
+    description: 'Autoyzacja w Supli',
+    link: `${base}img/pl/cloud/integracje/scripts3.png`
+  },
+  {
+    description: 'Panel w Scripts',
+    link: `${base}img/pl/cloud/integracje/scripts4.png`
+  },
+]
+</script>
+
+<many-pictures :srcImgs='srcImgs' :lazy='true' />
 :::info <i/>
 Integrację można usunąć z poziomu zakładki `Konto` -> `Bezpieczeństwo` -> `Aplikacje z dostępem`.
 :::
@@ -104,22 +188,21 @@ Jeśli folder nie istnieje utworzyć go najpierw poleceniem `mkdir -p /share/mos
 :::
 
 5. Otworzyć plik _mosquitto.conf_ (`nano mosquitto.conf`) i wprowadzić poniższą konfigurację:
-````
-        connection bridge-RANDOM
-
-        address ADRES:8883
-        topic supla/# in
-        topic homeassistant/# in
-        topic supla/+/devices/+/channels/+/execute_action out
-        topic supla/+/devices/+/channels/+/set/+ out
-        remote_username UŻYTKOWNIK
-        remote_password HASŁO
-        bridge_capath /etc/ssl/certs
-````
-
 :::warning <i/>
-W miejsce `RANDOM` należy wstawić ciąg 8-16 przypadkowych znaków trudnych do odgadnięcia przez innych użytkowników składający się z małych idużych liter oraz cyfr (nie należy używać znaków specjalnych). 
+````
+connection bridge-RANDOM
 
+address ADRES:8883
+topic supla/# in
+topic homeassistant/# in
+topic supla/+/devices/+/channels/+/execute_action out
+topic supla/+/devices/+/channels/+/set/+ out
+remote_username UŻYTKOWNIK
+remote_password HASŁO
+bridge_capath /etc/ssl/certs
+````
+
+W miejsce `RANDOM` należy wstawić ciąg 8-16 przypadkowych znaków trudnych do odgadnięcia przez innych użytkowników składający się z małych idużych liter oraz cyfr (nie należy używać znaków specjalnych). 
 
 W `ADRES` należy wpisać adres serwera odczytany z pola `Host` na cloud.supla.org -> `Konto`-> `Integracje` -> `Broker MQTT`. Na końcu `ADRES` należydodać `:8883`
 
