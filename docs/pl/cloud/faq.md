@@ -10,12 +10,14 @@ lastupdated: true
 <ins>Sposób 1:</ins>
 
 Przytrzymaj przycisk `CONFIG` przez min. 5 sek, aż dioda zacznie szybko migać.
+
 <ins>Sposób 2:</ins>
 
 Jeśli do modułu podłączony jest łącznik dzwonkowy, przytrzymaj go przez min. 5 sek lub naciśnij go 10x w krótkich odstępach czasu.
 Jeśli do modułu podłączony jest zwykły łącznik, przełącz go 10x w krótkich odstępach czasu.
 
 <ins>Sposób 3:</ins>
+
 cloud.supla.org *
 
 Sposób przełączenia SRW-01 w tryb konfiguracji przy użyciu standardowego przycisku widoczny na początku filmiku:
@@ -25,6 +27,7 @@ Sposób przełączenia SRW-01 w tryb konfiguracji przy użyciu standardowego prz
 <ins>Sposób 1:</ins>
 
 Wciśnij i przytrzymaj pokrętło przez min 5 sek, aż podświetlenie pokrętła zacznie szybko migać.
+
 <ins>Sposób 2:</ins>
 
 cloud.supla.org *
@@ -36,10 +39,11 @@ przez 5 sekund, do wygaszenia wyświetlacza
 5 sekund, aż środkowa dioda wyświetlacza zacznie szybko migać.
 
 <ins>Sposób 2:</ins>
+
 cloud.supla.org *
 
 :::warning *
-Od wersji firmware-u >=2.8.48 możliwe jest przełączenie modułu w tryb konfiguracji z poziomu cloud.supla.org. :::
+Od wersji firmware-u >=2.8.48 możliwe jest przełączenie modułu w tryb konfiguracji z poziomu cloud.supla.org.
 :::
 
 ## Jak uaktualnić moduł firmy Zamel/Nice/Varilight/Heatpol?
