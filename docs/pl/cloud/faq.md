@@ -18,15 +18,14 @@ Jeśli do modułu podłączony jest zwykły łącznik, przełącz go 10x w krót
 
 <ins>Sposób 3:</ins>
 
-cloud.supla.org *
 
+cloud.supla.org *
 Sposób przełączenia SRW-01 w tryb konfiguracji przy użyciu standardowego przycisku widoczny na początku filmiku:
 [ZAMEL SRW-01 Aktualizacja oprogramowania](https://youtu.be/al6R-Q65aP4)
-
 ### Ściemniacz Varilight:
 <ins>Sposób 1:</ins>
 
-Wciśnij i przytrzymaj pokrętło przez min 5 sek, aż podświetlenie pokrętła zacznie szybko migać.
+Wciśnij i przytrzymaj pokrętło przez min. 5 sek, aż podświetlenie pokrętła zacznie szybko migać.
 
 <ins>Sposób 2:</ins>
 
@@ -40,17 +39,16 @@ przez 5 sekund, do wygaszenia wyświetlacza
 
 <ins>Sposób 2:</ins>
 
-cloud.supla.org *
 
+cloud.supla.org *
 :::warning *
 Od wersji firmware-u >=2.8.48 możliwe jest przełączenie modułu w tryb konfiguracji z poziomu cloud.supla.org.
 :::
 
 ## Jak uaktualnić moduł firmy Zamel/Nice/Varilight/Heatpol?
 :::details Odpowiedź
-:::tip
-Najnowsze wersje oprogramowania sprawdzisz na [updates.supla.org](https://updates.supla.org).
-:::
+:::tip <i/> Najnowsze wersje oprogramowania sprawdzisz na [updates.supla.org](https://updates.supla.org). :::
+
 Procedura aktualizacji:
 1. Podłącz moduł do cloud.supla.org (powinien być widoczny w aplikacji)
 2. Przełącz moduł w tryb konfiguracji Jak przełączyć w tryb konfiguracji
