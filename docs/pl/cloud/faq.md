@@ -110,7 +110,7 @@ Jeśli tak, to zastąp tę reakcję taką, która reaguje tylko na otwarcie lub 
 :::
 ## Jak sterować centralnie roletami?
 :::details Odpowiedź
-Sterowanie centralne oparte o [`Grupy`](../automatyka/grupy) można zrealizować na trzy sposoby:
+Sterowanie centralne oparte o [`Grupy`](./automatyka/grupy-kanalow) można zrealizować na trzy sposoby:
 
 1. Za pośrednictwem aplikacji Supla - po dotknięciu ikony trzech kropek, która jest widoczna w prawej górnej części ekranu.
 Wcześniej należy utworzyć grupę rolet z poziomu cloud.supla.org
