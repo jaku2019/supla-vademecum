@@ -47,11 +47,11 @@ Od wersji firmware-u >=2.8.48 możliwe jest przełączenie modułu w tryb konfig
 
 ## Jak uaktualnić moduł firmy Zamel/Nice/Varilight/Heatpol?
 :::details Odpowiedź
-:::tip <i/> Najnowsze wersje oprogramowania sprawdzisz na [updates.supla.org](https://updates.supla.org). :::
+_Najnowsze wersje oprogramowania sprawdzisz na [updates.supla.org](https://updates.supla.org)._
 
 Procedura aktualizacji:
 1. Podłącz moduł do cloud.supla.org (powinien być widoczny w aplikacji)
-2. Przełącz moduł w tryb konfiguracji Jak przełączyć w tryb konfiguracji
+2. Przełącz moduł w tryb konfiguracji [Jak przełączyć w tryb konfiguracji](./faq#jak-przełaczyc-moduł-w-tryb-konfiguracji)
 3. Połącz się z siecią WiFi rozpoczynającą się od nazwy "ZAMEL-..."
 4. Otwórz stronę http://192.168.4.1
 5. Ustaw "Firmware update" na "YES"
@@ -62,7 +62,7 @@ W przypadku SRW-01 zapoznaj się z poniższym materiałem video.
 [ZAMEL SRW-01 Aktualizacja oprogramowania](https://youtu.be/al6R-Q65aP4)
 
 :::danger *
-Jeśli aktualizacja z jakiegoś powodu nie przeszła, to kolejną próbę możesz wykonać dopiero po odczekaniu minimum 30 min. :::
+Jeśli aktualizacja z jakiegoś powodu nie przeszła, to kolejną próbę możesz wykonać dopiero po odczekaniu minimum 30 min.
 :::
 ## Jak otwierać/zamykać głosowo bramę za pośrednictwem Siri bez instalacji Home Assistanta?
 :::details Odpowiedź
