@@ -87,7 +87,7 @@ Jeśli aktualizacja z jakiegoś powodu nie przeszła, to kolejną próbę możes
 :::details Odpowiedź
 Aby sterowanie modułem bramowym z Supli w Google Home działało poprawnie, kanał sterujący bramą musi być powiązany z prawidłowo działającym czujnikiem otwarcia. Więcej informacji znajdziesz w sekcji Otwieranie/zamykanie bramy wjazdowej.
 :::
-## Posiadam SBW-01/02 i otrzymuję powiadomienie o otwarciu/zamknięciu bramy, nawet jak moduł traci połączenie na chwilę.
+## Mam SBW-01/02 i otrzymuję powiadomienie o otwarciu/zamknięciu bramy, nawet jak moduł traci połączenie na chwilę.
 :::details Odpowiedź
 Jeśli posiadasz SBW i otrzymujesz powiadomienia o otwarciu/zamknięciu bramy nawet jak na chwilę moduł traci połączenie, a brama nie zmieniła swojego położenia to musisz [zaktualizować oprogramowanie SBW](./faq#jak-uaktualnic-moduł-firmy-zamel-nice-varilight-heatpol).
 :::
