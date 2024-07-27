@@ -49,16 +49,16 @@ Od wersji firmware-u >=2.8.48 możliwe jest przełączenie modułu w tryb konfig
 :::details Odpowiedź
 _Najnowsze wersje oprogramowania sprawdzisz na [updates.supla.org](https://updates.supla.org)._
 
-Procedura aktualizacji:
+<ins>Procedura aktualizacji:</ins>
 1. Podłącz moduł do cloud.supla.org (powinien być widoczny w aplikacji)
 2. Przełącz moduł w tryb konfiguracji [Jak przełączyć w tryb konfiguracji](./faq#jak-przełaczyc-moduł-w-tryb-konfiguracji)
 3. Połącz się z siecią WiFi rozpoczynającą się od nazwy "ZAMEL-..."
 4. Otwórz stronę http://192.168.4.1
-5. Ustaw "Firmware update" na "YES"
+5. Ustaw "Firmware update" na `YES`
 6. Zapisz
 7. Uruchom ponownie moduł np. poprzez krótkie naciśnięcie przycisku `CONFIG`.
 
-W przypadku SRW-01 zapoznaj się z poniższym materiałem video.
+W przypadku SRW-01 zapoznaj się z materiałem wideo: 
 [ZAMEL SRW-01 Aktualizacja oprogramowania](https://youtu.be/al6R-Q65aP4)
 
 :::danger *

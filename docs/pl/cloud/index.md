@@ -3,7 +3,7 @@ layout: doc
 lastupdated: true
 next:
   text: 'Moja Supla'
-  link: '/pl/cloud/moja-supla'
+  link: '/pl/cloud/faq'
 ---
 # Wprowadzenie
 
