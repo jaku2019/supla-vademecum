@@ -89,7 +89,7 @@ Aby sterowanie modułem bramowym z Supli w Google Home działało poprawnie, kan
 :::
 ## Posiadam SBW-01/02 i otrzymuję powiadomienie o otwarciu/zamknięciu bramy, nawet jak moduł traci połączenie na chwilę.
 :::details Odpowiedź
-Jeśli posiadasz SBW i otrzymujesz powiadomienia o otwarciu/zamknięciu bramy nawet jak na chwilę moduł traci połączenie, a brama nie zmieniła swojego położenia to musisz [zaktualizować oprogramowanie SBW](./faq#jak-uaktualnic-moduł-firmy-zamel-nice-varilight-heatpol).
+Jeśli posiadasz SBW i otrzymujesz powiadomienia o otwarciu/zamknięciu bramy nawet jak na chwilę moduł traci połączenie, a brama nie zmieniła swojego położenia to musisz [zaktualizować oprogramowanie SBW](https://jaku2019.github.io/supla-vademecum/pl/cloud/faq#jak-uaktualnic-modu%C5%82-firmy-zamel-nice-varilight-heatpol).
 :::
 ## Dlaczego przy zamykaniu bramy dostaję kilka powiadomień ?
 :::details Odpowiedź
@@ -131,11 +131,11 @@ Dzięki temu nie będzie trzeba zmieniać ustawień WiFi w żadnych urządzeniac
 Jeśli jednak nazwa sieci i hasło nie mogą pozostać bez zmian, to należy zmienić ustawienia WiFi wszystkich Suplowych i niesuplowych urządzeń. Zmianę ustawień można dokonać na dwa sposoby.
 
 <ins>Sposób 1:</ins>
-- Przełącz urządzenie w tryb konfiguracji (jak to zrobić: [link](./faq#jak-przełączyć-moduł-w-tryb-konfiguracji))
+- Przełącz urządzenie w tryb konfiguracji (jak to zrobić: [link](https://jaku2019.github.io/supla-vademecum/pl/cloud/faq#jak-prze%C5%82aczyc-modu%C5%82-w-tryb-konfiguracji))
 - Uruchom aplikację Supla i dodaj jeszcze raz moduł za pomocą kreatora dodawania. Pamiętaj, aby nie usuwać urządzenia z Clouda.
 
 <ins>Sposób 2:</ins>
-- Przełącz urządzenie w tryb konfiguracji (jak to zrobić: [link](./faq#jak-przełączyć-moduł-w-tryb-konfiguracji))
+- Przełącz urządzenie w tryb konfiguracji (jak to zrobić: [link](https://jaku2019.github.io/supla-vademecum/pl/cloud/faq#jak-prze%C5%82aczyc-modu%C5%82-w-tryb-konfiguracji))
 - Połącz się z siecią WiFi rozgłaszaną przez moduł
 - Otwórz stronę http://192.168.4.1
 - Zmień nazwę sieci i hasło WiFi
