@@ -1,0 +1,30 @@
+---
+title: "Wprowadzenie"
+linkTitle: "Wstęp"
+cascade:
+  type: "docs"
+---
+
+Supla to polski system automatyki budynkowej popularnie zwanej “smart home”. Rozwijany na zasadzie open-source (otwartych źródeł dostępnych na Githubie) zyskał wielu entuzjastów gromadzących się na [forum.supla.org](https://forum.supla.org/index.php).
+
+![diagram](supla_diagram_2.png)
+
+Elementem centralnym całego systemu jest chmura Supla Cloud dostępna pod adresem cloud.supla.org. Istnieje również opcja zainstalowania własnej instancji serwera Supli.
+
+Aby zacząć przygodę z Suplą, należy założyć darmowe konto na cloud.supla.org. Następnym krokiem jest dodanie urządzenia mobilnego, za pomocą którego można zdalnie sterować podłączonymi urządzeniami. W tym celu przechodzimy do zakładki `Smartfony`. Upewniwszy się, że rejestracja urządzeń jest aktywna, uruchamiamy telefon i pobieramy aplikację SUPLA. Uzupełniamy odpowiednie dane i klikamy `OK`. Nowo dodane urządzenie powinno pojawić się na liście zarejestrowanych aplikacji klienckich w Cloudzie. Z poziomu aplikacji można nie tylko sterować urządzeniami podłączonymi do Clouda, ale też dodawać nowe urządzenia do konta Supla Cloud, zmieniać nazwy kanałów, lokalizacji i wiele więcej. 
+Temat aplikacji został szerzej poruszony w odpowiednim dziale strony.
+
+{{< gallery type="carousel" >}}
+  {{< gallery-item src="img/wspolne/app_rejestr1.png" caption="Kliknięcie w przycisk włącza rejestrację" >}}
+  {{< gallery-item src="img/wspolne/app_klik.png" caption="Zarejestrowane urządzenie mobilne" >}}
+{{< /gallery >}}
+
+Język Clouda można zmienić wybierając pożądany z listy widocznej w lewym dolnym rogu strony.
+
+![język](jezyk.png)
+{data-zoomable="true"}
+
+> [!WARNING]
+> Niezrozumiałe zapisy w Cloudzie mogą wynikać z ustawienia języka Clouda na inny niż polski i automatycznego tłumaczenia przez przeglądarkę. W przypadku wystąpienia niezrozumiałych/nieskładnych informacji zaleca się weryfikację języka Clouda.
+
+W dalszej części tekstu zostały omówione poszczególne funkcje Supla Cloud.

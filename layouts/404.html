@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ site.Language.Lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nie znaleziono – {{ site.Title }}</title>
+    <link rel="icon" href="{{ "favicon.ico" | absURL }}" />
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #000;
+        background: #fff;
+      }
+      h1 { font-size: 64px; margin: 0; color: #13a71e; }
+      p { margin: 8px 0 24px; opacity: 0.7; }
+      a { color: #13a71e; font-weight: 600; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      @media (prefers-color-scheme: dark) {
+        body { color: #fff; background: #111; }
+        h1, a { color: #17cd24; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>404</h1>
+      <h2>Nie znaleziono</h2>
+      <p>Lubię wracać tam gdzie byłem</p>
+      <a href="{{ site.Home.Permalink }}">Powrót na główną</a>
+    </main>
+  </body>
+</html>
