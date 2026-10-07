@@ -34,16 +34,27 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 - [ ] Repo nie ma ustawionego `git remote` – dodać, wypchnąć gałąź, PR do `main`
 - [ ] Po pierwszym deployu: sprawdzić 404, aliasy i daty „Zaktualizowano” na GitHub Pages
 
+## Etap 4 – typy kanałów (z „Supla Cloud.docx”)
+- [x] 8 stron w `content/cloud/kanaly/`: Przekaźnik, Przekaźnik x2, Ściemniacz i RGB, HVAC, KPOP i KLOP, Liczniki energii, Czujniki binarne, Czujniki pomiarowe
+- [x] Menu „Kanały - lista” rozwija się do listy typów; na stronie listy – karty z linkami
+- [x] Grafika histerezy z docx → `kanaly/hvac/histereza.png` (z zoomem)
+- [x] Poprawione oczywiste błędy źródła (literówki, „działania bramy” przy kanałach niebędących bramą, „stanu rolety” przy oknie/markizie/ekranie, opis historii czujnika wilgotności)
+- [ ] Uzupełnić brakujące opisy (komentarze `<!-- TODO -->` w `przekaznik-x2`): Kalibruj, Automatyczna kalibracja, Odwrócone sterowanie przyciskami, Dodatkowy margines czasu
+- [ ] Rozdział „Żaluzje fasadowe” – pusty w docx
+- [ ] Zrzuty ekranu z aplikacji SUPLA dla rolet, okna dachowego, markizy i ekranu (placeholdery `[ZDJĘCIE Z APP]` w docx)
+- [ ] Sprawdzić, czy pozostałe rozdziały docx (Moja Supla, Smartfony, Automatyka, Konto, Funkcje Clouda…) nie są nowsze niż treść na stronie
+- [ ] `Supla Cloud.docx` leży w katalogu repo, nie jest commitowany – zdecydować: `.gitignore` czy przenieść poza repo
+
 ## Później / propozycje
 - [ ] **Optymalizacja zdjęć** – rozszerzyć `layouts/_markup/render-image.html` o przetwarzanie obrazów Hugo (WebP, resize do szerokości treści, `width`/`height`); zoom ma pokazywać oryginał. Galerie już same generują miniatury WebP.
 - [ ] Decyzja: czy wszystkie zdjęcia mają być powiększalne (wtedy `params.imageZoom.enable: true` i można usunąć atrybuty)
-- [ ] Galerie: `carousel` vs `grid` – zdecydować, który układ lepiej zastępuje many-pictures
+- [x] Galerie zostają jako karuzele (`carousel`) – decyzja z 2026-10-07
 - [ ] PR z `i18n/pl.yaml` do upstreamu `imfing/hextra`
 - [ ] Link-checker w CI (lychee / htmltest)
-- [ ] `kanaly/przekaznik` – w starym sidebarze go nie było; teraz `sidebar.exclude: true` (ale jest w wyszukiwarce). Zdecydować, czy pokazać w menu.
+- [x] Stary szkic `kanaly/przekaznik` zastąpiony nową stroną z docx, widoczną w menu jako typ kanału
 - [ ] „Wstęp” (`/pl/cloud/`) jest korzeniem sekcji – nie ma go jako pozycji w sidebarze (dostępny z navbara i breadcrumbów)
 - [ ] „Integracje”, „Kanały - lista”, „Funkcje Clouda” wizualnie trafiły pod separator „Sekcje Clouda” – ewentualnie dodać trzeci separator
-- [ ] Treść: linie zaczynające się od `!` w `kanaly/przekaznik` (np. `!Uwaga ...`) to pewnie niedokończone uwagi – zamienić na alerty
+- [x] Linie `!` z docx zamienione na alerty (`!Uwaga` → WARNING, pozostałe → NOTE/TIP)
 - [ ] Strona główna: karty Supla App / supla-device / GUI Generic nie mają jeszcze linków (jak w oryginale)
 - [ ] Nieużywany obraz `funkcje-clouda/moje_konto.png` (był nieużywany też w VitePressie)
 

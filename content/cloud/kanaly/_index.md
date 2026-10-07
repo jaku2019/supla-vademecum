@@ -42,3 +42,16 @@ Pod wymienionymi sekcjami w zależności od rodzaju kanału znajdują się odpow
 
 ![Karty](kanal_karty.png)
 {data-zoomable="true"}
+
+## Typy kanałów
+
+{{< cards >}}
+  {{< card link="przekaznik" title="Przekaźnik" subtitle="Furtka, bramy, drzwi, włączniki, automat schodowy" >}}
+  {{< card link="przekaznik-x2" title="Przekaźnik x2" subtitle="Rolety, okno dachowe, markiza, ekran projekcyjny" >}}
+  {{< card link="oswietlenie" title="Ściemniacz i RGB" subtitle="Ściemniacz, oświetlenie RGB" >}}
+  {{< card link="hvac" title="HVAC – termostaty" subtitle="Termostat, termostat różnicowy, ciepła woda" >}}
+  {{< card link="ogolnego-przeznaczenia" title="KPOP i KLOP" subtitle="Kanał pomiarowy i licznikowy ogólnego przeznaczenia" >}}
+  {{< card link="liczniki-energii" title="Liczniki energii" subtitle="Licznik impulsów, licznik energii elektrycznej" >}}
+  {{< card link="czujniki-binarne" title="Czujniki binarne" subtitle="Czujniki otwarcia, braku cieczy, karty hotelowej, alarmu, poczty" >}}
+  {{< card link="czujniki-pomiarowe" title="Czujniki pomiarowe" subtitle="Temperatura, wilgotność, ciśnienie, waga, odległość" >}}
+{{< /cards >}}
