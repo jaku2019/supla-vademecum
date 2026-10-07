@@ -1,4 +1,4 @@
-node_modules
-dist
-cache
-temp
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock

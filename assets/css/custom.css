@@ -1,0 +1,5 @@
+/* Zieleń Supli (#13a71e) jako kolor główny Hextry */
+:root {
+  --primary-hue: 124deg;
+  --primary-saturation: 80%;
+}
