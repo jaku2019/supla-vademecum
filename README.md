@@ -24,6 +24,17 @@ Tekst, zdjęcia i nowe podstrony można edytować w przeglądarce w [Pages CMS](
 
 Po każdym zapisie GitHub sprawdza, czy strona się buduje (zakładka `Actions`, „Build check”). Czerwony krzyżyk oznacza błąd, np. odwołanie do usuniętego zdjęcia.
 
+## supla.org (gałąź `supla-org`)
+Na gałęzi `supla-org` strona Vademecum jest częścią przepisanej strony supla.org: strona główna, „Dla domu”, „Urządzenia”, „Integruj i twórz”, „Dla producentów”, FAQ, „O SUPLI”, „Partnerzy”, „Pobierz” i aktualności. Vademecum zostaje pod `/cloud/`.
+
+**Nowa aktualność** – w Pages CMS wybierz **Aktualności** i dodaj wpis (tytuł, data, zajawka, zdjęcie okładki, treść). Wpis sam pojawi się na liście aktualności, na stronie głównej i w kanale RSS. Każdy wpis to katalog `content/aktualnosci/<adres>/` z plikiem `index.md` i zdjęciami.
+
+**Liczby i opinie** na stronie głównej są w `data/supla.yaml`, a lista partnerów we frontmatterze `content/partnerzy/index.md`. Oba miejsca można edytować w Pages CMS (grupa **supla.org – strony**).
+
+**Pasek i moduły** – strona ma dwa moduły: supla.org i Vademecum (sekcje wymienione w `params.vademecum.sekcje` w `hugo.yaml`). W Vademecum pasek pokazuje menu `vademecum` z `hugo.yaml`, a napis przy logo zmienia się na „vademecum supla”. Przejście między modułami animują CSS View Transitions (`@view-transition`, koniec `assets/css/custom.css`); w przeglądarkach bez ich obsługi strona po prostu się przeładowuje.
+
+**Zaślepki** – elementy, które potrzebują zewnętrznego źródła danych, mają na razie ramkę z przerywaną linią: katalog urządzeń z filtrami (`{{< katalog-filtry >}}`, `{{< zastepnik >}}`), wykres i liczniki „Zużycie energii na żywo” (`{{< energia >}}`) oraz podgląd aplikacji na stronie głównej.
+
 ## 3 - dodanie nowego rozdziału strony
 Aby dodać do strony coś zupełnie nowego, utwórz Forka tego repozytorium - GitHub stworzy jego kopię na Twoim koncie.
 

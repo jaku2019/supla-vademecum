@@ -1,0 +1,17 @@
+{{- /*
+  Miejsce na element, który wymaga zewnętrznego źródła danych (API, baza
+  urządzeń itp.) i nie jest jeszcze podłączony. Treść w środku opisuje,
+  co ma się tu pojawić.
+
+  @param {string} tytul
+  @param {string} ikona domyślnie "database"
+  @param {string} zrodlo skąd mają przyjść dane (np. „API supla.org”)
+
+  @example {{< zastepnik tytul="Katalog urządzeń" zrodlo="baza urządzeń" >}}Opis{{< /zastepnik >}}
+*/ -}}
+<div class="zastepnik not-prose" role="note">
+  <div class="zastepnik-ikona">{{ partial "utils/icon.html" (dict "name" (.Get "ikona" | default "database") "attributes" "height=28") }}</div>
+  <p class="zastepnik-tytul">{{ .Get "tytul" }}</p>
+  {{- with .Inner }}<div class="zastepnik-opis">{{ . | $.Page.RenderString (dict "display" "block") }}</div>{{ end }}
+  {{- with .Get "zrodlo" }}<p class="zastepnik-zrodlo">Wymaga źródła danych: {{ . }}</p>{{ end }}
+</div>

@@ -1,0 +1,15 @@
+{{- /*
+  Przełącznik modułów w pasku: supla.org | Vademecum. Aktywny moduł ma zieloną
+  pigułkę (.przelacznik-pigulka); obie strony przejścia mają ją pod tą samą
+  nazwą, więc View Transitions przesuwa ją między segmentami. Etykiety leżą
+  w osobnej warstwie nad pigułką. Kontekst: strona.
+*/ -}}
+{{- $modul := partial "modul.html" . -}}
+{{- $vademecum := site.GetPage site.Params.vademecum.start -}}
+<div class="przelacznik" data-modul="{{ $modul }}">
+  <span class="przelacznik-pigulka" aria-hidden="true"></span>
+  <span class="przelacznik-etykiety">
+    <a href="{{ site.Home.RelPermalink }}"{{ if eq $modul "supla" }} aria-current="true"{{ end }}>supla.org</a>
+    <a href="{{ with $vademecum }}{{ .RelPermalink }}{{ end }}"{{ if eq $modul "vademecum" }} aria-current="true"{{ end }}>Vademecum</a>
+  </span>
+</div>

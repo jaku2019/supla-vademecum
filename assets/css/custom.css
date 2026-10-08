@@ -16,6 +16,12 @@
   --supla-font-default: "Inter", sans-serif;
   --supla-radius: 3px;
   --supla-radius-md: 4px;
+  --supla-radius-lg: 5px;
+  --supla-radius-xl: 10px;
+  /* ramki – dwa stopnie wyżej w skali supla-theme niż przyciski i pola,
+     które zostają na radius / radius-md */
+  --supla-radius-ramka: var(--supla-radius-lg); /* kafelki, karty */
+  --supla-radius-blok: var(--supla-radius-xl);  /* bloki: alerty, kod, rozwijane, zaślepki */
   --supla-duration: 0.3s;
 
   --supla-bg: #fafbfc;
@@ -26,16 +32,24 @@
 
   --supla-green: #00d151;
   --supla-green-hover: #00b847;
+  --supla-green-active: #009e3d;
   --supla-on-green: #ffffff;
   --supla-green-text: #007d30;
   --supla-green-subtle: #e6faee;
   --supla-green-border: #9fe8bb;
 
   --supla-yellow: #ffe836;
+  --supla-yellow-hover: #ffe203;
+  --supla-yellow-active: #e8ce00;
+  --supla-on-yellow: #000000;
   --supla-yellow-text: #7a6a00;
   --supla-yellow-subtle: #ffee69;
   --supla-yellow-border: #ffe203;
 
+  --supla-blue: #003c77;
+  --supla-blue-hover: #002a53;
+  --supla-blue-active: #002a53;
+  --supla-on-blue: #ffffff;
   --supla-blue-text: #003c77;
   --supla-blue-subtle: #e7f3ff;
   --supla-blue-border: #b9d9f7;
@@ -43,6 +57,17 @@
   --supla-red-text: #cc2900;
   --supla-red-subtle: #ffebe6;
   --supla-red-border: #ffb3a1;
+
+  /* Akcent (rola supla-theme): komponenty używają --supla-primary-*, a nie
+     kolorów nazwanych. Domyślnie rola „user” = zieleń; strony z motywem
+     (frontmatter „motyw”) przestawiają go niżej (.motyw-zolty, .motyw-niebieski). */
+  --supla-primary: var(--supla-green);
+  --supla-primary-hover: var(--supla-green-hover);
+  --supla-primary-active: var(--supla-green-active);
+  --supla-primary-text: var(--supla-green-text);
+  --supla-primary-subtle: var(--supla-green-subtle);
+  --supla-primary-border: var(--supla-green-border);
+  --supla-on-primary: var(--supla-on-green);
 
   --supla-selection-bg: #00d151;
   --supla-selection-text: #ffffff;
@@ -77,16 +102,24 @@
 
   --supla-green: #00873a;
   --supla-green-hover: #007a34;
+  --supla-green-active: #006b2d;
   --supla-on-green: #ffffff;
   --supla-green-text: #00d151;
   --supla-green-subtle: #133a23;
   --supla-green-border: #1d5a35;
 
   --supla-yellow: #ffe836;
+  --supla-yellow-hover: #fff06b;
+  --supla-yellow-active: #ffe203;
+  --supla-on-yellow: #1f1b00;
   --supla-yellow-text: #ffe836;
   --supla-yellow-subtle: #332e0a;
   --supla-yellow-border: #665a0f;
 
+  --supla-blue: #1f6fbf; /* #003c77 ma na ciemnym tylko 1.7:1 */
+  --supla-blue-hover: #2e80d1;
+  --supla-blue-active: #1a5fa3;
+  --supla-on-blue: #ffffff;
   --supla-blue-text: #4d9be6;
   --supla-blue-subtle: #0e2338;
   --supla-blue-border: #1d4670;
@@ -127,8 +160,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* nazwa strony w navbarze – jak logo Supli */
-.hextra-nav-container nav > a:first-child span {
+.hextra-nav-container .napis-logo {
   font-family: var(--supla-font-special);
+  font-size: 1.2em; /* 120% tekstu navbara */
   font-weight: 700;
 }
 
@@ -146,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* linki: ciemniejsza zieleń dla kontrastu (#00d151 na białym ma 2:1) */
 .content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)) {
-  color: var(--supla-green-text);
+  color: var(--supla-primary-text);
   transition: color var(--supla-duration);
 }
 .content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)):hover {
@@ -163,14 +197,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .content :where(pre):not(:where(.hextra-code-block pre, [class~=not-prose],[class~=not-prose] *)),
 .hextra-code-block pre {
-  border-radius: var(--supla-radius-md);
+  border-radius: var(--supla-radius-blok);
 }
 
 /* --- Alerty (> [!NOTE] itd.) – kolory komunikatów Supli --------------------- */
 
 /* [data-alert] – ta sama szczegółowość co reguły Hextry dla typów alertów */
 .hextra-alert[data-alert] {
-  border-radius: var(--supla-radius-md);
+  border-radius: var(--supla-radius-blok);
   color: var(--supla-text);
 }
 .hextra-alert[data-alert="tip"] {
@@ -201,12 +235,12 @@ h1, h2, h3, h4, h5, h6 {
 .hextra-card {
   background: var(--supla-surface);
   border: 2px solid var(--supla-border);
-  border-radius: var(--supla-radius);
+  border-radius: var(--supla-radius-ramka);
   transition: border-color var(--supla-duration), background-color var(--supla-duration),
     box-shadow var(--supla-duration), transform var(--supla-duration);
 }
 .hextra-card:hover {
-  border-color: var(--supla-green);
+  border-color: var(--supla-primary);
   background: var(--supla-card-hover-bg);
   box-shadow: var(--supla-card-hover-shadow);
 }
@@ -214,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(0.98);
 }
 .hextra-card:hover .hextra-card-icon svg {
-  color: var(--supla-green-text);
+  color: var(--supla-primary-text);
 }
 
 /* --- Strona główna ---------------------------------------------------------- */
@@ -224,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--supla-tile-bg);
   color: var(--supla-tile-text);
   border: 2px solid var(--supla-tile-border);
-  border-radius: var(--supla-radius);
+  border-radius: var(--supla-radius-ramka);
   box-shadow: none;
   transition: border-color var(--supla-duration), transform var(--supla-duration);
 }
@@ -255,13 +289,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* przycisk główny – zielony przycisk Supli */
 .hero-actions a:first-child {
-  background: var(--supla-green);
-  color: var(--supla-on-green);
+  background: var(--supla-primary);
+  color: var(--supla-on-primary);
   border-radius: var(--supla-radius-md);
   transition: background-color 0.2s;
 }
 .hero-actions a:first-child:hover {
-  background: var(--supla-green-hover);
+  background: var(--supla-primary-hover);
 }
 .hero-actions a:not(:first-child) {
   border-radius: var(--supla-radius-md);
@@ -269,6 +303,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* gradient na nazwie „Supla”: żółty → zielony Supli */
 .hero-name {
+  font-size: 1.4em; /* 140% nagłówka – w proporcji także na telefonie */
   background: linear-gradient(120deg, var(--supla-yellow) 20%, #00d151);
   -webkit-background-clip: text;
   background-clip: text;
@@ -314,7 +349,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   min-width: 0;
   padding: 1.75rem 1rem 1rem;
-  border-radius: var(--supla-radius-md);
+  border-radius: var(--supla-radius-blok);
 }
 .sciaga-edytor::before,
 .sciaga-efekt::before {
@@ -409,7 +444,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.25rem 1.5rem;
   background: var(--supla-surface);
   border: 1px solid var(--supla-border);
-  border-radius: var(--supla-radius-md);
+  border-radius: var(--supla-radius-blok);
 }
 .cms-zaproszenie label {
   display: block;
@@ -437,16 +472,1180 @@ h1, h2, h3, h4, h5, h6 {
 .cms-zaproszenie button {
   padding: 0.5rem 1rem;
   font-weight: 600;
-  color: var(--supla-on-green);
-  background: var(--supla-green);
+  color: var(--supla-on-primary);
+  background: var(--supla-primary);
   border-radius: var(--supla-radius);
   cursor: pointer;
   transition: background var(--supla-duration);
 }
-.cms-zaproszenie button:hover { background: var(--supla-green-hover); }
+.cms-zaproszenie button:hover { background: var(--supla-primary-hover); }
 .cms-zaproszenie button:disabled { opacity: 0.5; cursor: not-allowed; }
 .cms-zaproszenie-pulapka { position: absolute; left: -9999px; }
 .cms-zaproszenie-status { margin-top: 0.75rem; font-size: 0.875rem; color: var(--supla-text-muted); }
 .cms-zaproszenie-status:empty { display: none; }
-.cms-zaproszenie-ok { color: var(--supla-green-text); }
+.cms-zaproszenie-ok { color: var(--supla-primary-text); }
 .cms-zaproszenie-blad { color: var(--supla-red-text); }
+
+/* =============================================================================
+   supla.org – podstrony, strona główna, aktualności, stopka
+   ============================================================================= */
+
+/* --- Przyciski (partial przycisk.html) ---------------------------------------- */
+
+.przyciski {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+.przycisk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--supla-radius-md);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.przycisk-glowny {
+  background: var(--supla-primary);
+  color: var(--supla-on-primary);
+}
+.przycisk-glowny:hover {
+  background: var(--supla-primary-hover);
+}
+.przycisk-glowny:active { background: var(--supla-primary-active); }
+
+/* przyciski w kolorach ról supla-theme (button($color)): żółty – instalator,
+   niebieski – dev; na stronie głównej „Integruj i twórz” / „Dla producentów” */
+.przycisk-zolty {
+  background: var(--supla-yellow);
+  color: var(--supla-on-yellow);
+}
+.przycisk-zolty:hover { background: var(--supla-yellow-hover); }
+.przycisk-zolty:active { background: var(--supla-yellow-active); }
+.przycisk-niebieski {
+  background: var(--supla-blue);
+  color: var(--supla-on-blue);
+}
+.przycisk-niebieski:hover { background: var(--supla-blue-hover); }
+.przycisk-niebieski:active { background: var(--supla-blue-active); }
+.przycisk-obrys {
+  border-color: var(--supla-primary);
+  color: var(--supla-primary-text);
+}
+.przycisk-obrys:hover {
+  background: var(--supla-primary-subtle);
+}
+.przycisk-zewn { opacity: 0.7; }
+/* .content koloruje linki – przyciski mają własne kolory */
+.content .przycisk-glowny,
+.content .przycisk-glowny:hover { color: var(--supla-on-primary); }
+.content .przycisk-obrys,
+.content .przycisk-obrys:hover { color: var(--supla-primary-text); }
+.content .przycisk-zolty,
+.content .przycisk-zolty:hover { color: var(--supla-on-yellow); }
+.content .przycisk-niebieski,
+.content .przycisk-niebieski:hover { color: var(--supla-on-blue); }
+
+/* --- Podstrona (layout strona, aktualności) ------------------------------------ */
+
+.strona-wnetrze {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.strona-naglowek {
+  padding: 3rem 0 2.5rem;
+  background:
+    radial-gradient(48rem 18rem at 100% 0%, var(--supla-naglowek-swiatlo, rgb(0 209 81 / 0.12)), transparent 70%),
+    radial-gradient(32rem 14rem at 0% 100%, rgb(255 232 54 / 0.14), transparent 70%),
+    var(--supla-surface);
+  border-bottom: 1px solid var(--supla-border);
+}
+.strona-naglowek h1 {
+  max-width: 52rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.strona-nadtytul {
+  margin-bottom: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--supla-primary-text);
+}
+.strona-naglowek h1 + .strona-nadtytul { margin: 1rem 0 0; }
+.strona-lead {
+  max-width: 48rem;
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--supla-text-muted);
+}
+.strona-cechy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.9375rem;
+}
+.strona-cechy li {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.strona-cechy svg { color: var(--supla-primary-text); }
+.strona-powrot {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--supla-primary-text);
+}
+.strona-powrot:hover { color: var(--supla-text-muted); }
+
+.strona-tresc {
+  padding: 1rem 0 3rem;
+}
+.strona-tresc > h2:first-child { margin-top: 1.5rem; }
+.strona [hidden] { display: none !important; }
+
+/* karty na podstronach i stronie głównej: pełny podtytuł (Hextra ucina do 3 linii) */
+.strona .hextra-card-subtitle,
+.sekcja .hextra-card-subtitle {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+/* treść karty od góry (Hextra dociska ją do dołu – w rzędzie kart różnej długości
+   tytuły rozjeżdżają się) */
+.strona .hextra-card > .hx\:mt-auto,
+.sekcja .hextra-card > .hx\:mt-auto {
+  margin-top: 0;
+}
+/* karta bez linku – bez efektów najechania */
+.hextra-card:not([href]):hover {
+  border-color: var(--supla-border);
+  background: var(--supla-surface);
+  box-shadow: none;
+}
+.hextra-card:not([href]):active { transform: none; }
+.hextra-card:not([href]):hover .hextra-card-icon svg { color: inherit; }
+
+/* rozwijane odpowiedzi – karty Supli zamiast szarego tła */
+.strona details {
+  background: var(--supla-surface);
+  border: 1px solid var(--supla-border);
+  border-radius: var(--supla-radius-blok);
+}
+.strona details[open] { border-color: var(--supla-primary-border); }
+
+/* --- Strona główna ---------------------------------------------------------- */
+
+.hero-cechy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.hero-cechy li::before {
+  content: "\2713";
+  margin-right: 0.375rem;
+  color: var(--supla-primary-text);
+}
+.hero-dopisek {
+  font-size: 0.9375rem;
+  color: var(--supla-text-muted);
+}
+.hero-dopisek a {
+  color: var(--supla-primary-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sekcja {
+  width: 100%;
+  margin-top: 4.5rem;
+}
+.sekcja-naglowek {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.sekcja-naglowek h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.sekcja-opis {
+  max-width: 44rem;
+  margin-top: 0.5rem;
+  color: var(--supla-text-muted);
+}
+.sekcja-link {
+  font-weight: 600;
+  color: var(--supla-primary-text);
+  white-space: nowrap;
+}
+.sekcja-link:hover { color: var(--supla-text-muted); }
+.sekcja-proza p {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+}
+.dwie-kolumny {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+@media (min-width: 960px) {
+  .dwie-kolumny { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 3rem; }
+}
+
+/* --- Statystyki ----------------------------------------------------------------- */
+
+.statystyki {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  margin: 2.5rem 0;
+}
+@media (min-width: 768px) {
+  .statystyki { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.statystyka {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  background: var(--supla-surface);
+  border: 2px solid var(--supla-border);
+  border-radius: var(--supla-radius-ramka);
+}
+.statystyka dd {
+  font-family: var(--supla-font-special);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--supla-primary-text);
+}
+.statystyka dt {
+  margin-top: 0.375rem;
+  font-size: 0.9375rem;
+  color: var(--supla-text-muted);
+}
+
+/* --- Opinie ------------------------------------------------------------------- */
+
+.opinie {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: 1rem;
+}
+@media (min-width: 1024px) {
+  .opinie { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.opinia {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  background: var(--supla-surface);
+  border: 2px solid var(--supla-border);
+  border-radius: var(--supla-radius-ramka);
+}
+.opinia-temat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--supla-primary-text);
+}
+.opinia blockquote { margin: 0.75rem 0 1rem; }
+.opinia blockquote p { line-height: 1.6; color: var(--supla-text-muted); }
+.opinia .opinia-tytul {
+  margin-bottom: 0.5rem;
+  font-family: var(--supla-font-special);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--supla-text);
+}
+.opinia figcaption {
+  margin-top: auto;
+  font-weight: 600;
+}
+.opinia figcaption::before { content: "\2014\00a0"; color: var(--supla-text-muted); }
+
+/* --- Zaślepki (dane z zewnętrznego źródła) ------------------------------------------ */
+
+.zastepnik {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 12rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--supla-text-muted);
+  background: var(--supla-surface);
+  border: 2px dashed var(--supla-border);
+  border-radius: var(--supla-radius-blok);
+}
+.zastepnik-ikona { color: var(--supla-primary-text); }
+.zastepnik-tytul {
+  font-family: var(--supla-font-special);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--supla-text);
+}
+.zastepnik-opis { max-width: 40rem; font-size: 0.9375rem; line-height: 1.6; }
+.zastepnik-opis p { margin: 0; }
+.zastepnik-zrodlo {
+  margin-top: 0.25rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.8125rem;
+  color: var(--supla-text);
+  background: var(--supla-yellow-subtle);
+  border: 1px solid var(--supla-yellow-border);
+  border-radius: var(--supla-radius);
+}
+.dark .zastepnik-zrodlo { color: var(--supla-yellow-text); }
+
+/* --- Energia na żywo (zaślepka) ----------------------------------------------------- */
+
+.energia-kafelki {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .energia-kafelki { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.energia-kafelek {
+  padding: 1.25rem;
+  background: var(--supla-surface);
+  border: 2px solid var(--supla-border);
+  border-top-width: 4px;
+  border-radius: var(--supla-radius-ramka);
+}
+.energia-oddawana { border-top-color: var(--supla-green); }
+.energia-pobierana { border-top-color: var(--supla-blue-border); }
+.energia-bilans { border-top-color: var(--supla-yellow-border); }
+.energia-kafelek > p:first-child { font-weight: 600; }
+.energia-wartosc {
+  margin: 0.5rem 0;
+  font-family: var(--supla-font-special);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--supla-text-muted);
+}
+.energia-dopisek { font-size: 0.875rem; color: var(--supla-text-muted); }
+.energia-wykres { margin-top: 1rem; min-height: 14rem; }
+
+/* --- Aktualności -------------------------------------------------------------- */
+
+.aktualnosci-siatka {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+.sekcja .aktualnosci-siatka { margin-top: 0; }
+.aktualnosc-karta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: inherit;
+  background: var(--supla-surface);
+  border: 2px solid var(--supla-border);
+  border-radius: var(--supla-radius-ramka);
+  transition: border-color var(--supla-duration), background-color var(--supla-duration),
+    box-shadow var(--supla-duration), transform var(--supla-duration);
+}
+.aktualnosc-karta:hover {
+  border-color: var(--supla-primary);
+  background: var(--supla-card-hover-bg);
+  box-shadow: var(--supla-card-hover-shadow);
+}
+.aktualnosc-karta:active { transform: scale(0.98); }
+.aktualnosc-karta-obraz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  color: var(--supla-primary-text);
+  background: var(--supla-primary-subtle);
+}
+.aktualnosc-karta-obraz img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aktualnosc-karta-tekst {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1rem 1.25rem 1.25rem;
+}
+.aktualnosc-karta time {
+  font-size: 0.8125rem;
+  color: var(--supla-text-muted);
+}
+.aktualnosc-karta h3 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.aktualnosc-karta p {
+  display: -webkit-box;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--supla-text-muted);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.aktualnosc-karta-wiecej {
+  margin-top: auto;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--supla-primary-text);
+}
+
+.aktualnosc {
+  display: flow-root;
+  padding-top: 2rem;
+}
+.aktualnosc .strona-tresc { padding-top: 0; }
+.aktualnosc-okladka {
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+  border: 1px solid var(--supla-border);
+  border-radius: var(--supla-radius-blok);
+}
+.aktualnosc-okladka img { width: 100%; height: auto; }
+@media (min-width: 1024px) {
+  .aktualnosc-okladka {
+    float: right;
+    width: 24rem;
+    margin: 0.5rem 0 1.5rem 2.5rem;
+  }
+}
+
+.udostepnij {
+  padding-top: 2rem;
+  border-top: 1px solid var(--supla-border);
+}
+.udostepnij > p { font-weight: 600; }
+.udostepnij .przyciski { margin-top: 0.75rem; }
+
+.stronicowanie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2.5rem 0 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--supla-border);
+}
+.stronicowanie a {
+  max-width: 45%;
+  font-weight: 600;
+  color: var(--supla-primary-text);
+}
+.stronicowanie a:hover { color: var(--supla-text-muted); }
+.stronicowanie > :last-child { text-align: right; }
+.stronicowanie-numer { font-size: 0.875rem; color: var(--supla-text-muted); }
+
+/* --- Partnerzy ---------------------------------------------------------------- */
+
+.partnerzy {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.partner {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  background: var(--supla-surface);
+  border: 2px solid var(--supla-border);
+  border-radius: var(--supla-radius-ramka);
+}
+/* logotypy są projektowane na jasne tło – również w ciemnym motywie */
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #ffffff;
+  border: 1px solid var(--supla-border);
+  border-radius: var(--supla-radius-ramka);
+}
+.partner-logo img {
+  max-width: 85%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.partner-inicjaly {
+  font-family: var(--supla-font-special);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f211f;
+}
+.partner-rola {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--supla-primary-text);
+}
+.partner h3 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.partner p:not(.partner-rola) {
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--supla-text-muted);
+}
+.partner a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: auto;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--supla-primary-text);
+}
+.partner a:hover { color: var(--supla-text-muted); }
+
+/* --- FAQ: filtrowanie ------------------------------------------------------------ */
+
+.faq-szukaj { margin: 1.5rem 0 2rem; }
+.faq-szukaj label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.faq-szukaj-pole {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.875rem;
+  color: var(--supla-text-muted);
+  background: var(--supla-surface);
+  border: 2px solid var(--supla-border);
+  border-radius: var(--supla-radius-md);
+  transition: border-color var(--supla-duration);
+}
+.faq-szukaj-pole:focus-within { border-color: var(--supla-primary); }
+.faq-szukaj-pole input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem 0;
+  color: var(--supla-text);
+  background: transparent;
+  outline: none;
+}
+.faq-szukaj-wynik {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--supla-text-muted);
+}
+.faq-szukaj-wynik:empty { display: none; }
+
+/* --- Katalog urządzeń: filtry (zaślepka) ------------------------------------------- */
+
+.katalog-filtry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+  margin: 2rem 0 1.25rem;
+  padding: 1rem;
+  background: var(--supla-surface);
+  border: 2px solid var(--supla-border);
+  border-radius: var(--supla-radius-blok);
+}
+.katalog-filtry label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.katalog-szukaj {
+  display: flex;
+  flex: 1 1 14rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  color: var(--supla-text-muted);
+  border: 1px solid var(--supla-border);
+  border-radius: var(--supla-radius);
+}
+.katalog-szukaj input {
+  padding: 0.5rem 0;
+  color: var(--supla-text);
+  background: transparent;
+}
+.katalog-filtry select {
+  min-width: 10rem;
+  padding: 0.5rem;
+  color: var(--supla-text);
+  background: var(--supla-surface);
+  border: 1px solid var(--supla-border);
+  border-radius: var(--supla-radius);
+}
+.katalog-filtry :disabled { cursor: not-allowed; opacity: 0.7; }
+.katalog-filtry .katalog-wycofane {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+/* --- Stopka (layouts/_partials/custom/footer.html) ------------------------------------ */
+
+.stopka {
+  display: grid;
+  gap: 2rem;
+  padding: 3rem 0 2rem;
+}
+@media (min-width: 768px) {
+  .stopka { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .stopka { grid-template-columns: minmax(0, 1.6fr) repeat(4, minmax(0, 1fr)); }
+}
+.stopka-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--supla-font-special);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--supla-text);
+}
+.stopka-marka p {
+  max-width: 20rem;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.stopka-media { display: flex; gap: 0.75rem; }
+.stopka-media a:hover,
+.stopka-kolumna a:hover { color: var(--supla-primary-text); }
+.stopka-kolumna h2 {
+  margin-bottom: 0.75rem;
+  font-family: var(--supla-font-default);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--supla-text);
+}
+.stopka-kolumna li { margin: 0.5rem 0; font-size: 0.875rem; }
+.stopka-dol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding: 1.5rem 0 2rem;
+  font-size: 0.8125rem;
+  border-top: 1px solid var(--supla-border);
+}
+.stopka-dol a { color: var(--supla-primary-text); }
+
+
+/* =============================================================================
+   Motywy ról supla-theme na podstronach (frontmatter „motyw”, layout strona)
+   -----------------------------------------------------------------------------
+   motyw: zolty     – rola „installer”: delikatny akcent żółty (Integruj i twórz);
+                      bez paska roli – żółty ma tylko akcentować, nie dominować
+   motyw: niebieski – rola „developer”: akcent niebieski (Dla producentów)
+   Wartości z mapy $roles w supla-theme.scss. Działa tylko w treści strony –
+   navbar i stopka zostają w roli „user”.
+   ============================================================================= */
+
+.motyw-zolty {
+  --supla-primary: var(--supla-yellow);
+  --supla-primary-hover: var(--supla-yellow-hover);
+  --supla-primary-active: var(--supla-yellow-active);
+  --supla-primary-text: var(--supla-yellow-text);
+  --supla-primary-subtle: #fff8c7;
+  --supla-primary-border: #f0d800;
+  --supla-on-primary: var(--supla-on-yellow);
+
+  --supla-bg: #f6f6f3;
+  --supla-surface: #ffffff;
+  --supla-border: #e2e2dc;
+  --supla-text: #14161a;
+  --supla-text-muted: #5a5f66;
+  --supla-focus-ring: #1f2328; /* żółty ring na bieli = 1.2:1 */
+  --supla-selection-bg: #ffe836;
+  --supla-selection-text: #1f1b00;
+  --supla-card-hover-bg: #fffef5;
+  --supla-card-hover-shadow: 0 4px 6px -1px rgb(31 35 40 / 0.08), 0 2px 4px -2px rgb(31 35 40 / 0.08);
+  --supla-naglowek-swiatlo: rgb(255 232 54 / 0.16);
+
+  background: var(--supla-bg);
+}
+.dark .motyw-zolty {
+  --supla-primary-subtle: #332e0a;
+  --supla-primary-border: #665a0f;
+  --supla-bg: #141517;
+  --supla-surface: #1c1e21;
+  --supla-border: #373b40;
+  --supla-text: #e8eaec;
+  --supla-text-muted: #a3a9af;
+  --supla-focus-ring: #ffe836;
+  --supla-card-hover-bg: #25240f;
+  --supla-card-hover-shadow: none;
+  --supla-naglowek-swiatlo: rgb(255 232 54 / 0.06);
+}
+/* ostrzeżenia u instalatora: pomarańcz (status warning: orange), bo żółty jest akcentem */
+.motyw-zolty .hextra-alert[data-alert="warning"] {
+  background: #fff0e6;
+  border-color: #ffc299;
+}
+.motyw-zolty .hextra-alert[data-alert="warning"] .hextra-alert-title { color: #c24e00; }
+.dark .motyw-zolty .hextra-alert[data-alert="warning"] {
+  background: #3a1d0a;
+  border-color: #70380f;
+}
+.dark .motyw-zolty .hextra-alert[data-alert="warning"] .hextra-alert-title { color: #ff8533; }
+/* obrys w żółtym: ramka w kolorze tekstu akcentu (button-outline), bo żółta na bieli jest niewidoczna */
+.motyw-zolty .przycisk-obrys { border-color: var(--supla-primary-text); }
+/* po najechaniu – prześwitujący żółty, napis i ramka bez zmian */
+.motyw-zolty .przycisk-obrys:hover { background: rgb(255 232 54 / 0.2); }
+.dark .motyw-zolty .przycisk-obrys:hover { background: rgb(255 232 54 / 0.12); }
+.motyw-zolty .hextra-card:hover,
+.motyw-zolty details[open] { border-color: var(--supla-primary-border); }
+
+.motyw-niebieski {
+  --supla-primary: var(--supla-blue);
+  --supla-primary-hover: var(--supla-blue-hover);
+  --supla-primary-active: var(--supla-blue-active);
+  --supla-primary-text: var(--supla-blue-text);
+  --supla-primary-subtle: var(--supla-blue-subtle);
+  --supla-primary-border: var(--supla-blue-border);
+  --supla-on-primary: var(--supla-on-blue);
+
+  --supla-focus-ring: #003c77;
+  --supla-selection-bg: #003c77;
+  --supla-selection-text: #ffffff;
+  --supla-card-hover-bg: #f5f9fe;
+  --supla-card-hover-shadow: 0 4px 6px -1px rgb(0 60 119 / 0.08), 0 2px 4px -2px rgb(0 60 119 / 0.08);
+  --supla-naglowek-swiatlo: rgb(0 60 119 / 0.12);
+}
+.dark .motyw-niebieski {
+  --supla-focus-ring: #4d9be6;
+  --supla-selection-bg: #4d9be6;
+  --supla-selection-text: #00172e;
+  --supla-card-hover-bg: #121f2d;
+  --supla-card-hover-shadow: none;
+  --supla-naglowek-swiatlo: rgb(77 155 230 / 0.14);
+}
+
+/* =============================================================================
+   Pasek (layouts/_partials/navbar.html)
+   -----------------------------------------------------------------------------
+   Trzy kolumny: logo + przełącznik modułów | pozycje menu (wyśrodkowane
+   względem całego paska) | wyszukiwarka, ikony, „Zaloguj się”. Wysokość 120%
+   paska Hextry (3,5rem → 4,2rem) – Hextra liczy z tej zmiennej przyklejanie
+   sidebara i spisu treści.
+   ============================================================================= */
+
+:root {
+  --hextra-navbar-height: 4.2rem;
+}
+
+.pasek {
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+  align-items: center;
+  column-gap: 1.5rem;
+}
+.pasek-lewa,
+.pasek-prawa {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.pasek-prawa {
+  justify-self: end;
+  gap: 0.25rem;
+}
+.pasek-staly,
+.pasek-szukaj {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* --- pozycje menu ------------------------------------------------------------- */
+
+.menu-pozycje {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+@media (min-width: 768px) {
+  .menu-pozycje { display: flex; }
+}
+.menu-link {
+  --menu-pad: 0.75rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0.5rem var(--menu-pad);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--supla-text);
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: var(--supla-radius-md);
+  transition: color var(--supla-duration), background-color var(--supla-duration);
+}
+.menu-link:hover,
+.menu-link[data-state="open"] {
+  color: var(--supla-green-text);
+  background: var(--supla-green-subtle);
+}
+.menu-link[aria-current="page"],
+.menu-link[data-aktywna] {
+  font-weight: 600;
+}
+/* wskaźnik aktywnej sekcji („chip”) – prawdziwy element z view-transition-name
+   menu-wskaznik, więc przy przejściu przesuwa się pod nową pozycję */
+.menu-wskaznik {
+  position: absolute;
+  right: var(--menu-pad);
+  bottom: -0.25rem;
+  left: var(--menu-pad);
+  height: 3px;
+  background: var(--supla-green);
+  border-radius: 3px;
+  view-transition-name: menu-wskaznik;
+}
+
+/* --- rozwijane menu („O SUPLI”) --------------------------------------------------- */
+
+.menu-rozwijane { position: relative; }
+.menu-strzalka { transition: transform var(--supla-duration); }
+.menu-link[data-state="open"] .menu-strzalka { transform: rotate(180deg); }
+/* skrypt Hextry ustawia top:100% i wyśrodkowanie – margines odsuwa listę spod
+   paska z linią akcentu */
+.menu-rozwijane .hextra-nav-menu-items {
+  min-width: 13rem;
+  margin-top: 0.875rem;
+  padding: 0.375rem;
+  background: var(--supla-surface);
+  border: 1px solid var(--supla-border);
+  border-radius: var(--supla-radius-blok);
+  box-shadow: 0 10px 24px -6px rgb(0 0 0 / 0.14), 0 2px 6px -2px rgb(0 0 0 / 0.08);
+}
+.menu-rozwijane .hextra-nav-menu-items a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--supla-text);
+  white-space: nowrap;
+  border-radius: var(--supla-radius-md);
+  transition: color var(--supla-duration), background-color var(--supla-duration);
+}
+.menu-rozwijane .hextra-nav-menu-items a:hover,
+.menu-rozwijane .hextra-nav-menu-items a:focus-visible {
+  color: var(--supla-green-text);
+  background: var(--supla-green-subtle);
+}
+.menu-rozwijane .hextra-nav-menu-items a[aria-current="page"] {
+  font-weight: 600;
+  color: var(--supla-green-text);
+  box-shadow: inset 3px 0 0 var(--supla-green);
+}
+
+/* węższe ekrany – mniejsze pozycje, żeby menu zmieściło się między kolumnami */
+@media (max-width: 1399px) {
+  .menu-link { --menu-pad: 0.5rem; font-size: 0.9375rem; }
+  .pasek { column-gap: 1rem; }
+}
+@media (max-width: 1199px) {
+  .menu-link { --menu-pad: 0.375rem; font-size: 0.875rem; }
+  .pasek { column-gap: 0.75rem; }
+  /* napis przy logo chowa się – moduł pokazuje przełącznik */
+  .napis-logo { display: none; }
+}
+
+/* --- „Zaloguj się” – mały zielony przycisk ------------------------------------- */
+
+.pasek-akcja {
+  margin-left: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--supla-on-green);
+  background: var(--supla-green);
+  border-radius: var(--supla-radius-md);
+  transition: background-color 0.2s;
+}
+.pasek-akcja:hover { background: var(--supla-green-hover); }
+@media (max-width: 767px) {
+  .pasek-akcja { display: none; } /* na telefonie – w menu z hamburgera */
+}
+/* … a tam z zieloną obwódką, jak przycisk obrysowy */
+.hextra-sidebar-container a[href="https://cloud.supla.org/"] {
+  margin-top: 0.5rem;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--supla-green-text);
+  border: 2px solid var(--supla-green);
+  border-radius: var(--supla-radius-md);
+}
+.hextra-sidebar-container a[href="https://cloud.supla.org/"]:hover {
+  color: var(--supla-green-text);
+  background: var(--supla-green-subtle);
+}
+
+/* --- przełącznik modułów (layouts/_partials/przelacznik-modulu.html) ----------- */
+
+.przelacznik {
+  position: relative;
+  display: inline-grid;
+  padding: 3px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: var(--supla-bg);
+  border: 1px solid var(--supla-border);
+  border-radius: 999px;
+}
+.przelacznik-etykiety {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.przelacznik-etykiety a {
+  padding: 0.3125rem 0.875rem;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--supla-text-muted);
+  border-radius: 999px;
+  transition: color var(--supla-duration);
+}
+.przelacznik-etykiety a:hover { color: var(--supla-text); }
+.przelacznik-etykiety a[aria-current] { color: var(--supla-on-green); }
+.przelacznik-pigulka {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  background: var(--supla-green);
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.12);
+}
+.przelacznik[data-modul="vademecum"] .przelacznik-pigulka { left: 50%; }
+
+/* --- progi szerokości (po regułach podstawowych, żeby je nadpisywały) --------- */
+
+/* wyszukiwarka (Vademecum): pole z podpisem tylko przy pełnej szerokości paska */
+.pasek-szukaj .hextra-search-trigger { width: 11rem; min-width: 0; }
+@media (max-width: 1535px) {
+  .pasek-szukaj .hextra-search-trigger { width: auto; }
+  .pasek-szukaj .hextra-search-trigger-label,
+  .pasek-szukaj .hextra-search-trigger-kbd { display: none; }
+}
+
+/* średnie ekrany (768–1099 px): przełącznik i GitHub chowają się – moduł
+   widać po napisie przy logo i linii akcentu (supla.org / Vademecum są też
+   w stopce i w menu mobilnym) */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .przelacznik { display: none; }
+  .napis-logo { display: inline; }
+  .menu-link { --menu-pad: 0.3125rem; font-size: 0.8125rem; }
+  .pasek-akcja { padding: 0.4375rem 0.75rem; font-size: 0.875rem; }
+}
+/* 768–899 px: także napis przy logo – zostaje logo i linia akcentu */
+@media (min-width: 768px) and (max-width: 899px) {
+  .napis-logo { display: none; }
+}
+
+/* telefon: menu w hamburgerze; przełącznik mniejszy, GitHub schowany */
+@media (max-width: 767px) {
+  .pasek-lewa { gap: 0.75rem; }
+  .przelacznik { font-size: 0.75rem; }
+  .przelacznik-etykiety a { padding: 0.25rem 0.625rem; }
+}
+/* najwęższe telefony (< 375 px): mniejsze marginesy, żeby w Vademecum zmieściły
+   się logo, przełącznik, lupa i hamburger */
+@media (max-width: 374px) {
+  .pasek { padding-inline: 1rem; column-gap: 0.5rem; }
+  .pasek-lewa { gap: 0.5rem; }
+  .przelacznik-etykiety a { padding: 0.25rem 0.5rem; }
+}
+@media (max-width: 339px) {
+  .przelacznik { font-size: 0.6875rem; }
+}
+
+/* --- linia akcentu modułu ------------------------------------------------------ */
+
+.pasek-linia {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--supla-green);
+}
+[data-modul="vademecum"] > .pasek-linia {
+  background: linear-gradient(90deg, var(--supla-yellow) 0%, #00d151 60%);
+}
+
+/* =============================================================================
+   Pasek: przejścia między modułami (CSS View Transitions, cross-document –
+   https://drafts.csswg.org/css-view-transitions-2/)
+   -----------------------------------------------------------------------------
+   - Pozycje menu (.menu-pozycje) mają nazwę zależną od modułu: menu-supla
+     albo menu-vademecum. W obrębie modułu para old/new ma tę samą nazwę –
+     pasek stoi. Przy zmianie modułu każdy obraz jest w swojej parze sam
+     (:only-child): stare pozycje zsuwają się w dół i gasną, nowe wsuwają się
+     z góry.
+   - Pigułka przełącznika ma tę samą nazwę po obu stronach – przeglądarka
+     przesuwa ją między segmentami; etykiety leżą nad nią (z-index).
+   - Linia akcentu przenika się z zielonej w gradient i odwrotnie.
+   - Napis przy logo: „supla” przesuwa się, „vademecum” wysuwa się / chowa.
+   - Wyszukiwarka (tylko Vademecum) pojawia się / znika; GitHub i „Zaloguj
+     się” stoją.
+   Przeglądarki bez obsługi po prostu przechodzą do nowej strony.
+   ============================================================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+.menu-pozycje[data-modul="supla"] { view-transition-name: menu-supla; }
+.menu-pozycje[data-modul="vademecum"] { view-transition-name: menu-vademecum; }
+.pasek-szukaj { view-transition-name: pasek-szukaj; }
+.pasek-staly { view-transition-name: pasek-staly; }
+.przelacznik-pigulka { view-transition-name: przelacznik-pigulka; }
+.przelacznik-etykiety { view-transition-name: przelacznik-etykiety; }
+.pasek-linia { view-transition-name: pasek-linia; }
+
+/* części napisu muszą być pojedynczymi pudełkami, żeby dało się je przechwycić */
+.napis-logo > span { display: inline-block; }
+.napis-marka { view-transition-name: napis-marka; }
+.napis-przedrostek { view-transition-name: napis-przedrostek; }
+
+/* kolejność warstw: grupy obecne tylko na nowej stronie przeglądarka rysuje
+   na wierzchu – etykiety przełącznika muszą leżeć nad pigułką */
+::view-transition-group(przelacznik-pigulka) { z-index: 1; }
+::view-transition-group(przelacznik-etykiety) { z-index: 2; }
+
+/* treść strony – krótkie przenikanie */
+::view-transition-group(root) {
+  animation-duration: 0.25s;
+}
+
+/* pozycje menu */
+::view-transition-old(menu-supla):only-child,
+::view-transition-old(menu-vademecum):only-child {
+  animation: 0.25s cubic-bezier(0.4, 0, 1, 1) both menu-zsun;
+}
+::view-transition-new(menu-supla):only-child,
+::view-transition-new(menu-vademecum):only-child {
+  animation: 0.35s cubic-bezier(0, 0, 0.2, 1) 0.15s both menu-wsun;
+}
+@keyframes menu-zsun {
+  to { transform: translateY(0.75rem); opacity: 0; }
+}
+@keyframes menu-wsun {
+  from { transform: translateY(-0.75rem); opacity: 0; }
+}
+
+/* wskaźnik aktywnej sekcji – przesuwa się pod nową pozycję (także między
+   modułami); gdy jest tylko po jednej stronie (np. strona główna), rośnie
+   od środka albo gaśnie */
+::view-transition-group(menu-wskaznik) {
+  z-index: 3;
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+::view-transition-new(menu-wskaznik):only-child {
+  animation: 0.3s cubic-bezier(0, 0, 0.2, 1) 0.1s both wskaznik-rosnij;
+}
+::view-transition-old(menu-wskaznik):only-child {
+  animation: 0.2s ease-in both zgas;
+}
+@keyframes wskaznik-rosnij {
+  from { transform: scaleX(0); opacity: 0; }
+}
+
+/* pigułka przełącznika */
+::view-transition-group(przelacznik-pigulka) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* linia akcentu */
+::view-transition-group(pasek-linia) {
+  animation-duration: 0.45s;
+}
+
+/* wyszukiwarka (tylko Vademecum) */
+::view-transition-new(pasek-szukaj):only-child {
+  animation: 0.3s ease-out 0.15s both pojaw;
+}
+::view-transition-old(pasek-szukaj):only-child {
+  animation: 0.2s ease-in both zgas;
+}
+
+/* napis przy logo */
+::view-transition-group(napis-marka) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+::view-transition-new(napis-przedrostek):only-child {
+  animation: 0.35s cubic-bezier(0, 0, 0.2, 1) 0.15s both napis-wysun;
+}
+::view-transition-old(napis-przedrostek):only-child {
+  animation: 0.25s cubic-bezier(0.4, 0, 1, 1) both napis-schowaj;
+}
+@keyframes napis-wysun {
+  from { transform: translateX(-0.75rem); opacity: 0; }
+}
+@keyframes napis-schowaj {
+  to { transform: translateX(-0.75rem); opacity: 0; }
+}
+@keyframes pojaw { from { opacity: 0; } }
+@keyframes zgas { to { opacity: 0; } }

@@ -1,0 +1,47 @@
+# Liczby i opinie pokazywane na stronie głównej i na stronie „O SUPLI”
+# (shortcode'y {{< statystyki >}} i {{< opinie >}}). Edytowalne w Pages CMS.
+
+statystyki:
+  glowna:
+    - { liczba: "10+", opis: lat rozwoju platformy SUPLA }
+    - { liczba: "336 000+", opis: domów i firm }
+    - { liczba: "90+", opis: krajów z użytkownikami SUPLI }
+    - { liczba: "70+", opis: urządzeń i produktów }
+  o-supli:
+    - { liczba: "2016", opis: rok publicznego udostępnienia oprogramowania SUPLA }
+    - { liczba: "336 000+", opis: domów i firm }
+    - { liczba: "180+", opis: serwerów w infrastrukturze chmurowej projektu }
+    - { liczba: "70+", opis: urządzeń i produktów }
+
+# Opinie z ankiety przeprowadzonej z okazji 10-lecia platformy
+opinie:
+  - temat: Bramy
+    tytul: Od pilota do jednego kliknięcia
+    tresc: Pilot zawsze był w innym aucie albo bateria była rozładowana. Telefon mam zawsze przy sobie. Jedno kliknięcie i brama otwarta – wtedy przepadłem.
+    autor: Marek
+    ikona: home
+  - temat: Rolety
+    tytul: Wygoda, bezpieczeństwo, automatyzacja
+    tresc: Chciałem sterować roletami z telefonu. SRW-01 był pierwszym urządzeniem. Teraz nie wyobrażam sobie domu bez automatycznych harmonogramów.
+    autor: Tomasz
+    ikona: clock
+  - temat: Oświetlenie
+    tytul: Mała zmiana, wielki efekt
+    tresc: Babcia nie używa smartfona, ale potrafi zadzwonić na „magiczny numer” i włączyć światła na podwórku. I to wszystko za darmo.
+    autor: Anna
+    ikona: light-bulb
+  - temat: Ogrzewanie i energia
+    tytul: Kontrola, oszczędności, spokój
+    tresc: Zbyt wysokie rachunki za prąd zmotywowały mnie do montażu MEW-01. Udało się zmniejszyć zużycie o prawie 8%.
+    autor: Piotr
+    ikona: lightning-bolt
+  - temat: DIY
+    tytul: Bo „zrobiłem to sam”
+    tresc: SUPLA daje coś, czego nie mają zamknięte systemy – mogę kupić gotowe urządzenia albo zbudować własne. Wszystko działa w jednym ekosystemie.
+    autor: Jakub
+    ikona: chip
+  - temat: Codzienne życie
+    tytul: Proste problemy, sprytne rozwiązania
+    tresc: Nie chciałem skomplikowanej szafy automatyki. Chciałem coś prostego, stabilnego i polskiego. SUPLA okazała się strzałem w dziesiątkę.
+    autor: Michał
+    ikona: sparkles

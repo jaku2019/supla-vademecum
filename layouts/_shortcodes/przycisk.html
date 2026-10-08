@@ -1,0 +1,12 @@
+{{- /*
+  Przycisk Supli – zielony (domyślnie) albo z obrysem. Kilka przycisków obok
+  siebie: owiń je w {{< przyciski >}}.
+
+  @param {string} tekst
+  @param {string} link  ścieżka w content/ ("/faq") albo adres http(s)
+  @param {string} styl  glowny | obrys | zolty | niebieski
+  @param {string} ikona opcjonalna ikona Hextry
+
+  @example {{< przycisk tekst="Zobacz urządzenia" link="/urzadzenia" >}}
+*/ -}}
+{{- partial "przycisk.html" (dict "tekst" (.Get "tekst") "link" (.Get "link") "styl" (.Get "styl") "ikona" (.Get "ikona")) -}}

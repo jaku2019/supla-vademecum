@@ -260,3 +260,125 @@ content:
           - { name: description, component: opis-karty }
           - { name: icon, component: ikona-karty }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/integracje, rename: safe } }
+
+  # --- supla.org ---
+  # Aktualności: każdy wpis to page bundle content/aktualnosci/<adres>/index.md.
+  # Lista (/aktualnosci), strona główna i kanał RSS aktualizują się same.
+  # Zdjęcie okładki: pole „Zdjęcie okładki” (layouts/_partials/okladka.html
+  # przyjmuje ścieżkę z CMS-u albo nazwę pliku obok index.md).
+  - name: aktualnosci
+    label: Aktualności
+    type: collection
+    path: content/aktualnosci
+    exclude: [_index.md]
+    filename: "{primary}/index.md"
+    view:
+      layout: tree
+      node: { filename: index.md, hideDirs: others }
+      fields: [title, date]
+      primary: title
+      sort: date
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, component: tytul }
+      - { name: date, label: Data publikacji, type: date, required: true }
+      - name: description
+        label: Zajawka
+        type: text
+        required: true
+        description: 1–2 zdania na karcie wpisu (lista aktualności, strona główna, RSS).
+      - name: image
+        label: Zdjęcie okładki
+        type: image
+        description: Najlepiej poziome, min. 1200 px szerokości. Na karcie przycinane do 16:9.
+        options: { path: content/aktualnosci, rename: safe }
+      - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/aktualnosci, rename: safe } }
+
+  - name: supla-org
+    label: supla.org – strony
+    type: group
+    items:
+      - name: partnerzy
+        label: Partnerzy
+        type: file
+        path: content/partnerzy/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: description, label: Opis pod tytułem, type: text }
+          - { name: layout, type: string, hidden: true }
+          - { name: aliases, type: string, list: true, hidden: true }
+          - name: partnerzy
+            label: Partnerzy
+            type: object
+            list: true
+            fields:
+              - { name: nazwa, label: Nazwa, type: string, required: true }
+              - name: rola
+                label: Rola
+                type: select
+                options:
+                  values: [Rozwój platformy, Producent urządzeń, Partner technologiczny, Dystrybutor, Marka partnerska]
+              - { name: opis, label: Opis, type: text }
+              - { name: link, label: Strona www, type: string }
+              - { name: logo, label: Logo, type: image, description: "Bez logo karta pokazuje nazwę.", options: { path: content/partnerzy, rename: safe } }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/partnerzy, rename: safe } }
+
+      - name: liczby-i-opinie
+        label: Liczby i opinie (strona główna, O SUPLI)
+        type: file
+        path: data/supla.yaml
+        format: yaml
+        fields:
+          - name: statystyki
+            label: Liczby
+            type: object
+            fields:
+              - name: glowna
+                label: Strona główna
+                type: object
+                list: true
+                fields:
+                  - { name: liczba, label: Liczba, type: string, description: "Np. „336 000+”." }
+                  - { name: opis, label: Opis, type: string }
+              - name: o-supli
+                label: Strona „O SUPLI”
+                type: object
+                list: true
+                fields:
+                  - { name: liczba, label: Liczba, type: string }
+                  - { name: opis, label: Opis, type: string }
+          - name: opinie
+            label: Opinie użytkowników
+            type: object
+            list: true
+            fields:
+              - { name: temat, label: Temat, type: string }
+              - { name: tytul, label: Tytuł, type: string }
+              - { name: tresc, label: Treść, type: text }
+              - { name: autor, label: Autor (imię), type: string }
+              - { name: ikona, component: ikona-karty }
+
+      - name: polityka-prywatnosci
+        label: Polityka prywatności
+        type: file
+        path: content/polityka-prywatnosci/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: nadtytul, label: Napis nad tytułem, type: string }
+          - { name: description, label: Opis pod tytułem, type: text }
+          - { name: layout, type: string, hidden: true }
+          - { name: aliases, type: string, list: true, hidden: true }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/polityka-prywatnosci, rename: safe } }
+
+      - name: data-act
+        label: Data Act
+        type: file
+        path: content/data-act/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: description, label: Opis pod tytułem, type: text }
+          - { name: layout, type: string, hidden: true }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/data-act, rename: safe } }

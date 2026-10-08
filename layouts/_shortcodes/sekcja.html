@@ -1,0 +1,22 @@
+{{- /*
+  Sekcja strony głównej: nagłówek, opcjonalny lead i treść (shortcode'y albo
+  Markdown – wtedy wywołuj z %: {{% sekcja %}}).
+
+  @param {string} tytul
+  @param {string} opis   lead pod nagłówkiem
+  @param {string} id     kotwica
+  @param {string} link   opcjonalny link „Zobacz wszystkie” obok nagłówka (ścieżka w content/)
+  @param {string} linkTekst
+*/ -}}
+{{- $link := "" -}}
+{{- with .Get "link" }}{{ with site.GetPage . }}{{ $link = .RelPermalink }}{{ end }}{{ end -}}
+<section class="sekcja"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  <div class="sekcja-naglowek">
+    <div>
+      <h2>{{ .Get "tytul" }}</h2>
+      {{- with .Get "opis" }}<p class="sekcja-opis">{{ . }}</p>{{ end }}
+    </div>
+    {{- with $link }}<a class="sekcja-link" href="{{ . }}">{{ $.Get "linkTekst" | default "Zobacz wszystkie" }} →</a>{{ end }}
+  </div>
+  <div class="sekcja-tresc">{{ .Inner }}</div>
+</section>

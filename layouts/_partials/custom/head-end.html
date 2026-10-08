@@ -10,3 +10,21 @@
 @font-face{font-family:"{{ .name }}";font-style:normal;font-display:swap;font-weight:{{ .weight }};src:url("{{ printf "fonts/%s-latin-ext-wght-normal.woff2" .file | relURL }}") format("woff2");unicode-range:{{ $latinExt }}}
 {{- end }}
 </style>
+{{- /* Speculation Rules (Chrome, Edge): strona docelowa linku renderuje się
+       w tle, gdy kursor zatrzyma się na nim ok. 200 ms (na telefonie – przy
+       dotknięciu), więc przejście jest natychmiastowe i przechodzi przez
+       View Transitions bez czekania. Tylko strony tej witryny, bez linków
+       otwieranych w nowej karcie, plików (RSS, obrazy) i pobierania.
+       Inne przeglądarki ignorują blok. */ -}}
+{{- $baza := "" | relLangURL -}}
+{{- $reguly := dict "prerender" (slice (dict
+  "where" (dict "and" (slice
+    (dict "href_matches" (printf "%s*" $baza))
+    (dict "not" (dict "href_matches" (printf "%s*.*" $baza)))
+    (dict "not" (dict "selector_matches" "[target=_blank], [download], [rel~=nofollow]"))
+  ))
+  "eagerness" "moderate"
+)) -}}
+{{- /* cały znacznik jako safeHTML – w <script> o nieznanym typie html/template
+       zamieniłby cudzysłowy JSON-a na encje */ -}}
+{{ printf "<script type=\"speculationrules\">%s</script>" ($reguly | jsonify) | safeHTML }}

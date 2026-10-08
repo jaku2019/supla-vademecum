@@ -1,0 +1,31 @@
+{{- /* Lista aktualności: karty ze zdjęciem, od najnowszych, stronicowane (params.aktualnosci.naStrone). */ -}}
+{{ define "main" }}
+  <div class="hx:flex hx:w-full">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
+    <main id="content" class="strona hx:w-full hx:min-w-0 hx:break-words">
+      <header class="strona-naglowek">
+        <div class="strona-wnetrze">
+          <h1>{{ .Title }}</h1>
+          {{- with .Description }}<p class="strona-lead">{{ . }}</p>{{ end }}
+          <div class="przyciski">
+            {{- partial "przycisk.html" (dict "tekst" "Kanał RSS" "link" (.OutputFormats.Get "rss").RelPermalink "styl" "obrys" "ikona" "rss") -}}
+          </div>
+        </div>
+      </header>
+      <div class="strona-wnetrze">
+        {{- with .Content }}<div class="content strona-tresc">{{ . }}</div>{{ end }}
+        {{- $paginator := .Paginate .Pages.ByDate.Reverse (site.Params.aktualnosci.naStrone | default 12) }}
+        <div class="aktualnosci-siatka">
+          {{- range $paginator.Pages }}{{ partial "aktualnosc-karta.html" . }}{{ end -}}
+        </div>
+        {{- if gt $paginator.TotalPages 1 }}
+          <nav class="stronicowanie" aria-label="Strony aktualności">
+            {{- if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}" rel="prev">← Nowsze</a>{{ else }}<span></span>{{ end }}
+            <span class="stronicowanie-numer">Strona {{ $paginator.PageNumber }} z {{ $paginator.TotalPages }}</span>
+            {{- if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}" rel="next">Starsze →</a>{{ else }}<span></span>{{ end }}
+          </nav>
+        {{- end }}
+      </div>
+    </main>
+  </div>
+{{ end }}

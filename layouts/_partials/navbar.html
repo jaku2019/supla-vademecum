@@ -1,0 +1,122 @@
+{{- /*
+  Pasek – na podstawie navbar.html z Hextry v0.13.0. Układ trzech kolumn
+  (.pasek, custom.css „Pasek”):
+  - lewa: logo z napisem i przełącznik modułów supla.org | Vademecum
+    (partial przelacznik-modulu.html),
+  - środek: pozycje bieżącego modułu (partial menu-modulu.html: „main” na
+    stronach supla.org, „vademecum” w Vademecum) w kontenerze .menu-pozycje
+    z view-transition-name menu-<moduł>,
+  - prawa: wyszukiwarka (tylko Vademecum, .pasek-szukaj), ikony i pozycje
+    z params.staly („Zaloguj się”) z menu „main” (.pasek-staly), hamburger.
+  Pod paskiem linia akcentu modułu (.pasek-linia). Przejścia między modułami:
+  custom.css, „Pasek: przejścia między modułami”.
+*/ -}}
+{{- $page := . -}}
+{{- $iconHeight := 24 -}}
+{{- $modul := partial "modul.html" . -}}
+
+<div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden" data-modul="{{ $modul }}">
+  <div
+    class="hextra-nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
+  ></div>
+
+  <nav class="pasek hextra-max-navbar-width hx:mx-auto hx:h-[var(--hextra-navbar-height)] hx:px-6" aria-label="Główna nawigacja">
+    <div class="pasek-lewa">
+      {{ partial "navbar-title.html" . }}
+      {{ partial "przelacznik-modulu.html" . }}
+    </div>
+
+    {{- /* pozycje modułu – podmieniane przy zmianie modułu */ -}}
+    <div class="menu-pozycje" data-modul="{{ $modul }}">
+      {{- range partial "menu-modulu.html" . -}}
+        {{- if or (eq .Params.type "search") .Params.icon .Params.staly -}}{{ continue }}{{- end -}}
+        {{- $link := .URL -}}
+        {{- $external := strings.HasPrefix $link "http" -}}
+        {{- /* adres strony z ukośnikiem na końcu (relLangURL dałby /pl/dla-domu,
+               czyli przekierowanie przy każdym kliknięciu i prerenderze) */ -}}
+        {{- with .Page }}{{ $link = .RelPermalink }}{{ end -}}
+        {{- if .HasChildren -}}
+          {{- /* rozwijane menu – własne znaczniki, klasy hextra-nav-menu-* dla
+                 skryptu Hextry (otwieranie, klawiatura, Esc, klik obok) */ -}}
+          {{- $pozycje := slice -}}
+          {{- $aktywna := false -}}
+          {{- range .Children -}}
+            {{- $l := .URL -}}
+            {{- with .Page }}{{ $l = .RelPermalink }}{{ end -}}
+            {{- $ta := and (hasPrefix $page.RelPermalink $l) (ne $l site.Home.RelPermalink) -}}
+            {{- if $ta }}{{ $aktywna = true }}{{ end -}}
+            {{- $pozycje = $pozycje | append (dict "nazwa" .Name "link" $l "aktywna" $ta) -}}
+          {{- end -}}
+          <div class="menu-rozwijane">
+            <button type="button" class="menu-link hextra-nav-menu-toggle" data-state="closed" aria-haspopup="menu" aria-expanded="false"{{ if $aktywna }} data-aktywna{{ end }}>
+              {{- or (T .Identifier) .Name | safeHTML -}}
+              {{- partial "utils/icon.html" (dict "name" "chevron-down" "attributes" "height=14 class=\"menu-strzalka\"") -}}
+              {{- if $aktywna }}<span class="menu-wskaznik" aria-hidden="true"></span>{{ end -}}
+            </button>
+            <ul class="hextra-nav-menu-items hx:hidden" role="menu">
+              {{- range $pozycje }}
+              <li role="none"><a role="menuitem" href="{{ .link }}"{{ if .aktywna }} aria-current="page"{{ end }}>{{ .nazwa }}</a></li>
+              {{- end }}
+            </ul>
+          </div>
+        {{- else -}}
+          {{- /* aktywna: bieżąca strona leży pod adresem pozycji (np. cała sekcja /cloud/) */ -}}
+          {{- $aktywna := and (not $external) (hasPrefix $page.RelPermalink $link) (ne $link site.Home.RelPermalink) -}}
+          <a class="menu-link" href="{{ $link }}"{{ if $external }} target="_blank" rel="noreferrer"{{ end }}{{ if $aktywna }} aria-current="page"{{ end }}>
+            {{- or (T .Identifier) .Name | safeHTML -}}
+            {{- /* wskaźnik („chip”) – ta sama nazwa przejścia na każdej stronie,
+                   więc View Transitions przesuwa go między sekcjami */ -}}
+            {{- if $aktywna }}<span class="menu-wskaznik" aria-hidden="true"></span>{{ end -}}
+          </a>
+        {{- end -}}
+      {{- end -}}
+    </div>
+
+    <div class="pasek-prawa">
+      {{- /* wyszukiwarka – tylko w Vademecum (na stronach supla.org ukryta) */ -}}
+      {{- if eq $modul "vademecum" -}}
+        {{- range where .Site.Menus.main "Params.type" "search" }}
+      <div class="pasek-szukaj">{{ partial "search.html" (dict "icon" .Params.icon) }}</div>
+        {{- end -}}
+      {{- end -}}
+
+      {{- /* elementy stałe – z menu „main” w obu modułach; własna warstwa przejścia
+             z tłem paska */ -}}
+      <div class="pasek-staly">
+      {{- range .Site.Menus.main -}}
+        {{- if eq .Params.type "search" -}}{{ continue }}
+        {{- else if or .Params.icon .Params.staly -}}
+          {{- $link := .URL -}}
+          {{- $external := strings.HasPrefix $link "http" -}}
+          {{- with .PageRef -}}
+            {{- if hasPrefix . "/" -}}
+              {{- $link = relLangURL (strings.TrimPrefix "/" .) -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- if eq .Params.type "theme-toggle" -}}
+            {{- partial "theme-toggle.html" (dict "iconHeight" $iconHeight "hideLabel" (not .Params.label) "iconHeight" $iconHeight "location" "top" "class" "hx:p-1 hx:md:p-2") -}}
+          {{- else if eq .Params.type "language-switch" -}}
+            {{- partial "language-switch" (dict "context" $page "grow" false "hideLabel" (not .Params.label) "iconName" (.Params.icon | default "translate") "iconHeight" $iconHeight "location" "top" "class" "hx:p-1 hx:md:p-2") -}}
+          {{- else if .Params.icon -}}
+            {{- $rel := cond (eq .Params.icon "mastodon") "noreferrer me" "noreferrer" }}
+            <a class="hx:p-1 hx:md:p-2 hx:text-current" {{ if $external }}target="_blank" rel="{{ $rel }}"{{ end }} href="{{ $link | safeURL }}" title="{{ or (T .Identifier) .Name | safeHTML }}">
+              {{- partial "utils/icon.html" (dict "name" .Params.icon "attributes" (printf "height=%d" $iconHeight)) -}}
+              <span class="hx:sr-only">{{ or (T .Identifier) .Name | safeHTML }}</span>
+            </a>
+          {{- else -}}
+            <a class="pasek-akcja" href="{{ $link }}"{{ if $external }} target="_blank" rel="noreferrer"{{ end }}>{{ or (T .Identifier) .Name | safeHTML }}</a>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      </div>
+
+      <button type="button" aria-label="{{ (T "menu") | default "Menu" }}" aria-expanded="false" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-1 hx:rounded-sm hx:p-1 hx:active:bg-gray-400/20 hx:md:hidden hx:hextra-focus-visible-inset">
+        {{- partial "utils/icon.html" (dict "name" "hamburger-menu" "attributes" (printf "height=%d" $iconHeight)) -}}
+      </button>
+    </div>
+  </nav>
+
+  {{- /* linia akcentu modułu: supla.org – zieleń, Vademecum – gradient z logo */ -}}
+  <div class="pasek-linia" aria-hidden="true"></div>
+</div>

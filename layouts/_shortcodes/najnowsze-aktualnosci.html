@@ -1,0 +1,12 @@
+{{- /*
+  Najnowsze aktualności (content/aktualnosci) jako karty – nowy wpis dodany
+  w Pages CMS pojawia się tu sam.
+
+  @param {number} liczba domyślnie 3
+*/ -}}
+{{- $liczba := .Get "liczba" | default 3 | int -}}
+{{- with site.GetPage "/aktualnosci" -}}
+<div class="aktualnosci-siatka not-prose">
+  {{- range first $liczba .Pages.ByDate.Reverse }}{{ partial "aktualnosc-karta.html" . }}{{ end -}}
+</div>
+{{- end -}}

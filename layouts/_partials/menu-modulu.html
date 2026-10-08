@@ -1,0 +1,11 @@
+{{- /*
+  Pozycje menu bieżącego modułu (pasek i menu mobilne): menu „vademecum”
+  w module Vademecum, „main” na stronach supla.org. Kontekst: strona.
+  Vademecum dostaje też pozycje stałe z „main” (params.staly – „Zaloguj się”),
+  żeby były w menu mobilnym; pasek pomija je w środkowej kolumnie.
+*/ -}}
+{{- $menu := site.Menus.main -}}
+{{- if eq (partial "modul.html" .) "vademecum" -}}
+  {{- $menu = site.Menus.vademecum | append (where site.Menus.main "Params.staly" true) -}}
+{{- end -}}
+{{- return $menu -}}

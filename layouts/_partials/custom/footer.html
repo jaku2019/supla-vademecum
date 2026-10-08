@@ -1,0 +1,35 @@
+{{- /* Stopka supla.org: opis, kolumny linków (menu „stopka” w hugo.yaml), media, copyright. */ -}}
+<div class="stopka">
+  <div class="stopka-marka">
+    <a class="stopka-logo" href="{{ "" | relLangURL }}">
+      <img src="{{ site.Params.navbar.logo.path | relURL }}" alt="" width="28" height="28">
+      <span>{{ site.Params.navbar.napis | default site.Title }}</span>
+    </a>
+    <p>Otwarta platforma do automatyki domowej i zarządzania inteligentnymi urządzeniami.</p>
+    <div class="stopka-media">
+      {{- range site.Params.spolecznosc }}
+      <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}">
+        {{- partial "utils/icon.html" (dict "name" (lower .name) "attributes" "height=20") -}}
+        <span class="hx:sr-only">{{ .name }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+  {{- range site.Menus.stopka }}
+  <nav class="stopka-kolumna" aria-label="{{ .Name }}">
+    <h2>{{ .Name }}</h2>
+    <ul>
+      {{- range .Children }}
+        {{- $link := .URL -}}
+        {{- with .Page }}{{ $link = .RelPermalink }}{{ end -}}
+        {{- $zewn := hasPrefix $link "http" }}
+      <li><a href="{{ $link }}"{{ if $zewn }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a></li>
+      {{- end }}
+    </ul>
+  </nav>
+  {{- end }}
+</div>
+<div class="stopka-dol">
+  <p>© {{ now.Year }} SUPLA.ORG</p>
+  <p>Potrzebujesz pomocy? Zajrzyj na <a href="https://forum.supla.org" target="_blank" rel="noopener">forum.supla.org</a></p>
+</div>

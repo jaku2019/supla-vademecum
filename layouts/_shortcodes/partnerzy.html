@@ -1,0 +1,26 @@
+{{- /*
+  Karty partnerów z frontmattera strony (pole „partnerzy”): nazwa, rola,
+  opis, link, logo (plik obok index.md). Edytowalne w Pages CMS.
+*/ -}}
+<div class="partnerzy not-prose">
+  {{- range .Page.Params.partnerzy }}
+  <div class="partner">
+    <div class="partner-logo">
+      {{- $logo := partial "okladka.html" (dict "strona" $.Page "plik" .logo) -}}
+      {{- with $logo -}}
+        {{- $img := . -}}
+        {{- if ne .MediaType.SubType "svg" }}{{ $img = .Process "fit 320x160 webp q85" }}{{ end -}}
+        <img src="{{ $img.RelPermalink }}" alt="Logo" loading="lazy" decoding="async">
+      {{- else -}}
+        <span class="partner-inicjaly" aria-hidden="true">{{ .nazwa }}</span>
+      {{- end -}}
+    </div>
+    <p class="partner-rola">{{ .rola }}</p>
+    <h3>{{ .nazwa }}</h3>
+    <p>{{ .opis }}</p>
+    {{- with .link }}
+    <a href="{{ . }}" target="_blank" rel="noopener">{{ (urls.Parse .).Host | strings.TrimPrefix "www." }} {{ partial "utils/icon.html" (dict "name" "arrow-up-right" "attributes" "height=14") }}</a>
+    {{- end }}
+  </div>
+  {{- end }}
+</div>

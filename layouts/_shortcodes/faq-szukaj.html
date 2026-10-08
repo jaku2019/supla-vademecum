@@ -1,0 +1,44 @@
+{{- /*
+  Pole filtrowania pytań: ukrywa rozwijane odpowiedzi ({{% details %}}),
+  które nie zawierają wpisanego tekstu, i nagłówki pustych grup.
+*/ -}}
+<div class="faq-szukaj not-prose">
+  <label for="faq-szukaj">Przeszukaj najczęściej zadawane pytania</label>
+  <div class="faq-szukaj-pole">
+    {{ partial "utils/icon.html" (dict "name" "search" "attributes" "height=18") }}
+    <input id="faq-szukaj" type="search" placeholder="Wpisz pytanie, np. Wi-Fi, router, Home Assistant" autocomplete="off">
+  </div>
+  <p class="faq-szukaj-wynik" aria-live="polite"></p>
+</div>
+<script>
+(() => {
+  const pole = document.getElementById("faq-szukaj");
+  const wynik = document.querySelector(".faq-szukaj-wynik");
+  const tresc = pole.closest(".content");
+  const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ł/g, "l");
+  pole.addEventListener("input", () => {
+    // skrypt stoi nad listą pytań – elementy szukane przy każdym wpisie, nie przy ładowaniu
+    const pytania = [...tresc.querySelectorAll("details")];
+    const naglowki = [...tresc.querySelectorAll("h2, h3")];
+    const q = norm(pole.value.trim());
+    let ile = 0;
+    pytania.forEach((d) => {
+      const pasuje = !q || norm(d.textContent).includes(q);
+      d.hidden = !pasuje;
+      if (pasuje) ile++;
+      if (q && pasuje) d.open = true;
+    });
+    // nagłówek grupy widoczny, gdy pod nim (do następnego nagłówka) jest widoczne pytanie
+    naglowki.forEach((h) => {
+      // (nagłówki bez pytań pod spodem, np. „Masz więcej pytań?”, zostają zawsze)
+      let el = h.nextElementSibling, pytan = 0, widoczne = false;
+      while (el && !/^H[23]$/.test(el.tagName)) {
+        if (el.tagName === "DETAILS") { pytan++; if (!el.hidden) widoczne = true; }
+        el = el.nextElementSibling;
+      }
+      h.hidden = Boolean(q && pytan && !widoczne);
+    });
+    wynik.textContent = q ? (ile ? `Znaleziono pytań: ${ile}` : "Brak pytań pasujących do wyszukiwania.") : "";
+  });
+})();
+</script>

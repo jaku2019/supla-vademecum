@@ -1,0 +1,46 @@
+{{- /*
+  Podstrona supla.org (frontmatter „layout: strona”): pas nagłówka z tytułem,
+  opisem i przyciskami, pod nim treść na pełną szerokość strony (bez menu
+  bocznego). Sekcje treści to zwykłe nagłówki ## oraz shortcode'y
+  (cards, steps, details, przyciski, statystyki…).
+
+  Frontmatter:
+    nadtytul    mały napis nad tytułem (np. „Dla domu, mieszkania i małej firmy”)
+    description lead pod tytułem
+    przyciski   lista { tekst, link, styl: glowny|obrys }
+    cechy       krótkie wyróżniki pod przyciskami (lista napisów)
+    motyw       zolty | niebieski – rola supla-theme (akcent strony); brak = zielony
+*/ -}}
+{{ define "main" }}
+  <div class="hx:flex hx:w-full">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
+    <main id="content" class="strona{{ with .Params.motyw }} motyw-{{ . }}{{ end }} hx:w-full hx:min-w-0 hx:break-words">
+      {{ partial "custom/page-begin.html" . }}
+      <header class="strona-naglowek">
+        <div class="strona-wnetrze">
+          {{- with .Params.nadtytul }}<p class="strona-nadtytul">{{ . }}</p>{{ end }}
+          <h1>{{ .Title }}</h1>
+          {{- with .Description }}<p class="strona-lead">{{ . | markdownify }}</p>{{ end }}
+          {{- with .Params.przyciski }}
+            <div class="przyciski">
+              {{- range . }}{{ partial "przycisk.html" . }}{{ end -}}
+            </div>
+          {{- end }}
+          {{- with .Params.cechy }}
+            <ul class="strona-cechy">
+              {{- range . }}<li>{{ partial "utils/icon.html" (dict "name" "check-circle" "attributes" "height=18") }}{{ . }}</li>{{ end -}}
+            </ul>
+          {{- end }}
+        </div>
+      </header>
+      <div class="strona-wnetrze">
+        <div class="content strona-tresc">
+          {{ partial "custom/content-begin.html" . }}
+          {{ .Content }}
+          {{ partial "custom/content-end.html" . }}
+        </div>
+      </div>
+      {{ partial "custom/page-end.html" . }}
+    </main>
+  </div>
+{{ end }}

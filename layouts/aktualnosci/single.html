@@ -1,0 +1,42 @@
+{{- /* Pojedyncza aktualność: nagłówek z datą, zdjęcie okładki obok tekstu, udostępnianie, poprzedni/następny wpis. */ -}}
+{{ define "main" }}
+  <div class="hx:flex hx:w-full">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
+    <main id="content" class="strona hx:w-full hx:min-w-0 hx:break-words">
+      <header class="strona-naglowek">
+        <div class="strona-wnetrze">
+          <a class="strona-powrot" href="{{ .Parent.RelPermalink }}">← Wszystkie aktualności</a>
+          <h1>{{ .Title }}</h1>
+          <p class="strona-nadtytul"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></p>
+        </div>
+      </header>
+      <article class="strona-wnetrze aktualnosc">
+        {{- $okladka := partial "okladka.html" (dict "strona" . "plik" .Params.image) }}
+        {{- with $okladka }}
+          {{- $img := .Process "resize 768x webp q85" }}
+          <figure class="aktualnosc-okladka">
+            <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="">
+          </figure>
+        {{- end }}
+        <div class="content strona-tresc">
+          {{ .Content }}
+        </div>
+      </article>
+      <div class="strona-wnetrze">
+        {{- $adres := .Permalink | urlquery }}
+        <section class="udostepnij" aria-label="Udostępnij ten artykuł">
+          <p>Udostępnij ten artykuł</p>
+          <div class="przyciski">
+            {{- partial "przycisk.html" (dict "tekst" "Facebook" "link" (printf "https://www.facebook.com/sharer/sharer.php?u=%s" $adres) "styl" "obrys" "ikona" "facebook") -}}
+            {{- partial "przycisk.html" (dict "tekst" "X" "link" (printf "https://twitter.com/intent/tweet?text=%s&url=%s" (.Title | urlquery) $adres) "styl" "obrys" "ikona" "x-twitter") -}}
+            {{- partial "przycisk.html" (dict "tekst" "LinkedIn" "link" (printf "https://www.linkedin.com/sharing/share-offsite/?url=%s" $adres) "styl" "obrys" "ikona" "linkedin") -}}
+          </div>
+        </section>
+        <nav class="stronicowanie" aria-label="Sąsiednie aktualności">
+          {{- with .NextInSection }}<a href="{{ .RelPermalink }}" rel="next">← {{ .Title }}</a>{{ else }}<span></span>{{ end }}
+          {{- with .PrevInSection }}<a href="{{ .RelPermalink }}" rel="prev">{{ .Title }} →</a>{{ else }}<span></span>{{ end }}
+        </nav>
+      </div>
+    </main>
+  </div>
+{{ end }}

@@ -1,0 +1,22 @@
+{{- /*
+  Pasek filtrów katalogu urządzeń – ZAŚLEPKA. Wartości filtrów są stałe
+  (lista z supla.org), pola są nieaktywne do czasu podłączenia bazy urządzeń.
+*/ -}}
+{{- $filtry := slice
+  (dict "nazwa" "Kategoria" "wartosci" (slice "Wszystkie urządzenia" "Bramy, drzwi, furtki" "Liczniki" "Ogrzewanie" "Oświetlenie" "Rolety, żaluzje" "Termometry" "Zasilanie" "Pozostałe"))
+  (dict "nazwa" "Producent" "wartosci" (slice "Wszyscy producenci" "Auraton" "DGF" "Fakro" "Hatpol" "Heatpol" "HPD" "Peveko" "SmartBOB" "Varilight" "Zamel"))
+  (dict "nazwa" "Komunikacja" "wartosci" (slice "Wszystkie metody" "Wi-Fi" "Ethernet" "Modbus" "Z-Wave" "RF 868/869 MHz"))
+-}}
+<form class="katalog-filtry not-prose" aria-label="Filtry urządzeń (nieaktywne)" onsubmit="return false">
+  <div class="katalog-szukaj">
+    {{ partial "utils/icon.html" (dict "name" "search" "attributes" "height=18") }}
+    <input type="search" placeholder="Szukaj urządzeń" disabled>
+  </div>
+  {{- range $filtry }}
+  <label>
+    <span>{{ .nazwa }}</span>
+    <select disabled>{{ range .wartosci }}<option>{{ . }}</option>{{ end }}</select>
+  </label>
+  {{- end }}
+  <label class="katalog-wycofane"><input type="checkbox" disabled> Pokaż wycofane z oferty</label>
+</form>

@@ -1,0 +1,12 @@
+{{- /*
+  Moduł strony: "vademecum" dla sekcji z params.vademecum.sekcje (hugo.yaml),
+  w pozostałych przypadkach "supla" (strona supla.org). Kontekst: strona.
+*/ -}}
+{{- $modul := "supla" -}}
+{{- /* pierwszy człon ścieżki, a nie .Section – strona w katalogu głównym
+       (content/sciagawka/index.md) nie ma sekcji */ -}}
+{{- $katalog := index (split (strings.TrimPrefix "/" .Path) "/") 0 -}}
+{{- if and $katalog (in site.Params.vademecum.sekcje $katalog) -}}
+  {{- $modul = "vademecum" -}}
+{{- end -}}
+{{- return $modul -}}

@@ -1,0 +1,26 @@
+{{- /*
+  Przycisk Supli (link). Wspólny dla shortcode'u {{< przycisk >}}
+  i pola „przyciski” we frontmatterze stron.
+
+  @param {string} tekst
+  @param {string} link  ścieżka w content/ ("/faq", "/pobierz#aplikacje") albo adres http(s)
+  @param {string} styl  glowny (domyślnie) | obrys | zolty | niebieski
+  @param {string} ikona opcjonalna ikona Hextry po lewej
+*/ -}}
+{{- $link := .link | default "" -}}
+{{- $zewn := hasPrefix $link "http" -}}
+{{- /* gotowy adres w obrębie strony (np. .RelPermalink kanału RSS) zostaje bez zmian */ -}}
+{{- if and (hasPrefix $link "/") (not (hasPrefix $link "//")) (not (hasPrefix $link ("" | relURL))) -}}
+  {{- $url := urls.Parse $link -}}
+  {{- with site.GetPage (strings.TrimSuffix "/" $url.Path) -}}
+    {{- $link = printf "%s%s" .RelPermalink (cond (ne $url.Fragment "") (printf "#%s" $url.Fragment) "") -}}
+  {{- else -}}
+    {{- warnf "przycisk %q prowadzi do nieistniejącej strony %q" .tekst $link -}}
+  {{- end -}}
+{{- end -}}
+<a class="przycisk przycisk-{{ .styl | default "glowny" }}" href="{{ $link | safeURL }}"{{ if $zewn }} target="_blank" rel="noopener"{{ end }}>
+  {{- with .ikona }}{{ partial "utils/icon.html" (dict "name" . "attributes" "height=18") }}{{ end -}}
+  <span>{{ .tekst }}</span>
+  {{- if $zewn }}{{ partial "utils/icon.html" (dict "name" "arrow-up-right" "attributes" "height=14 class=\"przycisk-zewn\"") }}<span class="hx:sr-only"> (otwiera się w nowej karcie)</span>{{ end -}}
+</a>
+{{- /* bez końcowego znaku nowej linii – przyciski stoją obok siebie */ -}}

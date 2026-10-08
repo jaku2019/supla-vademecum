@@ -1,5 +1,5 @@
 baseURL: https://jaku2019.github.io/supla-vademecum/
-title: Vademecum Supla
+title: SUPLA
 
 # Jedyny (na razie) język – polski. Treść trafia pod /pl/,
 # dzięki czemu adresy /pl/cloud/... z VitePressa pozostają bez zmian.
@@ -10,7 +10,7 @@ languages:
     label: Polski
     weight: 1
     params:
-      description: Opisy funkcjonalności systemu Supla
+      description: SUPLA – rozwijana w Polsce, otwarta platforma inteligentnego domu bez abonamentu.
 
 module:
   imports:
@@ -35,25 +35,93 @@ markup:
 
 menu:
   main:
+    - name: Dla domu
+      pageRef: /dla-domu
+      weight: 1
+    - name: Urządzenia
+      pageRef: /urzadzenia
+      weight: 2
+    - name: Integruj i twórz
+      pageRef: /integruj-i-tworz
+      weight: 3
+    - name: Dla producentów
+      pageRef: /dla-producentow
+      weight: 4
+    - name: FAQ
+      pageRef: /faq
+      weight: 6
+    - name: O SUPLI
+      identifier: o-supli
+      weight: 7
+    - { parent: o-supli, name: O nas, pageRef: /o-supli, weight: 1 }
+    - { parent: o-supli, name: Aktualności, pageRef: /aktualnosci, weight: 2 }
+    - { parent: o-supli, name: Partnerzy, pageRef: /partnerzy, weight: 3 }
+    - { parent: o-supli, name: Pobierz aplikację, pageRef: /pobierz, weight: 4 }
+    - { parent: o-supli, name: "Jak zacząć?", pageRef: /jak-zaczac, weight: 5 }
+    - name: Szukaj
+      weight: 8
+      params:
+        type: search
+    - name: Zaloguj się
+      identifier: zaloguj
+      weight: 10
+      url: https://cloud.supla.org/
+      params:
+        staly: true # w pasku obu modułów, poza animacją przejścia
+
+  # Pasek w module Vademecum (sekcje z params.vademecum.sekcje). Wyszukiwarka,
+  # GitHub i „Zaloguj się” dochodzą z menu „main” (layouts/_partials/navbar.html),
+  # a przejście do supla.org daje przełącznik modułów przy logo.
+  vademecum:
     - name: Supla Cloud
       pageRef: /cloud
       weight: 1
-    - name: supla.org
-      url: https://supla.org
+    - name: Aplikacja SUPLA
+      pageRef: /aplikacja
       weight: 2
-    - name: Szukaj
+    - name: supla-device
+      pageRef: /supla-device
       weight: 3
-      params:
-        type: search
-    - name: GitHub
+    - name: GUI Generic
+      pageRef: /gui-generic
       weight: 4
-      url: https://github.com/SUPLA
-      params:
-        icon: github
+    - name: Forum
+      url: https://forum.supla.org/
+      weight: 5
+
+  # Kolumny stopki (layouts/_partials/custom/footer.html)
+  stopka:
+    - { identifier: produkty, name: Produkty, weight: 1 }
+    - { identifier: wsparcie, name: Wsparcie, weight: 2 }
+    - { identifier: wspolpraca, name: Współpraca, weight: 3 }
+    - { identifier: prawne, name: Informacje prawne, weight: 4 }
+
+    - { parent: produkty, name: Urządzenia, pageRef: /urzadzenia, weight: 1 }
+    - { parent: produkty, name: Aplikacje, pageRef: /pobierz, weight: 2 }
+    - { parent: produkty, name: SUPLA Cloud, url: "https://cloud.supla.org/", weight: 3 }
+    - { parent: produkty, name: SUPLA Icons, url: "https://icons.supla.io/", weight: 4 }
+    - { parent: produkty, name: Zadzwoń do SUPLI, url: "https://call.supla.io/", weight: 5 }
+
+    - { parent: wsparcie, name: Vademecum, pageRef: /cloud, weight: 1 }
+    - { parent: wsparcie, name: FAQ, pageRef: /faq, weight: 2 }
+    - { parent: wsparcie, name: Forum, url: "https://forum.supla.org/", weight: 3 }
+    - { parent: wsparcie, name: Status usług, url: "https://status.supla.org/", weight: 4 }
+    - { parent: wsparcie, name: GitHub, url: "https://github.com/SUPLA", weight: 5 }
+
+    - { parent: wspolpraca, name: O nas, pageRef: /o-supli, weight: 1 }
+    - { parent: wspolpraca, name: Partnerzy, pageRef: /partnerzy, weight: 2 }
+    - { parent: wspolpraca, name: Aktualności, pageRef: /aktualnosci, weight: 3 }
+    - { parent: wspolpraca, name: "Jak zacząć?", pageRef: /jak-zaczac, weight: 4 }
+    - { parent: wspolpraca, name: Kontakt, url: "mailto:kontakt@supla.org", weight: 5 }
+
+    - { parent: prawne, name: Polityka prywatności, pageRef: /polityka-prywatnosci, weight: 1 }
+    - { parent: prawne, name: Data Act, pageRef: /data-act, weight: 2 }
 
 params:
   navbar:
     displayTitle: true
+    # napis obok logo (layouts/_partials/navbar-title.html); tytuł strony w <title> bez zmian
+    napis: supla
     displayLogo: true
     logo:
       path: logo.svg
@@ -72,11 +140,28 @@ params:
 
   footer:
     enable: true
-    displayCopyright: true
+    # copyright i linki – własna stopka (layouts/_partials/custom/footer.html)
+    displayCopyright: false
     displayPoweredBy: false
     width: normal
 
   displayUpdatedDate: true
+
+  # Moduł Vademecum: sekcje content/, w których pasek pokazuje menu „vademecum”
+  # i napis „vademecum supla” (layouts/_partials/modul.html)
+  vademecum:
+    sekcje: [cloud, aplikacja, supla-device, gui-generic, sciagawka, edytuj-w-cms]
+    przedrostek: vademecum
+    start: /cloud
+
+  # Aktualności (content/aktualnosci) – wpisów na stronę listy
+  aktualnosci:
+    naStrone: 12
+
+  # Media społecznościowe w stopce
+  spolecznosc:
+    - { name: Facebook, url: "https://facebook.com/supla.org" }
+    - { name: GitHub, url: "https://github.com/SUPLA" }
   dateFormat: "02.01.2006"
 
   search:

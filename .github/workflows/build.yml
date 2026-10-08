@@ -3,7 +3,7 @@ name: Build check
 
 on:
   push:
-    branches: [cms]
+    branches: [cms, supla-org]
   pull_request:
     branches: [main]
 

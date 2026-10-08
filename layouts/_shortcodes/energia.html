@@ -1,0 +1,28 @@
+{{- /*
+  „Zużycie energii na żywo” – zbiorcza moc z liczników energii użytkowników.
+  ZAŚLEPKA: wartości i wykres wymagają danych z API SUPLI (do podłączenia).
+  Docelowo skrypt pobiera dane i wpisuje je w elementy [data-energia].
+*/ -}}
+<div class="energia not-prose">
+  <div class="energia-kafelki">
+    <div class="energia-kafelek energia-oddawana">
+      <p>Moc oddawana do sieci</p>
+      <div class="energia-wartosc" data-energia="oddawana">—</div>
+      <p class="energia-dopisek">Maksimum dzienne: <span data-energia="oddawana-max">—</span></p>
+    </div>
+    <div class="energia-kafelek energia-pobierana">
+      <p>Moc pobierana z sieci</p>
+      <div class="energia-wartosc" data-energia="pobierana">—</div>
+      <p class="energia-dopisek">Średnia dzienna: <span data-energia="pobierana-srednia">—</span></p>
+    </div>
+    <div class="energia-kafelek energia-bilans">
+      <p>Bilans energetyczny</p>
+      <div class="energia-wartosc" data-energia="bilans">—</div>
+    </div>
+  </div>
+  <div class="zastepnik energia-wykres" role="note">
+    <div class="zastepnik-ikona">{{ partial "utils/icon.html" (dict "name" "presentation-chart-line" "attributes" "height=28") }}</div>
+    <p class="zastepnik-tytul">Wykres mocy z ostatnich 24 godzin</p>
+    <p class="zastepnik-zrodlo">Wymaga źródła danych: zbiorcze odczyty liczników energii (API SUPLI)</p>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{{- /*
+  Kopia navbar-title.html z Hextry v0.13.0. Zmiany:
+  - napis obok logo z params.navbar.napis („supla” małymi literami jak w logo),
+    a nie z tytułu strony, który zostaje w <title> („… – SUPLA”),
+  - w module Vademecum przed nim params.vademecum.przedrostek („vademecum”),
+    a logo prowadzi do params.vademecum.start; obie części napisu mają
+    własne view-transition-name (custom.css, „Pasek: przejścia między modułami”).
+*/ -}}
+{{- $vademecum := eq (partial "modul.html" .) "vademecum" -}}
+{{- $logoPath := .Site.Params.navbar.logo.path | default "images/logo.svg" -}}
+{{- $logoLink := .Site.Params.navbar.logo.link | default .Site.Home.RelPermalink -}}
+{{- if $vademecum }}{{ with site.GetPage site.Params.vademecum.start }}{{ $logoLink = .RelPermalink }}{{ end }}{{ end -}}
+{{- $logoWidth := .Site.Params.navbar.logo.width | default "20" -}}
+{{- $logoHeight := .Site.Params.navbar.logo.height | default "20" -}}
+{{- $logoDarkPath := .Site.Params.navbar.logo.dark | default $logoPath -}}
+
+<a class="pasek-logo hx:flex hx:items-center hx:hover:opacity-75" href="{{ $logoLink }}">
+  {{- $displayTitle := (.Site.Params.navbar.displayTitle | default true) }}
+  {{- if (.Site.Params.navbar.displayLogo | default true) }}
+    <img class="hx:mr-2 hx:block hx:dark:hidden" src="{{ $logoPath | relURL }}" alt="{{ cond $displayTitle `Logo` .Site.Title }}" height="{{ $logoHeight }}" width="{{ $logoWidth }}" />
+    <img class="hx:mr-2 hx:hidden hx:dark:block" src="{{ $logoDarkPath | relURL }}" alt="{{ cond $displayTitle `Dark Logo` .Site.Title }}" height="{{ $logoHeight }}" width="{{ $logoWidth }}" />
+  {{- end }}
+  {{- if $displayTitle }}
+    <span class="napis-logo hx:mr-2 hx:font-extrabold hx:inline hx:select-none">
+      {{- if $vademecum }}<span class="napis-przedrostek">{{ site.Params.vademecum.przedrostek }}</span> {{ end -}}
+      <span class="napis-marka">{{- .Site.Params.navbar.napis | default .Site.Title -}}</span>
+    </span>
+  {{- end }}
+</a>

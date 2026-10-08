@@ -1,0 +1,13 @@
+{{- /* Opinie użytkowników z data/supla.yaml (opinie). */ -}}
+<div class="opinie not-prose">
+  {{- range hugo.Data.supla.opinie }}
+  <figure class="opinia">
+    <div class="opinia-temat">{{ partial "utils/icon.html" (dict "name" (.ikona | default "chat-alt") "attributes" "height=20") }}{{ .temat }}</div>
+    <blockquote>
+      <p class="opinia-tytul">{{ .tytul }}</p>
+      <p>{{ .tresc }}</p>
+    </blockquote>
+    <figcaption>{{ .autor }}</figcaption>
+  </figure>
+  {{- end }}
+</div>

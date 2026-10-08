@@ -1,0 +1,18 @@
+{{- /* Karta aktualności (lista aktualności, strona główna). Kontekst: strona aktualności. */ -}}
+<a class="aktualnosc-karta" href="{{ .RelPermalink }}">
+  <div class="aktualnosc-karta-obraz">
+    {{- $okladka := partial "okladka.html" (dict "strona" . "plik" .Params.image) -}}
+    {{- with $okladka -}}
+      {{- $img := .Process "fill 640x360 Center webp q80" -}}
+      <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy" decoding="async">
+    {{- else -}}
+      {{ partial "utils/icon.html" (dict "name" "newspaper" "attributes" "height=40") }}
+    {{- end -}}
+  </div>
+  <div class="aktualnosc-karta-tekst">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+    <h3>{{ .Title }}</h3>
+    {{- with .Description }}<p>{{ . }}</p>{{ end }}
+    <span class="aktualnosc-karta-wiecej">Czytaj więcej →</span>
+  </div>
+</a>

@@ -1,0 +1,15 @@
+{{- /*
+  Zdjęcie ze frontmattera jako zasób strony. Kontekst: (dict "strona" . "plik" .Params.image).
+  Przyjmuje nazwę pliku z page bundle'a („okladka.webp”) albo ścieżkę absolutną
+  od katalogu content, jaką wstawia pole zdjęcia w Pages CMS („/aktualnosci/wpis/foto.jpg”).
+  Zwraca zasób albo false.
+*/ -}}
+{{- $zasob := false -}}
+{{- with .plik -}}
+  {{- if hasPrefix . "/" -}}
+    {{- $zasob = partial "zasob-tresci.html" . -}}
+  {{- else -}}
+    {{- $zasob = $.strona.Resources.Get . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $zasob -}}

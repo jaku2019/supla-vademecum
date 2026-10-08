@@ -1,0 +1,14 @@
+{{- /*
+  Liczby SUPLI z data/supla.yaml (statystyki.<zestaw>).
+
+  @param {string} zestaw glowna (domyślnie) | o-supli
+*/ -}}
+{{- $zestaw := .Get "zestaw" | default "glowna" -}}
+<dl class="statystyki not-prose">
+  {{- range index hugo.Data.supla.statystyki $zestaw }}
+  <div class="statystyka">
+    <dt>{{ .opis }}</dt>
+    <dd>{{ replace .liczba " " " " }}</dd>{{/* twarda spacja – „336 000+” bez łamania */}}
+  </div>
+  {{- end }}
+</dl>
