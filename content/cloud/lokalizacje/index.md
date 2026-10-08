@@ -1,8 +1,7 @@
 ---
-title: "Lokalizacje"
+title: Lokalizacje
 weight: 13
 ---
-
 Lokalizacje to zbiory, do których można przypisywać wybrane kanały oraz grupy kanałów. 
 
 Wyświetlają się one w aplikacji SUPLA w postaci kaskadowo ułożonych list. Istnieje możliwość przypisania poszczególnych lokalizacji do różnych identyfikatorów dostępu :one:.
