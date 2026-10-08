@@ -1,10 +1,9 @@
 ---
-title: "Wprowadzenie"
-linkTitle: "Wstęp"
+title: Wprowadzenie
+linkTitle: Wstęp
 cascade:
-  type: "docs"
+  type: docs
 ---
-
 Supla to polski system automatyki budynkowej popularnie zwanej “smart home”. Rozwijany na zasadzie open-source (otwartych źródeł dostępnych na Githubie) zyskał wielu entuzjastów gromadzących się na [forum.supla.org](https://forum.supla.org/index.php).
 
 ![diagram](supla_diagram_2.png)
