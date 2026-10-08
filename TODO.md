@@ -64,7 +64,7 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 
 ## Etap 6 – styl Supli
 - [x] Tokeny z `supla-theme.scss` (rola „user”, jasny + ciemny) przepisane do `assets/css/custom.css`; pliki źródłowe w `.gitignore`
-- [x] Fonty Quicksand (nagłówki) i Open Sans (tekst) hostowane lokalnie (`static/fonts`, OFL), `@font-face` w `layouts/_partials/custom/head-end.html`
+- [x] Fonty Quicksand (nagłówki) i Inter (tekst) hostowane lokalnie (`static/fonts`, OFL), `@font-face` w `layouts/_partials/custom/head-end.html`
 - [x] Zieleń #00d151 jako kolor główny, linki #007d30 (kontrast), alerty/kod/karty/przyciski w kolorach i promieniach Supli, tło #fafbfc / #121416
 - [x] Karty funkcji na stronie głównej jako kafelki Supli (pełna zieleń / tonalne w ciemnym), napis „Supla” bez obrysu, kod w tekście zielony
 - [ ] Rozmiary tekstu zostawione z Hextry (16 px) – supla-cloud ma 14 px, ale to aplikacja, nie dokumentacja

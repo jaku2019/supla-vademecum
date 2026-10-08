@@ -1,11 +1,11 @@
-{{- /* Fonty Supli (Quicksand – nagłówki, Open Sans – tekst), hostowane lokalnie
+{{- /* Fonty Supli (Quicksand – nagłówki, Inter – tekst), hostowane lokalnie
        w static/fonts (fontsource, licencja OFL). Tu, a nie w custom.css,
        bo adresy muszą uwzględniać podkatalog strony (relURL). */ -}}
 {{- $latin := "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD" -}}
 {{- $latinExt := "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF" -}}
-<link rel="preload" href="{{ "fonts/open-sans-latin-wght-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/inter-latin-wght-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 <style>
-{{- range slice (dict "name" "Quicksand" "file" "quicksand" "weight" "300 700") (dict "name" "Open Sans" "file" "open-sans" "weight" "300 800") }}
+{{- range slice (dict "name" "Quicksand" "file" "quicksand" "weight" "300 700") (dict "name" "Inter" "file" "inter" "weight" "100 900") }}
 @font-face{font-family:"{{ .name }}";font-style:normal;font-display:swap;font-weight:{{ .weight }};src:url("{{ printf "fonts/%s-latin-wght-normal.woff2" .file | relURL }}") format("woff2");unicode-range:{{ $latin }}}
 @font-face{font-family:"{{ .name }}";font-style:normal;font-display:swap;font-weight:{{ .weight }};src:url("{{ printf "fonts/%s-latin-ext-wght-normal.woff2" .file | relURL }}") format("woff2");unicode-range:{{ $latinExt }}}
 {{- end }}

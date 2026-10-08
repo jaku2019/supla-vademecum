@@ -13,7 +13,7 @@
 
 :root {
   --supla-font-special: "Quicksand", sans-serif;
-  --supla-font-default: "Open Sans", sans-serif;
+  --supla-font-default: "Inter", sans-serif;
   --supla-radius: 3px;
   --supla-radius-md: 4px;
   --supla-duration: 0.3s;
