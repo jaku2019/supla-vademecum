@@ -1,11 +1,11 @@
 ---
-title: "Czujniki binarne"
+title: Czujniki binarne
 weight: 7
+description: "Czujniki otwarcia, braku cieczy, karty hotelowej, alarmu, poczty"
 ---
-
 ## Czujnik otwarcia furtki
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -17,7 +17,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik otwarcia bramy wjazdowej
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -26,6 +26,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 - **Kanał dla czujnika pośredniego otwarcia** - powiązanie czujnika z kanałem otwierania bramy wjazdowej umożliwi monitorowanie stanu bramy z poziomu kanału otwierania bramy. Ten czujnik odpowiada za rozpoznanie pozycji pośredniej bramy (np. otwartej do połowy)
 
 > [!NOTE]
+>
 > - **Czujnik kanału dla** - zwarty tylko gdy brama całkowicie otwarta
 > - **Kanał dla czujnika pośredniego otwarcia** - zwarty tylko gdy brama zamknięta
 
@@ -38,7 +39,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik otwarcia bramy garażowej
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -47,6 +48,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 - **Kanał dla czujnika pośredniego otwarcia** - powiązanie czujnika z kanałem otwierania bramy garażowej umożliwi monitorowanie stanu bramy z poziomu kanału otwierania bramy. Ten czujnik odpowiada za rozpoznanie pozycji pośredniej bramy (np. otwartej do połowy)
 
 > [!NOTE]
+>
 > - **Czujnik kanału dla** - zwarty tylko gdy brama całkowicie otwarta
 > - **Kanał dla czujnika pośredniego otwarcia** - zwarty tylko gdy brama zamknięta
 
@@ -59,7 +61,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik otwarcia drzwi
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -71,7 +73,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik braku cieczy
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -81,7 +83,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik otwarcia rolet
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -93,7 +95,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik otwarcia okna dachowego
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -104,7 +106,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik otwarcia okna
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -116,7 +118,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik karty hotelowej
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -126,7 +128,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik uzbrojenia alarmu
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -136,7 +138,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 ## Czujnik poczty
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA

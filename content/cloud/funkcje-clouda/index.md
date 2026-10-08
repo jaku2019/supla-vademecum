@@ -11,7 +11,6 @@ Wyzwalacz akcji umożliwia wykorzystanie przycisku lub stanu wybranego urządzen
 > Wyzwalacze mogą występować jako niezależne kanały lub być podpięte pod kanały przekaźników. Zależy to od wewnętrznych ustawień urządzenia. 
 >
 > ![język](wyzwalacze.png)
-> {data-zoomable="true"}
 
 Wyzwalacz akcji pojawia się w kartach w menu kanałów, który go obsługują. Istnieje możliwość jego konfiguracji dla następujących akcji:
 
@@ -27,7 +26,6 @@ Wyzwalacz akcji pojawia się w kartach w menu kanałów, który go obsługują. 
 > Wyzwalacze oznaczone żółtym wykrzyknikiem mają przypisaną akcję wynikającą z funkcji urządzenia. Przypisanie im innej akcji wiąże się z wyłączeniem ich lokalnej funkcji.
 
 ![Wyzwalacz akcji](wyzwalacz.png)
-{data-zoomable="true"}
 
 Po wybraniu wyzwalacza należy ustawić, na czym ma zostać wykonana akcja. Mogą to być:
 * **Kanały** - wykonaj wybraną akcję, na jaką pozwala dany kanał (np. włącz, wyłącz, przełącz, otwórz, zamknij itd.)
@@ -45,7 +43,6 @@ Po wybraniu wyzwalacza należy ustawić, na czym ma zostać wykonana akcja. Mog�
 Szczegółowe dane konta potrzebne przy manualnej rejestracji niektórych urządzeń można sprawdzić klikając na logo Supli w lewym górnym rogu.
 
 ![Moja Supla](moja_supla.png)
-{data-zoomable="true"}
 
 ## Zmiana ikony
 
@@ -54,7 +51,6 @@ Aby zmienić ikonę kanału lub sceny należy kliknąć `Zmień ikonę`. Można 
 Ikony powinny być przesłane w formacie PNG o wymiarach 210x156px (szerokość x wysokość). Domyślnie przysyłane są ikony dla trybu jasnego i działają zarówno w trybie jasnym, jak i ciemnym. Użytkownik ma możliwość dodania osobnych ikon dla trybu ciemnego. W tym celu wystarczy zmienić pozycję górnego suwaka na `Tryb ciemny` i wgrać odpowiednie pliki.
 
 ![Dodaj ikonę](ikona.png)
-{data-zoomable="true"}
 
 Zestawy ikon zapisywane są w Cloudzie. Istnieje możliwość ich ponownego użycia dla innych kanałów o tej samej funkcji.
 
@@ -79,4 +75,3 @@ Supla może być zintegrowana z różnymi systemami, w tym z Alexą Amazona i Ho
 > Domyślnie `Potwierdzenie akcji` jest wyłączone.
 
 ![GH Potwierdzenie i PIN](gh_pin.png)
-{data-zoomable="true"}

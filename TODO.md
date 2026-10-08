@@ -45,9 +45,26 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 - [ ] Sprawdzić, czy pozostałe rozdziały docx (Moja Supla, Smartfony, Automatyka, Konto, Funkcje Clouda…) nie są nowsze niż treść na stronie
 - [ ] `Supla Cloud.docx` leży w katalogu repo, nie jest commitowany – zdecydować: `.gitignore` czy przenieść poza repo
 
+## Etap 5 – Pages CMS (gałąź `cms`)
+- [x] Etap 0: prototyp `.pages.yml` (Wstęp, Lokalizacje, FAQ, Kanały – lista + kolekcja Kanały), media = `content/` (zdjęcia zostają w bundle'ach)
+- [x] Hook obrazków rozpoznaje ścieżki z CMS (`/cloud/...`) jako zasoby bundle'a (`layouts/_partials/zasob-tresci.html`)
+- [x] Zoom dla wszystkich zdjęć (wymóg edytora)
+- [x] Test „wczytaj i zapisz” w CMS → edytor **rich-text** (galerie, details, cards, alerty, tabele przetrwały)
+- [x] Treść dostosowana do edytora: `<ins>` → pogrubienie (59×), przypisy `\*` → zdania, link z kodem w FAQ, lista z niewciętą kontynuacją w FAQ
+- [x] Zdjęcia: domyślny folder wgrywania = katalog strony/sekcji (`options.path`), `rename: safe`; hook obsługuje też pliki w `content/`
+- [x] `options.path` działa (domyślny folder = sekcja; strona może mieć zdjęcia w folderze sekcji)
+- [x] Nowa strona w kolekcji powstaje jako `slug/index.md` i pojawia się w menu
+- [x] Pełna konfiguracja: grupa „Strony” (8 stron stałych) + Automatyka, Kanały, Integracje (strona sekcji + podstrony), wspólne pola przez `components`
+- [x] CI `build.yml`: build z `--panicOnWarning` na push do `cms` i PR do `main`; hook ostrzega o brakującym zdjęciu
+- [x] README: instrukcja dla redaktorów
+- [ ] Sprawdzić pełną konfigurację w CMS (grupy, komponenty pól, widok drzewa w Integracjach z podfolderem `HA/`)
+- [x] Karty na stronach sekcji generowane z podstron – shortcode `{{< podstrony >}}` (`description` = podtytuł, `icon` = ikona); w CMS pola „Opis na karcie” i „Ikona na karcie”
+- [ ] `gallery-item` nie rozpoznaje ścieżek `/cloud/...` – nadpisać shortcode, jeśli galerie będą edytowane w CMS
+- [ ] Merge `hextra-migration` → `main`, potem `cms` → `main`; ustawić ochronę gałęzi `main` (wymagany „Build check”)
+
 ## Później / propozycje
 - [ ] **Optymalizacja zdjęć** – rozszerzyć `layouts/_markup/render-image.html` o przetwarzanie obrazów Hugo (WebP, resize do szerokości treści, `width`/`height`); zoom ma pokazywać oryginał. Galerie już same generują miniatury WebP.
-- [ ] Decyzja: czy wszystkie zdjęcia mają być powiększalne (wtedy `params.imageZoom.enable: true` i można usunąć atrybuty)
+- [x] Wszystkie zdjęcia powiększalne (`params.imageZoom.enable: true`, atrybuty `{data-zoomable}` usunięte) – decyzja z 2026-10-08, pod Pages CMS
 - [x] Galerie zostają jako karuzele (`carousel`) – decyzja z 2026-10-07
 - [ ] PR z `i18n/pl.yaml` do upstreamu `imfing/hextra`
 - [ ] Link-checker w CI (lychee / htmltest)

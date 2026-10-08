@@ -1,22 +1,24 @@
 ---
-title: "Przekaźnik"
+title: Przekaźnik
 weight: 1
+description: "Furtka, bramy, drzwi, włączniki, automat schodowy"
 ---
-
 ## Otwieranie furtki
 
 Funkcja otwieranie furtki umożliwia sterowanie impulsem, tzn. załączanie przekaźnika na krótki, ustawiany w Cloudzie czas, po naciśnięciu przycisku `Otwórz`
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
 - **Czas załączenia przekaźnika** - czas, na jaki przekaźnik ma się załączyć (długość impulsu przekaźnika)
 - **Czujnik otwarcia** - istnieje możliwość wybrania czujnika, który monitoruje stan furtki i gdy jest otwarta pokazuje furtkę jako otwartą (bez niego nie da się sprawdzić faktycznego stanu furtki)
 
+
 | Akcje |
-|---|
+| ------ |
 | Otwórz |
+
 
 Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
@@ -24,7 +26,7 @@ Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośr
 
 Funkcja otwieranie/zamykanie bramy wjazdowej umożliwia sterowanie impulsem, tzn. załączanie przekaźnika na krótki, ustawiany w Cloudzie czas. Dodatkowo umożliwia sparowanie dwóch czujników otwarcia, dzięki czemu może rozróżniać stan bramy (otwarty, częściowo otwarty, zamknięty). Poza tym ma kilka usprawnień, które umożliwią zautomatyzowanie bramy.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -44,7 +46,7 @@ Funkcja otwieranie/zamykanie bramy wjazdowej umożliwia sterowanie impulsem, tzn
 - **Ustawienia integracji** - ustawienie widoczności i działania bramy w Google Home, więcej na ten temat w dziale [Funkcje Clouda](/cloud/funkcje-clouda).
 
 > [!WARNING]
-> Dla poprawnego działania integracji z Google Home musi być zainstalowany <ins>przynajmniej</ins> czujnik otwarcia bramy.
+> Dla poprawnego działania integracji z Google Home musi być zainstalowany **przynajmniej** czujnik otwarcia bramy.
 
 > [!TIP]
 > Ze względu na wysoką jakość i niezawodność jako czujnik otwarcia forumowicze polecają Satela B-3.
@@ -52,12 +54,14 @@ Funkcja otwieranie/zamykanie bramy wjazdowej umożliwia sterowanie impulsem, tzn
 > [!TIP]
 > Jeśli nie wiesz, jak podłączyć moduł bramowy do swojego napędu, sprawdź [forum.supla.org](https://forum.supla.org)
 
+
 | Akcje |
-|---|
+| ---------------------------- |
 | Otwórz |
 | Zamknij |
 | Otwórz / zamknij |
 | Skopiuj stan z innego kanału |
+
 
 Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
@@ -65,7 +69,7 @@ Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośr
 
 Funkcja otwieranie/zamykanie bramy garażowej umożliwia sterowanie impulsem, tzn. załączanie przekaźnika na krótki, ustawiany w Cloudzie czas. Dodatkowo umożliwia sparowanie dwóch czujników otwarcia, dzięki czemu może rozróżniać stan bramy (otwarty, częściowo otwarty, zamknięty). Poza tym ma kilka usprawnień, które umożliwią zautomatyzowanie bramy.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -85,7 +89,7 @@ Funkcja otwieranie/zamykanie bramy garażowej umożliwia sterowanie impulsem, tz
 - **Ustawienia integracji** - ustawienie widoczności i działania bramy w Google Home, więcej na ten temat w dziale [Funkcje Clouda](/cloud/funkcje-clouda).
 
 > [!WARNING]
-> Dla poprawnego działania integracji z Google Home musi być zainstalowany <ins>przynajmniej</ins> czujnik otwarcia bramy.
+> Dla poprawnego działania integracji z Google Home musi być zainstalowany **przynajmniej** czujnik otwarcia bramy.
 
 > [!TIP]
 > Ze względu na wysoką jakość i niezawodność jako czujnik otwarcia forumowicze polecają Satela B-3.
@@ -93,12 +97,14 @@ Funkcja otwieranie/zamykanie bramy garażowej umożliwia sterowanie impulsem, tz
 > [!TIP]
 > Jeśli nie wiesz, jak podłączyć moduł bramowy do swojego napędu, sprawdź [forum.supla.org](https://forum.supla.org)
 
+
 | Akcje |
-|---|
+| ---------------------------- |
 | Otwórz |
 | Zamknij |
 | Otwórz / zamknij |
 | Skopiuj stan z innego kanału |
+
 
 Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
@@ -106,16 +112,18 @@ Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośr
 
 Funkcja otwieranie drzwi umożliwia sterowanie impulsem, tzn. załączanie przekaźnika na krótki, ustawiany w Cloudzie czas, po naciśnięciu przycisku `Otwórz`
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
 - **Czas załączenia przekaźnika** - czas, na jaki przekaźnik ma się załączyć (długość impulsu przekaźnika)
 - **Czujnik otwarcia** - istnieje możliwość wybrania czujnika, który monitoruje stan drzwi gdy są otwarte pokazuje ich stan jako otwarte (bez niego nie da się sprawdzić faktycznego stanu drzwi)
 
+
 | Akcje |
-|---|
+| ------ |
 | Otwórz |
+
 
 Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
@@ -123,51 +131,55 @@ Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośr
 
 Włącznik zasilania to standardowy kanał przekaźnika. Można go sparować z wybranym kanałem pomiarowym.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
 - **Powiązany kanał pomiarowy** - dodanie licznika energii jako powiązanego kanału pomiarowego połączy wybrane kanały w aplikacji SUPLA. Licznik energii będzie widoczny w szczegółach kanału w aplikacji
 - **Ustawienia integracji** - ustawienie widoczności i działania kanału w Google Home, więcej na ten temat w dziale [Funkcje Clouda](/cloud/funkcje-clouda).
 
+
 | Akcje |
-|---|
+| ---------------------------- |
 | Włącz |
 | Wyłącz |
 | Przełącz |
 | Skopiuj stan z innego kanału |
 
-Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`\*, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-\*Wyzwalacze akcji są dostępne dla tego kanału jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia
+Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
+
+Zakładka `Wyzwalacze akcji` jest dostępna dla tego kanału, jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia.
 
 ## Włącznik światła
 
 Włącznik światła jest podobny w działaniu do kanału włącznika zasilania z tą różnicą, że dodaje możliwość podglądu łącznego czasu świecenia żarówki w aplikacji SUPLA.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
 - **Powiązany kanał pomiarowy** - dodanie licznika energii jako powiązanego kanału pomiarowego połączy wybrane kanały w aplikacji SUPLA. Licznik energii będzie widoczny w szczegółach kanału w aplikacji
 - **Ustawienia integracji** - ustawienie widoczności i działania kanału w Google Home, więcej na ten temat w dziale [Funkcje Clouda](/cloud/funkcje-clouda).
 
+
 | Akcje |
-|---|
+| ---------------------------- |
 | Włącz |
 | Wyłącz |
 | Przełącz |
 | Skopiuj stan z innego kanału |
 
-Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`\*, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-\*Wyzwalacze akcji są dostępne dla tego kanału jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia
+Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
+
+Zakładka `Wyzwalacze akcji` jest dostępna dla tego kanału, jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia.
 
 ## Automat schodowy
 
 Automat schodowy daje możliwość ustawienia automatycznego wyłączania przekaźnika.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -175,13 +187,15 @@ Automat schodowy daje możliwość ustawienia automatycznego wyłączania przeka
 - **Powiązany kanał pomiarowy** - dodanie licznika energii jako powiązanego kanału pomiarowego połączy wybrane kanały w aplikacji SUPLA. Licznik energii będzie widoczny w szczegółach kanału w aplikacji
 - **Ustawienia integracji** - ustawienie widoczności i działania kanału w Google Home, więcej na ten temat w dziale [Funkcje Clouda](/cloud/funkcje-clouda).
 
+
 | Akcje |
-|---|
+| ---------------------------- |
 | Włącz |
 | Wyłącz |
 | Przełącz |
 | Skopiuj stan z innego kanału |
 
-Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`\*, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-\*Wyzwalacze akcji są dostępne dla tego kanału jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia
+Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
+
+Zakładka `Wyzwalacze akcji` jest dostępna dla tego kanału, jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia.

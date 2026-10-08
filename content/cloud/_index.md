@@ -1,10 +1,9 @@
 ---
-title: "Wprowadzenie"
-linkTitle: "Wstęp"
+title: Wprowadzenie
+linkTitle: Wstęp
 cascade:
-  type: "docs"
+  type: docs
 ---
-
 Supla to polski system automatyki budynkowej popularnie zwanej “smart home”. Rozwijany na zasadzie open-source (otwartych źródeł dostępnych na Githubie) zyskał wielu entuzjastów gromadzących się na [forum.supla.org](https://forum.supla.org/index.php).
 
 ![diagram](supla_diagram_2.png)
@@ -22,7 +21,6 @@ Temat aplikacji został szerzej poruszony w odpowiednim dziale strony.
 Język Clouda można zmienić wybierając pożądany z listy widocznej w lewym dolnym rogu strony.
 
 ![język](jezyk.png)
-{data-zoomable="true"}
 
 > [!WARNING]
 > Niezrozumiałe zapisy w Cloudzie mogą wynikać z ustawienia języka Clouda na inny niż polski i automatycznego tłumaczenia przez przeglądarkę. W przypadku wystąpienia niezrozumiałych/nieskładnych informacji zaleca się weryfikację języka Clouda.

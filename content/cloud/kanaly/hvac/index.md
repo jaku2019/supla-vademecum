@@ -2,13 +2,14 @@
 title: "Ogrzewanie, wentylacja, klimatyzacja (HVAC)"
 linkTitle: "HVAC – termostaty"
 weight: 4
+description: "Termostat, termostat różnicowy, ciepła woda"
 ---
 
 ## Termostat
 
 Kanał termostatu umożliwia osobną konfigurację dla grzania i chłodzenia (Podfunkcja grzanie/chłodzenie) - w zależności od tego, która zostanie wybrana, zawartość menu minimalnie się zmieni. Zasada konfiguracji pozostanie jednak analogiczna.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -54,7 +55,7 @@ Kanał termostatu umożliwia osobną konfigurację dla grzania i chłodzenia (Po
 
 Dostępne zakładki: `Tydzień`, `Reakcje`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-<ins>Tydzień</ins>:
+**Tydzień**:
 
 W widoku tygodnia użytkownik może zaprogramować działanie termostatu w programie tygodniowym. Do wyboru są cztery konfigurowalne temperatury (+wyłącz) w 15-minutowych komórkach.
 
@@ -74,7 +75,7 @@ Termostat różnicowy działa na bazie różnicy temperatur z dwóch czujników 
 
 W ramach tej funkcji można łatwo kontrolować temperaturę CWU w domu.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -102,7 +103,6 @@ W ramach tej funkcji można łatwo kontrolować temperaturę CWU w domu.
 Dobrze ilustruje to poniższa grafika:
 
 ![Histereza – nastawa środkowa i górna](histereza.png)
-{data-zoomable="true"}
 
 - **Minimalny czas włączenia przed ponownym wyłączeniem ogrzewania** - kiedy temperatura znajdzie się na “granicy histerezy” termostat może włączać się i wyłączać co chwilę, ustawiony czas pozwoli stworzyć “margines” dla takich sytuacji (min. 0s maks. 600s=10min)
 - **Minimalny czas wyłączenia przed ponownym włączeniem ogrzewania** - kiedy temperatura znajdzie się na “granicy histerezy” termostat może włączać się i wyłączać co chwilę, ustawiony czas pozwoli stworzyć “margines” dla takich sytuacji (min. 0s maks. 600s=10min)
@@ -124,7 +124,7 @@ Dobrze ilustruje to poniższa grafika:
 
 Dostępne zakładki: `Tydzień`, `Reakcje`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-<ins>Tydzień</ins>:
+**Tydzień**:
 
 W widoku tygodnia użytkownik może zaprogramować działanie termostatu w programie tygodniowym. Do wyboru są cztery konfigurowalne temperatury (+wyłącz) w 15-minutowych komórkach.
 

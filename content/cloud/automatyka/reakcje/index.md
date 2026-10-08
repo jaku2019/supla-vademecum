@@ -1,6 +1,7 @@
 ---
 title: "Reakcje"
 weight: 5
+icon: "lightning-bolt"
 ---
 
 Reakcje to moduł tzw. logiki. Umożliwia automatyczne wykonanie akcji na wybranym kanale po spełnieniu ustalonego warunku. Aby dodać reakcję należy wejść w widok kanału w Cloudzie i kliknąć przycisk `Utwórz nową reakcję`. W zależności od funkcji kanału wyświetlą się możliwe wyzwalacze reakcji (np. dla kanału  czujnika temperatury: _Kiedy temperatura osiągnie określoną wartość_). Po ustawieniu wyzwalacza należy wybrać, na czym ma zostać wykonana akcja. Mogą to być:
@@ -26,4 +27,3 @@ W sekcji `Warunki aktywności` użytkownik ma możliwość ustawienia, kiedy rea
 > Jeśli zostanie ustawiony więcej niż jeden warunek aktywności, to reakcja będzie aktywna tylko wtedy, gdy wszystkie warunki będą spełnione jednocześnie.
 
 ![Reakcje](reakcje.png)
-{data-zoomable="true"}

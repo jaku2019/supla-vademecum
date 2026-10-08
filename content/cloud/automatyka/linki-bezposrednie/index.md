@@ -1,6 +1,7 @@
 ---
 title: "Linki bezpośrednie"
 weight: 3
+icon: "link"
 ---
 
 Dowolny podmiot Clouda (`Kanał`, `Grupa kanałów`, `Scena` lub `Harmonogram`) może być kontrolowany za pomocą specjalnie generowanego linku bezpośredniego, umożliwiającego interakcję bez konieczności logowania na konto Supla.
@@ -22,7 +23,6 @@ Dokonane zmiany należy zatwierdzić przyciskiem `Zapisz zmiany`.
 Dodatkowo istnieje możliwość podglądu, z jakim kanałem powiązany jest link oraz historia wykonań akcji linku.
 
 ![Linki bezpośrednie](link_bezp.png)
-{data-zoomable="true"}
 
 > [!CAUTION]
 > Po utworzeniu linku i opuszczeniu strony zostanie on ukryty. Każdy kto zdobędzie do niego dostęp, będzie mógł wykonać zdefiniowane akcje. Usunięcie linku odbiera możliwość jego użycia.

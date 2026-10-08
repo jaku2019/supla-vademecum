@@ -1,0 +1,262 @@
+# Konfiguracja Pages CMS (https://pagescms.org)
+#
+# Redaktorzy pracują na gałęzi `cms`; publikacja = PR `cms` → `main`.
+#
+# Zdjęcia zostają obok stron (page bundle'e w content/). CMS wstawia ścieżkę
+# absolutną, np. /cloud/lokalizacje/utworz.png – zamienia ją na zasób bundle'a
+# hook layouts/_markup/render-image.html (partial zasob-tresci.html).
+# Edytor treści wgrywa zdjęcia domyślnie do katalogu strony/sekcji
+# (options.path) i zamienia nazwy plików na bezpieczne (rename: safe).
+#
+# Edytor (rich-text) gubi: podkreślenie <ins>, przypisy z \*, kod wewnątrz
+# linków. Shortcode'y ({{< gallery >}}, {{% details %}}, {{< cards >}}) i alerty
+# (> [!WARNING]) przechodzą bez zmian.
+#
+# Separatory menu (content/cloud/sep-*.md) i strona główna (content/_index.md)
+# celowo nie są edytowalne w CMS.
+
+media:
+  input: content
+  output: /
+  extensions: [png, jpg, jpeg, webp, gif, svg]
+
+components:
+  tytul:
+    label: Tytuł
+    type: string
+    required: true
+  tytul-menu:
+    label: Tytuł w menu
+    type: string
+    description: Krótsza nazwa w menu bocznym. Puste = taka sama jak tytuł.
+  kolejnosc:
+    label: Kolejność w menu
+    type: number
+    description: Mniejsza liczba = wyżej w menu. Strona bez numeru trafia na koniec sekcji.
+  opis-karty:
+    label: Opis na karcie
+    type: string
+    description: Krótki podtytuł na karcie na stronie sekcji (np. „Termostat, termostat różnicowy, ciepła woda”). Może zostać pusty.
+  ikona-karty:
+    label: Ikona na karcie
+    type: select
+    description: Ikona na karcie na stronie sekcji. Może zostać pusta.
+    options:
+      placeholder: Bez ikony
+      values:
+        - { name: clock, label: Zegar }
+        - { name: calendar, label: Kalendarz }
+        - { name: collection, label: Stos / grupa }
+        - { name: link, label: Link }
+        - { name: film, label: Film / scena }
+        - { name: lightning-bolt, label: Błyskawica }
+        - { name: puzzle, label: Puzzel / integracja }
+        - { name: chip, label: Układ scalony }
+        - { name: cloud, label: Chmura }
+        - { name: bell, label: Dzwonek }
+        - { name: cog, label: Zębatka }
+        - { name: adjustments, label: Suwaki }
+        - { name: switch-horizontal, label: Przełącznik }
+        - { name: light-bulb, label: Żarówka }
+        - { name: fire, label: Ogień }
+        - { name: home, label: Dom }
+        - { name: key, label: Klucz }
+        - { name: shield-check, label: Tarcza }
+        - { name: device-mobile, label: Smartfon }
+        - { name: chart-bar, label: Wykres }
+        - { name: globe-alt, label: Glob }
+        - { name: code, label: Kod }
+        - { name: sparkles, label: Gwiazdki }
+
+content:
+  # --- Strony stałe: tylko edycja ---
+  - name: strony
+    label: Strony
+    type: group
+    items:
+      - name: wstep
+        label: Wstęp
+        type: file
+        path: content/cloud/_index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: cascade, type: object, hidden: true, fields: [{ name: type, type: string }] }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud, rename: safe } }
+
+      - name: moja-supla
+        label: Moja Supla
+        type: file
+        path: content/cloud/moja-supla/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/moja-supla, rename: safe } }
+
+      - name: smartfony
+        label: Smartfony
+        type: file
+        path: content/cloud/smartfony/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/smartfony, rename: safe } }
+
+      - name: lokalizacje
+        label: Lokalizacje
+        type: file
+        path: content/cloud/lokalizacje/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/lokalizacje, rename: safe } }
+
+      - name: identyfikatory
+        label: Identyfikatory
+        type: file
+        path: content/cloud/identyfikatory/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/identyfikatory, rename: safe } }
+
+      - name: moje-konto
+        label: Moje konto
+        type: file
+        path: content/cloud/moje-konto/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/moje-konto, rename: safe } }
+
+      - name: funkcje-clouda
+        label: Funkcje Clouda
+        type: file
+        path: content/cloud/funkcje-clouda/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/funkcje-clouda, rename: safe } }
+
+      - name: faq
+        label: FAQ
+        type: file
+        path: content/cloud/faq/index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/faq, rename: safe } }
+
+  # --- Sekcje: strona-indeks sekcji + podstrony, które można dodawać ---
+  # Karty na stronie sekcji generuje shortcode {{< podstrony >}} z pól
+  # linkTitle/title, description i icon podstron.
+  - name: automatyka
+    label: Automatyka
+    type: group
+    items:
+      - name: automatyka-indeks
+        label: Automatyka – strona sekcji
+        type: file
+        path: content/cloud/automatyka/_index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: sidebar, type: object, hidden: true, fields: [{ name: open, type: boolean }] }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/automatyka, rename: safe } }
+
+      - name: automatyka-strony
+        label: Automatyka – podstrony
+        type: collection
+        path: content/cloud/automatyka
+        exclude: [_index.md]
+        filename: "{primary}/index.md"
+        view:
+          layout: tree
+          node: { filename: index.md, hideDirs: others }
+          fields: [title, weight]
+          primary: title
+          sort: weight
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: description, component: opis-karty }
+          - { name: icon, component: ikona-karty }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/automatyka, rename: safe } }
+
+  - name: kanaly
+    label: Kanały
+    type: group
+    items:
+      - name: kanaly-indeks
+        label: Kanały – lista (strona sekcji)
+        type: file
+        path: content/cloud/kanaly/_index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: aliases, type: string, list: true, hidden: true }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/kanaly, rename: safe } }
+
+      - name: kanaly-strony
+        label: Kanały – typy kanałów
+        type: collection
+        path: content/cloud/kanaly
+        exclude: [_index.md]
+        filename: "{primary}/index.md"
+        view:
+          layout: tree
+          node: { filename: index.md, hideDirs: others }
+          fields: [title, weight]
+          primary: title
+          sort: weight
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: description, component: opis-karty }
+          - { name: icon, component: ikona-karty }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/kanaly, rename: safe } }
+
+  - name: integracje
+    label: Integracje
+    type: group
+    items:
+      - name: integracje-indeks
+        label: Integracje – strona sekcji
+        type: file
+        path: content/cloud/integracje/_index.md
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/integracje, rename: safe } }
+
+      - name: integracje-strony
+        label: Integracje – podstrony
+        type: collection
+        path: content/cloud/integracje
+        exclude: [_index.md]
+        filename: "{primary}/index.md"
+        view:
+          layout: tree
+          node: { filename: index.md, hideDirs: others }
+          fields: [title, weight]
+          primary: title
+          sort: weight
+        fields:
+          - { name: title, component: tytul }
+          - { name: linkTitle, component: tytul-menu }
+          - { name: weight, component: kolejnosc }
+          - { name: description, component: opis-karty }
+          - { name: icon, component: ikona-karty }
+          - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/integracje, rename: safe } }

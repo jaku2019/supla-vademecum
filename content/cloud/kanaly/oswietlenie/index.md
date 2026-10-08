@@ -2,11 +2,12 @@
 title: "Ściemniacz i oświetlenie RGB"
 linkTitle: "Ściemniacz i RGB"
 weight: 3
+description: "Ściemniacz, oświetlenie RGB"
 ---
 
 ## Ściemniacz
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -26,7 +27,7 @@ Dostępne zakładki: `Reakcje`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Lin
 
 ### Oświetlenie RGB
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -44,7 +45,7 @@ Dostępne zakładki: `Reakcje`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Lin
 
 ### Ściemniacz i oświetlenie RGB
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA

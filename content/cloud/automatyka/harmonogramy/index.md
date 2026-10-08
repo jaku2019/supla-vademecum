@@ -1,6 +1,7 @@
 ---
 title: "Harmonogramy"
 weight: 1
+icon: "clock"
 ---
 
 Harmonogramy umożliwiają zaplanowanie wykonania akcji przez wybrane kanały, grupy kanałów lub sceny. 
@@ -19,4 +20,3 @@ Nowy harmonogram można utworzyć klikając przycisk `Utwórz nowy harmonogram` 
 Dokonane zmiany należy zatwierdzić przyciskiem `Zapisz zmiany`.
 
 ![Harmonogramy](harmonogramy.png)
-{data-zoomable="true"}

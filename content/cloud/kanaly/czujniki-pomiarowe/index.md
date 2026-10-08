@@ -1,13 +1,14 @@
 ---
 title: "Czujniki pomiarowe"
 weight: 8
+description: "Temperatura, wilgotność, ciśnienie, waga, odległość"
 ---
 
 ## Czujnik temperatury
 
 Pomiar i zapis temperatury.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -16,7 +17,7 @@ Pomiar i zapis temperatury.
 
 Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`, `Historia pomiarów`
 
-<ins>Historia pomiarów</ins>
+**Historia pomiarów**
 
 Cloud umożliwia przeglądanie historii pomiarów czujnika temperatury.
 
@@ -39,7 +40,7 @@ Cloud umożliwia przeglądanie historii pomiarów czujnika temperatury.
 
 Pomiar i zapis wilgotności.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -47,7 +48,7 @@ Pomiar i zapis wilgotności.
 
 Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`, `Historia pomiarów`
 
-<ins>Historia pomiarów</ins>
+**Historia pomiarów**
 
 Cloud umożliwia przeglądanie historii pomiarów czujnika wilgotności.
 
@@ -73,7 +74,7 @@ Pomiar ciśnienia.
 > [!NOTE]
 > Czujnik ciśnienia nie zapisuje pomiarów.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -84,7 +85,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 
 Pomiar i zapis temperatury i wilgotności w ramach jednego kanału (dane w aplikacji SUPLA wyświetlają się na jednym kafelku).
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -94,7 +95,7 @@ Pomiar i zapis temperatury i wilgotności w ramach jednego kanału (dane w aplik
 
 Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`, `Historia pomiarów`
 
-<ins>Historia pomiarów</ins>
+**Historia pomiarów**
 
 Cloud umożliwia przeglądanie historii pomiarów czujnika temperatury i wilgotności.
 
@@ -120,7 +121,7 @@ Wyświetla aktualną masę
 > [!NOTE]
 > Waga nie zapisuje pomiarów.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -134,7 +135,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 > [!NOTE]
 > Czujnik odległości nie zapisuje pomiarów.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -146,7 +147,7 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 > [!NOTE]
 > Czujnik głębokości nie zapisuje pomiarów.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
