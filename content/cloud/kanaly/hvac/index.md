@@ -8,7 +8,7 @@ weight: 4
 
 Kanał termostatu umożliwia osobną konfigurację dla grzania i chłodzenia (Podfunkcja grzanie/chłodzenie) - w zależności od tego, która zostanie wybrana, zawartość menu minimalnie się zmieni. Zasada konfiguracji pozostanie jednak analogiczna.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -54,7 +54,7 @@ Kanał termostatu umożliwia osobną konfigurację dla grzania i chłodzenia (Po
 
 Dostępne zakładki: `Tydzień`, `Reakcje`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-<ins>Tydzień</ins>:
+**Tydzień**:
 
 W widoku tygodnia użytkownik może zaprogramować działanie termostatu w programie tygodniowym. Do wyboru są cztery konfigurowalne temperatury (+wyłącz) w 15-minutowych komórkach.
 
@@ -74,7 +74,7 @@ Termostat różnicowy działa na bazie różnicy temperatur z dwóch czujników 
 
 W ramach tej funkcji można łatwo kontrolować temperaturę CWU w domu.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -123,7 +123,7 @@ Dobrze ilustruje to poniższa grafika:
 
 Dostępne zakładki: `Tydzień`, `Reakcje`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-<ins>Tydzień</ins>:
+**Tydzień**:
 
 W widoku tygodnia użytkownik może zaprogramować działanie termostatu w programie tygodniowym. Do wyboru są cztery konfigurowalne temperatury (+wyłącz) w 15-minutowych komórkach.
 

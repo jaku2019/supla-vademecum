@@ -6,7 +6,7 @@ weight: 1
 
 Funkcja otwieranie furtki umożliwia sterowanie impulsem, tzn. załączanie przekaźnika na krótki, ustawiany w Cloudzie czas, po naciśnięciu przycisku `Otwórz`
 
-Konfiguracja:
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -25,7 +25,7 @@ Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośr
 
 Funkcja otwieranie/zamykanie bramy wjazdowej umożliwia sterowanie impulsem, tzn. załączanie przekaźnika na krótki, ustawiany w Cloudzie czas. Dodatkowo umożliwia sparowanie dwóch czujników otwarcia, dzięki czemu może rozróżniać stan bramy (otwarty, częściowo otwarty, zamknięty). Poza tym ma kilka usprawnień, które umożliwią zautomatyzowanie bramy.
 
-Konfiguracja:
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -45,7 +45,7 @@ Konfiguracja:
 - **Ustawienia integracji** - ustawienie widoczności i działania bramy w Google Home, więcej na ten temat w dziale [Funkcje Clouda](/cloud/funkcje-clouda).
 
 > [!WARNING]
-> Dla poprawnego działania integracji z Google Home musi być zainstalowany przynajmniej czujnik otwarcia bramy.
+> Dla poprawnego działania integracji z Google Home musi być zainstalowany **przynajmniej** czujnik otwarcia bramy.
 
 > [!TIP]
 > Ze względu na wysoką jakość i niezawodność jako czujnik otwarcia forumowicze polecają Satela B-3.
@@ -68,7 +68,7 @@ Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośr
 
 Funkcja otwieranie/zamykanie bramy garażowej umożliwia sterowanie impulsem, tzn. załączanie przekaźnika na krótki, ustawiany w Cloudzie czas. Dodatkowo umożliwia sparowanie dwóch czujników otwarcia, dzięki czemu może rozróżniać stan bramy (otwarty, częściowo otwarty, zamknięty). Poza tym ma kilka usprawnień, które umożliwią zautomatyzowanie bramy.
 
-Konfiguracja:
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -85,13 +85,10 @@ Konfiguracja:
 - **Zamykaj automatycznie** - włączenie spowoduje automatyczne zamykanie bramy po zadanym czasie
 - **Zamknij po** - ustawienie czasu od otwarcia, po jakim brama ma się zamknąć; możliwe opóźnienie o maksymalnie 1 minutę
 - **Harmonogram aktywności** - opcjonalne ustawienie dni tygodnia i godzin, w których automatyczne zamykanie bramy ma być aktywne
-- **Ustawienia integracji** - usta
-  ![nogi stołu miodzio!.png](</nogi stołu miodzio!.png>)
-
-  wienie widoczności i działania bramy w Google Home, więcej na ten temat w dziale [Funkcje Clouda](/cloud/funkcje-clouda).
+- **Ustawienia integracji** - ustawienie widoczności i działania bramy w Google Home, więcej na ten temat w dziale [Funkcje Clouda](/cloud/funkcje-clouda).
 
 > [!WARNING]
-> Dla poprawnego działania integracji z Google Home musi być zainstalowany przynajmniej czujnik otwarcia bramy.
+> Dla poprawnego działania integracji z Google Home musi być zainstalowany **przynajmniej** czujnik otwarcia bramy.
 
 > [!TIP]
 > Ze względu na wysoką jakość i niezawodność jako czujnik otwarcia forumowicze polecają Satela B-3.
@@ -114,7 +111,7 @@ Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośr
 
 Funkcja otwieranie drzwi umożliwia sterowanie impulsem, tzn. załączanie przekaźnika na krótki, ustawiany w Cloudzie czas, po naciśnięciu przycisku `Otwórz`
 
-Konfiguracja:
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -133,7 +130,7 @@ Dostępne zakładki: `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośr
 
 Włącznik zasilania to standardowy kanał przekaźnika. Można go sparować z wybranym kanałem pomiarowym.
 
-Konfiguracja:
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -151,13 +148,13 @@ Konfiguracja:
 
 Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-Wyzwalacze akcji są dostępne dla tego kanału jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia
+Zakładka `Wyzwalacze akcji` jest dostępna dla tego kanału, jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia.
 
 ## Włącznik światła
 
 Włącznik światła jest podobny w działaniu do kanału włącznika zasilania z tą różnicą, że dodaje możliwość podglądu łącznego czasu świecenia żarówki w aplikacji SUPLA.
 
-Konfiguracja:
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -175,13 +172,13 @@ Konfiguracja:
 
 Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-Wyzwalacze akcji są dostępne dla tego kanału jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia
+Zakładka `Wyzwalacze akcji` jest dostępna dla tego kanału, jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia.
 
 ## Automat schodowy
 
 Automat schodowy daje możliwość ustawienia automatycznego wyłączania przekaźnika.
 
-Konfiguracja:
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -200,4 +197,4 @@ Konfiguracja:
 
 Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-Wyzwalacze akcji są dostępne dla tego kanału jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia
+Zakładka `Wyzwalacze akcji` jest dostępna dla tego kanału, jeśli został on powiązany z przyciskiem w oprogramowaniu urządzenia.

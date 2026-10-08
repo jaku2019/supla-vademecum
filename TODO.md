@@ -49,8 +49,12 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 - [x] Etap 0: prototyp `.pages.yml` (Wstęp, Lokalizacje, FAQ, Kanały – lista + kolekcja Kanały), media = `content/` (zdjęcia zostają w bundle'ach)
 - [x] Hook obrazków rozpoznaje ścieżki z CMS (`/cloud/...`) jako zasoby bundle'a (`layouts/_partials/zasob-tresci.html`)
 - [x] Zoom dla wszystkich zdjęć (wymóg edytora)
-- [ ] Test „wczytaj i zapisz” w CMS: diff po zapisie bez zmian (galerie, details, cards, alerty, tabele, `<ins>`) → wybór edytora (rich-text / code)
+- [x] Test „wczytaj i zapisz” w CMS → edytor **rich-text** (galerie, details, cards, alerty, tabele przetrwały)
+- [x] Treść dostosowana do edytora: `<ins>` → pogrubienie (59×), przypisy `\*` → zdania, link z kodem w FAQ, lista z niewciętą kontynuacją w FAQ
+- [x] Zdjęcia: domyślny folder wgrywania = katalog strony/sekcji (`options.path`), `rename: safe`; hook obsługuje też pliki w `content/`
+- [ ] Sprawdzić w CMS, czy `options.path` (ścieżka od korzenia repo) faktycznie ustawia domyślny folder
 - [ ] Test: czy nowa strona w kolekcji powstaje jako `slug/index.md`
+- [ ] Redaktorzy: nie używać `\*`, `<ins>` ani kodu wewnątrz linków – edytor je gubi
 - [ ] `gallery-item` nie rozpoznaje ścieżek `/cloud/...` – nadpisać shortcode, jeśli galerie będą edytowane w CMS
 - [ ] Pełna konfiguracja: wszystkie strony stałe + kolekcje Automatyka, Kanały, Integracje
 - [ ] CI: build Hugo dla PR-ów z gałęzi `cms`

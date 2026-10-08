@@ -18,4 +18,10 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
+{{- /* plik wgrany wprost do content/ – zasób strony głównej */ -}}
+{{- if not $zasob -}}
+  {{- with site.Home.Resources.Get $sciezka -}}
+    {{- $zasob = . -}}
+  {{- end -}}
+{{- end -}}
 {{- return $zasob -}}

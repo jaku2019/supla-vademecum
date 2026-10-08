@@ -12,7 +12,7 @@ Umożliwia sterowanie roletami za pomocą lokalnie podłączonych przycisków (o
 
 <!-- TODO: zrzut ekranu z aplikacji SUPLA -->
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -33,9 +33,9 @@ Umożliwia sterowanie roletami za pomocą lokalnie podłączonych przycisków (o
 | W dół lub zatrzymaj |
 | Krok po kroku |
 
-Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`\*, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
+Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-\*zależy od konfiguracji urządzenia
+Dostępność zakładki `Wyzwalacze akcji` zależy od konfiguracji urządzenia.
 
 > [!WARNING]
 > Zmiana ikony nie wpływa na sposób wizualizacji stanu rolety w aplikacji SUPLA.
@@ -46,7 +46,7 @@ Umożliwia sterowanie oknem dachowym. Ustawienie tej funkcji daje możliwość g
 
 <!-- TODO: zrzut ekranu z aplikacji SUPLA -->
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -63,9 +63,9 @@ Umożliwia sterowanie oknem dachowym. Ustawienie tej funkcji daje możliwość g
 | Zatrzymaj |
 | Skopiuj stan z innego kanału |
 
-Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`\*, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
+Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-\*zależy od konfiguracji urządzenia
+Dostępność zakładki `Wyzwalacze akcji` zależy od konfiguracji urządzenia.
 
 > [!WARNING]
 > Zmiana ikony nie wpływa na sposób wizualizacji stanu okna w aplikacji SUPLA.
@@ -78,7 +78,7 @@ Umożliwia sterowanie markizą tarasową. Ustawienie tej funkcji daje możliwoś
 
 <!-- TODO: zrzut ekranu z aplikacji SUPLA -->
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -96,9 +96,9 @@ Umożliwia sterowanie markizą tarasową. Ustawienie tej funkcji daje możliwoś
 | Zatrzymaj |
 | Skopiuj stan z innego kanału |
 
-Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`\*, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
+Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-\*zależy od konfiguracji urządzenia
+Dostępność zakładki `Wyzwalacze akcji` zależy od konfiguracji urządzenia.
 
 > [!WARNING]
 > Zmiana ikony nie wpływa na sposób wizualizacji stanu markizy w aplikacji SUPLA.
@@ -109,7 +109,7 @@ Umożliwia sterowanie ekranem projekcyjnym za pomocą lokalnie podłączonych pr
 
 <!-- TODO: zrzut ekranu z aplikacji SUPLA -->
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -131,9 +131,9 @@ Umożliwia sterowanie ekranem projekcyjnym za pomocą lokalnie podłączonych pr
 | Rozwijaj albo zatrzymaj |
 | Krok po kroku |
 
-Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`\*, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
+Dostępne zakładki: `Reakcje`, `Wyzwalacze akcji`, `Harmonogramy`, `Grupy kanałów`, `Sceny`, `Linki bezpośrednie`
 
-\*zależy od konfiguracji urządzenia
+Dostępność zakładki `Wyzwalacze akcji` zależy od konfiguracji urządzenia.
 
 > [!WARNING]
 > Zmiana ikony nie wpływa na sposób wizualizacji stanu ekranu w aplikacji SUPLA.

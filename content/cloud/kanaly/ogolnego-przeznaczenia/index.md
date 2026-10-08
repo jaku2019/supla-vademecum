@@ -21,7 +21,7 @@ Natomiast KLOP został stworzony z myślą o licznikach, w których często inte
 
 W skrócie KPOP (kanał pomiarowy ogólnego przeznaczenia) to prawdziwa gratka dla fanów rozwiązań zrób-to-sam chcących mierzyć wybrane parametry. Umożliwia szeroką konfigurację: użytkownik może dostosować niemal wszystko - od sposobu wyświetlania po formę zapisu odbieranych danych.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -41,7 +41,7 @@ W skrócie KPOP (kanał pomiarowy ogólnego przeznaczenia) to prawdziwa gratka d
 
 Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`, `Historia pomiarów`
 
-<ins>Historia pomiarów:</ins>
+**Historia pomiarów:**
 
 Cloud umożliwia przeglądanie historii pomiarów ogólnego kanału pomiarowego. W zależności od wybranego typu wykresu dane mogą być prezentowane na różne sposoby.
 
@@ -65,7 +65,7 @@ Cloud umożliwia przeglądanie historii pomiarów ogólnego kanału pomiarowego.
 
 W skrócie KLOP to prawdziwa gratka dla fanów rozwiązań zrób-to-sam chcących mierzyć wybrane parametry. Obok KPOP jest drugim typem kanału ogólnego przeznaczenia i posiada inną konfigurację zapisu historii pomiarów. Umożliwia szeroką konfigurację: użytkownik może dostosować niemal wszystko - od sposobu wyświetlania po formę zapisu odbieranych danych.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -91,7 +91,7 @@ W skrócie KLOP to prawdziwa gratka dla fanów rozwiązań zrób-to-sam chcącyc
 
 Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`, `Historia pomiarów`
 
-<ins>Historia pomiarów:</ins>
+**Historia pomiarów:**
 
 Cloud umożliwia przeglądanie historii pomiarów ogólnego kanału pomiarowego. W zależności od wybranego typu wykresu dane mogą być prezentowane na różne sposoby.
 

@@ -9,7 +9,7 @@ Niektóre liczniki generują na wyjściu impulsy, które można odczytywać odpo
 
 ### Licznik energii elektrycznej
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -41,7 +41,7 @@ Licznik pozwalający mierzyć energię elektryczną z bardziej zaawansowanymi fu
 > [!WARNING]
 > Licznik energii elektrycznej zapisuje dane z minimalnym interwałem 10 sekund. Jeśli zależy Ci na większej częstotliwości pomiarów, rozważ podłączenie licznika do serwera MQTT.
 
-<ins>Konfiguracja:</ins>
+**Konfiguracja:**
 
 - **Nazwa kanału** - ustawienie własnej nazwy kanału wyświetlanej w Cloudzie i aplikacji SUPLA
 - **Pokaż w urządzeniach klienckich** - wyłączenie spowoduje ukrycie kanału w aplikacji SUPLA
@@ -71,7 +71,7 @@ Licznik pozwalający mierzyć energię elektryczną z bardziej zaawansowanymi fu
 
 Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`, `Historia pomiarów`, `Aberracje napięcia`
 
-<ins>Historia pomiarów:</ins>
+**Historia pomiarów:**
 
 Cloud umożliwia przeglądanie historii pomiarów licznika energii elektrycznej.
 
@@ -93,7 +93,7 @@ Cloud umożliwia przeglądanie historii pomiarów licznika energii elektrycznej.
 >
 > Zaznaczenie obszaru (przytrzymaj lewy przycisk myszy i przejdź po wykresie) odpowiednio zawęzi wyświetlany zakres czasu.
 
-<ins>Aberracje napięcia:</ins>
+**Aberracje napięcia:**
 
 Cloud umożliwia rejestrowanie i zapis tzw. aberracji napięcia.
 
