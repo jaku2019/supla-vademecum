@@ -18,6 +18,8 @@ Tekst, zdjęcia i nowe podstrony można edytować w przeglądarce w [Pages CMS](
 
 **Zdjęcia** – "obrazek" w pasku edytora. Okno wyboru otwiera folder strony lub sekcji; nazwa pliku zostanie zamieniona na bezpieczną (bez spacji i polskich znaków). Po wstawieniu zmień opis zdjęcia – domyślnie jest nim nazwa pliku.
 
+**Ściągawka** – jak w edytorze wstawić ramki z uwagami, rozwijane odpowiedzi, zakładki, kroki, karty, galerie i inne elementy, z podglądem efektu: [Ściągawka redaktora](https://jaku2019.github.io/supla-vademecum/pl/sciagawka/). Strona jest ukryta – nie prowadzi do niej żaden link na stronie.
+
 **Czego edytor nie obsługuje** (znika po zapisie): podkreślenie (używaj pogrubienia), przypisy z gwiazdką `\*` (napisz zwykłe zdanie), kod wewnątrz linku. Linii w nawiasach `{{< … >}}` / `{{% … %}}` (galerie, karty, rozwijane odpowiedzi) oraz znaczników `[!TIP]`, `[!WARNING]` itp. nie zmieniaj – edytuj tylko tekst wokół nich.
 
 Po każdym zapisie GitHub sprawdza, czy strona się buduje (zakładka `Actions`, „Build check”). Czerwony krzyżyk oznacza błąd, np. odwołanie do usuniętego zdjęcia.

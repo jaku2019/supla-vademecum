@@ -59,12 +59,15 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 - [x] README: instrukcja dla redaktorów
 - [ ] Sprawdzić pełną konfigurację w CMS (grupy, komponenty pól, widok drzewa w Integracjach z podfolderem `HA/`)
 - [x] Karty na stronach sekcji generowane z podstron – shortcode `{{< podstrony >}}` (`description` = podtytuł, `icon` = ikona); w CMS pola „Opis na karcie” i „Ikona na karcie”
+- [x] Ukryta ściągawka redaktora `content/sciagawka` (link tylko w README; poza menu, listami, wyszukiwarką, sitemapą i llms.txt, `noindex`) – makieta pola edytora obok efektu
+- [x] Shortcode `card` nadpisany: `link="/cloud/..."` rozwiązywany jak link w treści (Hextra gubiła `/pl/` i podkatalog strony)
+- [ ] Pages CMS ma zablokowany `@tiptap/markdown` 3.21.0, który zapisuje tekst dosłownie. Nowsze wersje (≥ 3.2x, sprawdzone 3.31) escapują `[ ] * _` i `< >` – po aktualizacji CMS alerty i shortcode'y wpisywane w edytorze mogą się psuć
 - [ ] `gallery-item` nie rozpoznaje ścieżek `/cloud/...` – nadpisać shortcode, jeśli galerie będą edytowane w CMS
 - [ ] Merge `hextra-migration` → `main`, potem `cms` → `main`; ustawić ochronę gałęzi `main` (wymagany „Build check”)
 
 ## Etap 6 – styl Supli
 - [x] Tokeny z `supla-theme.scss` (rola „user”, jasny + ciemny) przepisane do `assets/css/custom.css`; pliki źródłowe w `.gitignore`
-- [x] Fonty Quicksand (nagłówki) i Open Sans (tekst) hostowane lokalnie (`static/fonts`, OFL), `@font-face` w `layouts/_partials/custom/head-end.html`
+- [x] Fonty Quicksand (nagłówki) i Inter (tekst) hostowane lokalnie (`static/fonts`, OFL), `@font-face` w `layouts/_partials/custom/head-end.html`
 - [x] Zieleń #00d151 jako kolor główny, linki #007d30 (kontrast), alerty/kod/karty/przyciski w kolorach i promieniach Supli, tło #fafbfc / #121416
 - [x] Karty funkcji na stronie głównej jako kafelki Supli (pełna zieleń / tonalne w ciemnym), napis „Supla” bez obrysu, kod w tekście zielony
 - [ ] Rozmiary tekstu zostawione z Hextry (16 px) – supla-cloud ma 14 px, ale to aplikacja, nie dokumentacja

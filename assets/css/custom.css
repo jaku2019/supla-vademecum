@@ -13,7 +13,7 @@
 
 :root {
   --supla-font-special: "Quicksand", sans-serif;
-  --supla-font-default: "Open Sans", sans-serif;
+  --supla-font-default: "Inter", sans-serif;
   --supla-radius: 3px;
   --supla-radius-md: 4px;
   --supla-duration: 0.3s;
@@ -297,3 +297,106 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 960px) {
   .hero-image::before { filter: blur(68px); }
 }
+
+/* --- Ściągawka redaktora (content/sciagawka) -------------------------------- */
+
+/* para „W edytorze” / „Na stronie”: jedna pod drugą, obok siebie na szerokim ekranie */
+.sciaga {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+@media (min-width: 1280px) {
+  .sciaga { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+.sciaga-edytor,
+.sciaga-efekt {
+  position: relative;
+  min-width: 0;
+  padding: 1.75rem 1rem 1rem;
+  border-radius: var(--supla-radius-md);
+}
+.sciaga-edytor::before,
+.sciaga-efekt::before {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--supla-text-muted);
+}
+.sciaga-edytor::before { content: "W edytorze"; }
+.sciaga-efekt::before { content: "Na stronie"; }
+
+/* makieta pola „Treść” w Pages CMS – neutralna, bez stylów strony */
+.sciaga-edytor {
+  background: var(--supla-surface);
+  border: 1px dashed var(--supla-border);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.sciaga-edytor > :first-child,
+.sciaga-efekt > :first-child { margin-top: 0; }
+.sciaga-edytor > :last-child,
+.sciaga-efekt > :last-child { margin-bottom: 0; }
+.sciaga-edytor p { margin: 0.4rem 0; }
+.sciaga-edytor h2,
+.sciaga-edytor h3 {
+  margin: 0.75rem 0 0.4rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--supla-font-default);
+  font-weight: 700;
+  letter-spacing: normal;
+}
+.sciaga-edytor h2 { font-size: 1.25rem; }
+.sciaga-edytor h3 { font-size: 1.05rem; }
+.sciaga-edytor blockquote {
+  margin: 0.5rem 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--supla-border);
+  font-style: normal;
+}
+.sciaga-edytor ul,
+.sciaga-edytor ol { margin: 0.4rem 0; padding-left: 1.5rem; }
+.sciaga-edytor ul { list-style: disc; }
+.sciaga-edytor ol { list-style: decimal; }
+.sciaga-edytor li p { margin: 0; }
+.sciaga-edytor table { margin: 0.5rem 0; border-collapse: collapse; }
+.sciaga-edytor th,
+.sciaga-edytor td { padding: 0.2rem 0.6rem; border: 1px solid var(--supla-border); text-align: left; }
+.sciaga-edytor th p,
+.sciaga-edytor td p { margin: 0; }
+.sciaga-edytor .sciaga-kod {
+  margin: 0.4rem 0;
+  padding: 0.75rem;
+  overflow-x: auto;
+  border-radius: var(--supla-radius);
+  background: var(--supla-bg);
+  font-size: 0.8rem;
+  white-space: pre;
+}
+.sciaga-zdjecie {
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--supla-border);
+  border-radius: var(--supla-radius);
+  color: var(--supla-text-muted);
+}
+
+/* podgląd efektu – tło strony, żeby odróżnić od makiety */
+.sciaga-efekt {
+  background: var(--supla-bg);
+  border: 1px solid var(--supla-border);
+}
+/* nagłówki w podglądzie bez wpisów w spisie treści */
+.sciaga-naglowek {
+  margin-top: 0;
+  font-family: var(--supla-font-special);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.sciaga-naglowek-3 { font-size: 1.25rem; }
