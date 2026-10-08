@@ -144,3 +144,8 @@ Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
 - **Odwrócona logika** - odwraca interpretację sygnałów z urządzenia (pierwotnie otwarty to po włączeniu odwróconej logiki zamknięty)
 
 Dostępne zakładki: `Reakcje`, `Linki bezpośrednie`
+
+
+
+![nogi stołu miodzio!.png](/cloud/kanaly/nogi-stolu-miodzio.png)
+
