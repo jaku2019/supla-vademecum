@@ -1,25 +1,233 @@
-/* Zieleń Supli (#13a71e) jako kolor główny Hextry */
+/* =============================================================================
+   Styl Supli na Hextrze
+   -----------------------------------------------------------------------------
+   Tokeny przepisane z supla-theme.scss (design supla-cloud, rola „user” =
+   zielona; plik źródłowy nie jest w repo). Tylko te, których używa strona.
+   Hextra przełącza motyw klasą .dark na <html>, stąd :root / .dark zamiast
+   [data-theme]. Fonty: layouts/_partials/custom/head-end.html.
+
+   Ten plik jest dołączany PO stylach Hextry i poza warstwami (@layer)
+   Tailwinda, więc wygrywa z jej klasami – nie dodawaj tu globalnych reguł
+   dla gołych elementów (np. „a { … }”), bo nadpiszą cały motyw.
+   ============================================================================= */
+
 :root {
-  --primary-hue: 124deg;
-  --primary-saturation: 80%;
+  --supla-font-special: "Quicksand", sans-serif;
+  --supla-font-default: "Open Sans", sans-serif;
+  --supla-radius: 3px;
+  --supla-radius-md: 4px;
+  --supla-duration: 0.3s;
+
+  --supla-bg: #fafbfc;
+  --supla-surface: #ffffff;
+  --supla-border: #eaeaea;
+  --supla-text: #000000;
+  --supla-text-muted: #606060;
+
+  --supla-green: #00d151;
+  --supla-green-hover: #00b847;
+  --supla-on-green: #ffffff;
+  --supla-green-text: #007d30;
+  --supla-green-subtle: #e6faee;
+  --supla-green-border: #9fe8bb;
+
+  --supla-yellow: #ffe836;
+  --supla-yellow-text: #7a6a00;
+  --supla-yellow-subtle: #ffee69;
+  --supla-yellow-border: #ffe203;
+
+  --supla-blue-text: #003c77;
+  --supla-blue-subtle: #e7f3ff;
+  --supla-blue-border: #b9d9f7;
+
+  --supla-red-text: #cc2900;
+  --supla-red-subtle: #ffebe6;
+  --supla-red-border: #ffb3a1;
+
+  --supla-selection-bg: #00d151;
+  --supla-selection-text: #ffffff;
+  --supla-focus-ring: #00d151;
+  --supla-code-text: #003c77;
+  --supla-code-bg: #e7f3ff;
+
+  /* Kolor główny Hextry = zieleń Supli #00d151 (hsl 143° 100% 41%) */
+  --primary-hue: 143deg;
+  --primary-saturation: 100%;
+  --primary-lightness: 41%;
 }
 
-/* Strona główna – nawiązanie do dawnego hero z VitePressa */
+.dark {
+  --supla-bg: #121416;
+  --supla-surface: #1a1d20;
+  --supla-border: #33383d;
+  --supla-text: #e8eaec;
+  --supla-text-muted: #a3a9af;
+
+  --supla-green: #00873a;
+  --supla-green-hover: #007a34;
+  --supla-on-green: #ffffff;
+  --supla-green-text: #00d151;
+  --supla-green-subtle: #133a23;
+  --supla-green-border: #1d5a35;
+
+  --supla-yellow: #ffe836;
+  --supla-yellow-text: #ffe836;
+  --supla-yellow-subtle: #332e0a;
+  --supla-yellow-border: #665a0f;
+
+  --supla-blue-text: #4d9be6;
+  --supla-blue-subtle: #0e2338;
+  --supla-blue-border: #1d4670;
+
+  --supla-red-text: #ff6b47;
+  --supla-red-subtle: #3a140a;
+  --supla-red-border: #70240f;
+
+  --supla-selection-bg: #00873a;
+  --supla-selection-text: #ffffff;
+  --supla-focus-ring: #00d151;
+  --supla-code-text: #4d9be6;
+  --supla-code-bg: #0e2338;
+
+  --primary-hue: 143deg;
+  --primary-saturation: 100%;
+  --primary-lightness: 41%;
+
+  /* tło ciemnego motywu Hextry (body, navbar, menu mobilne) */
+  --hx-color-dark: #121416;
+}
+
+/* --- Podstawy ------------------------------------------------------------- */
+
+body {
+  background-color: var(--supla-bg);
+  color: var(--supla-text);
+  font-family: var(--supla-font-default);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--supla-font-special);
+}
+
+/* nazwa strony w navbarze – jak logo Supli */
+.hextra-nav-container nav > a:first-child span {
+  font-family: var(--supla-font-special);
+  font-weight: 700;
+}
+
+::selection {
+  background: var(--supla-selection-bg);
+  color: var(--supla-selection-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--supla-focus-ring);
+  outline-offset: 2px;
+}
+
+/* --- Treść ---------------------------------------------------------------- */
+
+/* linki: ciemniejsza zieleń dla kontrastu (#00d151 na białym ma 2:1) */
+.content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  color: var(--supla-green-text);
+  transition: color var(--supla-duration);
+}
+.content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)):hover {
+  color: var(--supla-text-muted);
+}
+
+/* kod w tekście – niebieski na jasnoniebieskim, jak w Cloudzie */
+.content :where(code):not(:where(.hextra-code-block code, [class~=not-prose],[class~=not-prose] *)) {
+  color: var(--supla-code-text);
+  background: var(--supla-code-bg);
+  border-color: transparent;
+  border-radius: var(--supla-radius);
+}
+
+.content :where(pre):not(:where(.hextra-code-block pre, [class~=not-prose],[class~=not-prose] *)),
+.hextra-code-block pre {
+  border-radius: var(--supla-radius-md);
+}
+
+/* --- Alerty (> [!NOTE] itd.) – kolory komunikatów Supli --------------------- */
+
+/* [data-alert] – ta sama szczegółowość co reguły Hextry dla typów alertów */
+.hextra-alert[data-alert] {
+  border-radius: var(--supla-radius-md);
+  color: var(--supla-text);
+}
+.hextra-alert[data-alert="tip"] {
+  background: var(--supla-green-subtle);
+  border-color: var(--supla-green-border);
+}
+.hextra-alert[data-alert="note"],
+.hextra-alert[data-alert="important"] {
+  background: var(--supla-blue-subtle);
+  border-color: var(--supla-blue-border);
+}
+.hextra-alert[data-alert="warning"] {
+  background: var(--supla-yellow-subtle);
+  border-color: var(--supla-yellow-border);
+}
+.hextra-alert[data-alert="caution"] {
+  background: var(--supla-red-subtle);
+  border-color: var(--supla-red-border);
+}
+.hextra-alert[data-alert="tip"] .hextra-alert-title { color: var(--supla-green-text); }
+.hextra-alert[data-alert="note"] .hextra-alert-title,
+.hextra-alert[data-alert="important"] .hextra-alert-title { color: var(--supla-blue-text); }
+.hextra-alert[data-alert="warning"] .hextra-alert-title { color: var(--supla-text); }
+.hextra-alert[data-alert="caution"] .hextra-alert-title { color: var(--supla-red-text); }
+
+/* --- Karty (kafelki) ------------------------------------------------------- */
+
+.hextra-card {
+  background: var(--supla-surface);
+  border: 2px solid var(--supla-border);
+  border-radius: var(--supla-radius);
+  transition: border-color var(--supla-duration), transform var(--supla-duration);
+}
+.hextra-card:hover {
+  border-color: var(--supla-green);
+}
+.hextra-card:active {
+  transform: scale(0.98);
+}
+.hextra-card:hover .hextra-card-icon svg {
+  color: var(--supla-green-text);
+}
+
+/* --- Strona główna ---------------------------------------------------------- */
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
 }
 
-/* Gradient na nazwie „Supla” (jak --vp-home-hero-name-background) */
+/* przycisk główny – zielony przycisk Supli */
+.hero-actions a:first-child {
+  background: var(--supla-green);
+  color: var(--supla-on-green);
+  border-radius: var(--supla-radius-md);
+  transition: background-color 0.2s;
+}
+.hero-actions a:first-child:hover {
+  background: var(--supla-green-hover);
+}
+.hero-actions a:not(:first-child) {
+  border-radius: var(--supla-radius-md);
+}
+
+/* gradient na nazwie „Supla”: żółty → zielony Supli */
 .hero-name {
-  background: linear-gradient(120deg, #e2fa36 20%, #12d648);
+  background: linear-gradient(120deg, var(--supla-yellow) 20%, #00d151);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Rozmyta poświata za zrzutem ekranu (jak --vp-home-hero-image-*) */
+/* rozmyta poświata za zrzutem ekranu */
 .hero-image {
   position: relative;
   display: block;
@@ -31,7 +239,7 @@
   inset: 10%;
   z-index: -1;
   border-radius: 50%;
-  background-image: linear-gradient(-45deg, #e2fa36 20%, #12d648 80%);
+  background-image: linear-gradient(-45deg, #ffe836 20%, #00d151 80%);
   filter: blur(44px);
   opacity: 0.8;
 }
