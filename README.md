@@ -8,15 +8,15 @@ Możesz zgłosić błąd w sekcji `Issues` tego repozytorium.
 Aby edytować istniejącą stronę kliknij `Edytuj na GitHubie` (link po prawej stronie każdego rozdziału). Link przeniesie Cię do widoku wybranego pliku na tym repozytorium. Dokonaj edycji pliku i wybierz `Commit changes...`, a następnie krótko opisz wprowadzone zmiany. Następnie kliknij `Propose changes`. Twoja edycja zostanie zweryfikowana i opublikowana na stronie.
 
 ## Edycja w Pages CMS (bez znajomości Markdowna)
-Tekst, zdjęcia i nowe podstrony można edytować w przeglądarce w [Pages CMS](https://pagescms.org). Potrzebny jest dostęp do repozytorium – poproś o niego administratora.
+Tekst, zdjęcia i nowe podstrony można edytować w przeglądarce w [Pages CMS](https://pagescms.org). W tym celu potrzebujesz dostępu do tego repo - napisz do mnie, a wyślę Ci zaproszenie do edycji. 
 
 1. Otwórz [app.pagescms.org/jaku2019/supla-vademecum/cms](https://app.pagescms.org/jaku2019/supla-vademecum/cms) – pracujemy na gałęzi **`cms`**, nie na `main`.
 2. W menu po lewej wybierz stronę (grupa **Strony**) albo sekcję (**Automatyka**, **Kanały**, **Integracje**).
-3. Każde `Save` to osobny commit na gałęzi `cms`. Na stronie zmiany pojawią się dopiero po zatwierdzeniu przez administratora (Pull Request `cms` → `main`).
+3. Każde `Save` to osobny commit na gałęzi `cms`. Na stronie zmiany pojawią się dopiero po zatwierdzeniu przez któregoś z administratorów (Pull Request `cms` → `main`).
 
 **Nowa strona** – w sekcji wybierz pozycję „podstrony” / „typy kanałów” i dodaj wpis. Z tytułu powstaje adres strony (np. „Nowy czujnik” → `nowy-czujnik/index.md`), więc wybierz go starannie. Pole **Kolejność w menu** decyduje o pozycji w menu bocznym (mniejsza liczba = wyżej; bez numeru strona trafia na koniec sekcji). Strona sama pojawi się jako karta na stronie sekcji – podtytuł i ikonę karty ustawisz w polach **Opis na karcie** i **Ikona na karcie**. Nowych sekcji nie da się dodać z CMS.
 
-**Zdjęcia** – przycisk obrazka w pasku edytora. Okno wyboru otwiera folder strony lub sekcji; nazwa pliku zostanie zamieniona na bezpieczną (bez spacji i polskich znaków). Po wstawieniu zmień opis zdjęcia – domyślnie jest nim nazwa pliku.
+**Zdjęcia** – "obrazek" w pasku edytora. Okno wyboru otwiera folder strony lub sekcji; nazwa pliku zostanie zamieniona na bezpieczną (bez spacji i polskich znaków). Po wstawieniu zmień opis zdjęcia – domyślnie jest nim nazwa pliku.
 
 **Czego edytor nie obsługuje** (znika po zapisie): podkreślenie (używaj pogrubienia), przypisy z gwiazdką `\*` (napisz zwykłe zdanie), kod wewnątrz linku. Linii w nawiasach `{{< … >}}` / `{{% … %}}` (galerie, karty, rozwijane odpowiedzi) oraz znaczników `[!TIP]`, `[!WARNING]` itp. nie zmieniaj – edytuj tylko tekst wokół nich.
 
