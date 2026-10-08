@@ -5,7 +5,7 @@ layout: hextra-home
 
 {{< hextra/hero-container imageClass="hero-image" image="../pulpit_cloud.png" imageTitle="Pulpit Supla Cloud" imageWidth="520" imageHeight="340" >}}
 <div class="hx:mt-6 hx:mb-6">
-{{< hextra/hero-headline >}}
+{{< hextra/hero-headline style="background: none; color: var(--supla-text);" >}}
   <span class="hero-name">Supla</span><br class="hx:sm:block hx:hidden" /> vademecum
 {{< /hextra/hero-headline >}}
 </div>

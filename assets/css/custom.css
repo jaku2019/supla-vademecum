@@ -47,8 +47,16 @@
   --supla-selection-bg: #00d151;
   --supla-selection-text: #ffffff;
   --supla-focus-ring: #00d151;
-  --supla-code-text: #003c77;
-  --supla-code-bg: #e7f3ff;
+  /* kod w tekście: zielony wariant motywu (w supla-theme kod jest niebieski) */
+  --supla-code-text: var(--supla-green-text);
+  --supla-code-bg: var(--supla-green-subtle);
+
+  /* kafelki (.square-link) – pełna zieleń jak w Cloudzie */
+  --supla-tile-bg: #00d151;
+  --supla-tile-text: #ffffff;
+  --supla-tile-text-muted: #ffffff;
+  --supla-tile-border: #00d151;
+  --supla-tile-selected-border: #000000;
 
   /* Kolor główny Hextry = zieleń Supli #00d151 (hsl 143° 100% 41%) */
   --primary-hue: 143deg;
@@ -86,8 +94,11 @@
   --supla-selection-bg: #00873a;
   --supla-selection-text: #ffffff;
   --supla-focus-ring: #00d151;
-  --supla-code-text: #4d9be6;
-  --supla-code-bg: #0e2338;
+  --supla-tile-bg: #133a23;
+  --supla-tile-text: #e8eaec;
+  --supla-tile-text-muted: #9fd9b3;
+  --supla-tile-border: #1d5a35;
+  --supla-tile-selected-border: #00d151;
 
   --primary-hue: 143deg;
   --primary-saturation: 100%;
@@ -136,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--supla-text-muted);
 }
 
-/* kod w tekście – niebieski na jasnoniebieskim, jak w Cloudzie */
+/* kod w tekście – zielony na jasnozielonym (w ciemnym: jaskrawa zieleń na tonalnym tle) */
 .content :where(code):not(:where(.hextra-code-block code, [class~=not-prose],[class~=not-prose] *)) {
   color: var(--supla-code-text);
   background: var(--supla-code-bg);
@@ -198,6 +209,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- Strona główna ---------------------------------------------------------- */
+
+/* karty funkcji – kafelki Supli (pełna zieleń w jasnym, tonalne w ciemnym) */
+.hextra-feature-card {
+  background: var(--supla-tile-bg);
+  color: var(--supla-tile-text);
+  border: 2px solid var(--supla-tile-border);
+  border-radius: var(--supla-radius);
+  box-shadow: none;
+  transition: border-color var(--supla-duration), transform var(--supla-duration);
+}
+.hextra-feature-card::before {
+  display: none; /* szklany gradient Hextry */
+}
+.hextra-feature-card h3 {
+  font-weight: 600;
+}
+.hextra-feature-card p {
+  color: var(--supla-tile-text-muted);
+}
+.hextra-feature-card[href]:hover {
+  border-color: var(--supla-tile-selected-border);
+}
+.hextra-feature-card[href]:active {
+  transform: scale(0.95);
+}
+.hextra-feature-card:not([href]) {
+  cursor: default;
+}
 
 .hero-actions {
   display: flex;
