@@ -1,11 +1,10 @@
 ---
-title: "Lista dostępnych kanałów"
-linkTitle: "Kanały - lista"
+title: Lista dostępnych kanałów
+linkTitle: Kanały - lista
 weight: 21
 aliases:
   - /cloud/kanaly/kanaly/
 ---
-
 W tym dziale omówiono działanie wszystkich dostępnych rodzajów kanałów i dostępnych funkcji.
 
 ![Kanały](kanaly.png)
@@ -13,9 +12,10 @@ W tym dziale omówiono działanie wszystkich dostępnych rodzajów kanałów i d
 ## Kanały - cd.
 
 Widok kanału składa się zazwyczaj z czterech lub pięciu sekcji (4 dla sensorów, 5 dla urządzeń wykonawczych):
+
 1. **Urządzenie** - kliknięcie w kafelek powoduje powrót do menu urządzenia i listy jego kanałów
 2. **Lokalizacja** - wybór lokalizacji kanału. Domyślnie jest to lokalizacja, do której przypisano urządzenie
-3. **Stan** - ikona kanału, zmienia się zależnie od jego stanu. W przypadku kanałów pomiarowych prezentowane są tam aktualne odczyty. 
+3. **Stan** - ikona kanału, zmienia się zależnie od jego stanu. W przypadku kanałów pomiarowych prezentowane są tam aktualne odczyty.
 
 > [!TIP]
 > Więcej na temat zmiany ikon w dziale Funkcje Clouda.
