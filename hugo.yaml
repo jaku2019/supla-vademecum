@@ -95,7 +95,7 @@ params:
   # Pierwsze zgłoszenie przyśle na adres odbiorcy e-mail aktywacyjny; po aktywacji
   # FormSubmit podaje losowy alias – wstaw go tu zamiast adresu, żeby nie był jawny.
   cmsZaproszenie:
-    formularz: ""   # https://formsubmit.co/ajax/<alias> – alias z FormSubmit, nie adres e-mail
+    formularz: https://formsubmit.co/ajax/c5b21c7863388f083ad074dc394ceef6   # alias z FormSubmit (nie adres e-mail)
 
   # Zoom dla wszystkich zdjęć w treści (bez atrybutów – edytor Pages CMS ich nie obsługuje)
   imageZoom:
