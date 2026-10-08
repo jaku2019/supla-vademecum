@@ -400,3 +400,53 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
 }
 .sciaga-naglowek-3 { font-size: 1.25rem; }
+
+/* -----------------------------------------------------------------------------
+   Prośba o zaproszenie do Pages CMS (shortcode zaproszenie-cms)
+   ----------------------------------------------------------------------------- */
+.cms-zaproszenie {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--supla-surface);
+  border: 1px solid var(--supla-border);
+  border-radius: var(--supla-radius-md);
+}
+.cms-zaproszenie label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.cms-zaproszenie-wiersz {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.cms-zaproszenie input[type="email"] {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+  color: var(--supla-text);
+  background: var(--supla-bg);
+  border: 1px solid var(--supla-border);
+  border-radius: var(--supla-radius);
+}
+.cms-zaproszenie input[type="email"]:focus {
+  outline: 2px solid var(--supla-focus-ring);
+  outline-offset: -1px;
+}
+.cms-zaproszenie button {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: var(--supla-on-green);
+  background: var(--supla-green);
+  border-radius: var(--supla-radius);
+  cursor: pointer;
+  transition: background var(--supla-duration);
+}
+.cms-zaproszenie button:hover { background: var(--supla-green-hover); }
+.cms-zaproszenie button:disabled { opacity: 0.5; cursor: not-allowed; }
+.cms-zaproszenie-pulapka { position: absolute; left: -9999px; }
+.cms-zaproszenie-status { margin-top: 0.75rem; font-size: 0.875rem; color: var(--supla-text-muted); }
+.cms-zaproszenie-status:empty { display: none; }
+.cms-zaproszenie-ok { color: var(--supla-green-text); }
+.cms-zaproszenie-blad { color: var(--supla-red-text); }

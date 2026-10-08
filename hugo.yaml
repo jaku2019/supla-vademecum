@@ -90,6 +90,13 @@ params:
     enable: true
     base: https://github.com/jaku2019/supla-vademecum/edit/main/content
 
+  # Prośba o zaproszenie do Pages CMS (strona /edytuj-w-cms/, link pod „Edytuj na GitHubie”).
+  # Formularz wysyła adres e-mail redaktora przez FormSubmit (https://formsubmit.co).
+  # Pierwsze zgłoszenie przyśle na adres odbiorcy e-mail aktywacyjny; po aktywacji
+  # FormSubmit podaje losowy alias – wstaw go tu zamiast adresu, żeby nie był jawny.
+  cmsZaproszenie:
+    formularz: ""   # https://formsubmit.co/ajax/<alias> – alias z FormSubmit, nie adres e-mail
+
   # Zoom dla wszystkich zdjęć w treści (bez atrybutów – edytor Pages CMS ich nie obsługuje)
   imageZoom:
     enable: true
