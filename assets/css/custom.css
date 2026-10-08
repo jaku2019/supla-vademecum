@@ -3,3 +3,41 @@
   --primary-hue: 124deg;
   --primary-saturation: 80%;
 }
+
+/* Strona główna – nawiązanie do dawnego hero z VitePressa */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+/* Gradient na nazwie „Supla” (jak --vp-home-hero-name-background) */
+.hero-name {
+  background: linear-gradient(120deg, #e2fa36 20%, #12d648);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Rozmyta poświata za zrzutem ekranu (jak --vp-home-hero-image-*) */
+.hero-image {
+  position: relative;
+  display: block;
+  isolation: isolate;
+}
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  z-index: -1;
+  border-radius: 50%;
+  background-image: linear-gradient(-45deg, #e2fa36 20%, #12d648 80%);
+  filter: blur(44px);
+  opacity: 0.8;
+}
+@media (min-width: 640px) {
+  .hero-image::before { filter: blur(56px); }
+}
+@media (min-width: 960px) {
+  .hero-image::before { filter: blur(68px); }
+}

@@ -3,10 +3,10 @@ title: Vademecum Supla
 layout: hextra-home
 ---
 
-{{< hextra/hero-container image="../pulpit_cloud.png" imageTitle="Pulpit Supla Cloud" imageWidth="520" imageHeight="340" >}}
+{{< hextra/hero-container imageClass="hero-image" image="../pulpit_cloud.png" imageTitle="Pulpit Supla Cloud" imageWidth="520" imageHeight="340" >}}
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  Supla<br class="hx:sm:block hx:hidden" /> vademecum
+  <span class="hero-name">Supla</span><br class="hx:sm:block hx:hidden" /> vademecum
 {{< /hextra/hero-headline >}}
 </div>
 
@@ -16,7 +16,7 @@ layout: hextra-home
 {{< /hextra/hero-subtitle >}}
 </div>
 
-<div class="hx:mb-6 hx:flex hx:flex-wrap hx:gap-3">
+<div class="hx:mb-6 hero-actions">
 {{< hextra/hero-button text="Zaczynajmy!" link="cloud" >}}
 {{< hextra/hero-button text="Forum społeczności" link="https://forum.supla.org" style="background: transparent; color: inherit; border: 1px solid currentColor;" >}}
 </div>
