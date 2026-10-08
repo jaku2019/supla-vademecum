@@ -59,6 +59,9 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 - [x] README: instrukcja dla redaktorów
 - [ ] Sprawdzić pełną konfigurację w CMS (grupy, komponenty pól, widok drzewa w Integracjach z podfolderem `HA/`)
 - [x] Karty na stronach sekcji generowane z podstron – shortcode `{{< podstrony >}}` (`description` = podtytuł, `icon` = ikona); w CMS pola „Opis na karcie” i „Ikona na karcie”
+- [x] Ukryta ściągawka redaktora `content/sciagawka` (link tylko w README; poza menu, listami, wyszukiwarką, sitemapą i llms.txt, `noindex`) – makieta pola edytora obok efektu
+- [x] Shortcode `card` nadpisany: `link="/cloud/..."` rozwiązywany jak link w treści (Hextra gubiła `/pl/` i podkatalog strony)
+- [ ] Pages CMS ma zablokowany `@tiptap/markdown` 3.21.0, który zapisuje tekst dosłownie. Nowsze wersje (≥ 3.2x, sprawdzone 3.31) escapują `[ ] * _` i `< >` – po aktualizacji CMS alerty i shortcode'y wpisywane w edytorze mogą się psuć
 - [ ] `gallery-item` nie rozpoznaje ścieżek `/cloud/...` – nadpisać shortcode, jeśli galerie będą edytowane w CMS
 - [ ] Merge `hextra-migration` → `main`, potem `cms` → `main`; ustawić ochronę gałęzi `main` (wymagany „Build check”)
 
