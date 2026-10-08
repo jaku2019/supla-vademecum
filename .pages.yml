@@ -33,6 +33,40 @@ components:
     label: Kolejność w menu
     type: number
     description: Mniejsza liczba = wyżej w menu. Strona bez numeru trafia na koniec sekcji.
+  opis-karty:
+    label: Opis na karcie
+    type: string
+    description: Krótki podtytuł na karcie na stronie sekcji (np. „Termostat, termostat różnicowy, ciepła woda”). Może zostać pusty.
+  ikona-karty:
+    label: Ikona na karcie
+    type: select
+    description: Ikona na karcie na stronie sekcji. Może zostać pusta.
+    options:
+      placeholder: Bez ikony
+      values:
+        - { name: clock, label: Zegar }
+        - { name: calendar, label: Kalendarz }
+        - { name: collection, label: Stos / grupa }
+        - { name: link, label: Link }
+        - { name: film, label: Film / scena }
+        - { name: lightning-bolt, label: Błyskawica }
+        - { name: puzzle, label: Puzzel / integracja }
+        - { name: chip, label: Układ scalony }
+        - { name: cloud, label: Chmura }
+        - { name: bell, label: Dzwonek }
+        - { name: cog, label: Zębatka }
+        - { name: adjustments, label: Suwaki }
+        - { name: switch-horizontal, label: Przełącznik }
+        - { name: light-bulb, label: Żarówka }
+        - { name: fire, label: Ogień }
+        - { name: home, label: Dom }
+        - { name: key, label: Klucz }
+        - { name: shield-check, label: Tarcza }
+        - { name: device-mobile, label: Smartfon }
+        - { name: chart-bar, label: Wykres }
+        - { name: globe-alt, label: Glob }
+        - { name: code, label: Kod }
+        - { name: sparkles, label: Gwiazdki }
 
 content:
   # --- Strony stałe: tylko edycja ---
@@ -121,6 +155,8 @@ content:
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/faq, rename: safe } }
 
   # --- Sekcje: strona-indeks sekcji + podstrony, które można dodawać ---
+  # Karty na stronie sekcji generuje shortcode {{< podstrony >}} z pól
+  # linkTitle/title, description i icon podstron.
   - name: automatyka
     label: Automatyka
     type: group
@@ -152,6 +188,8 @@ content:
           - { name: title, component: tytul }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
+          - { name: description, component: opis-karty }
+          - { name: icon, component: ikona-karty }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/automatyka, rename: safe } }
 
   - name: kanaly
@@ -185,6 +223,8 @@ content:
           - { name: title, component: tytul }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
+          - { name: description, component: opis-karty }
+          - { name: icon, component: ikona-karty }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/kanaly, rename: safe } }
 
   - name: integracje
@@ -217,4 +257,6 @@ content:
           - { name: title, component: tytul }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
+          - { name: description, component: opis-karty }
+          - { name: icon, component: ikona-karty }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/integracje, rename: safe } }

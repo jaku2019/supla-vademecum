@@ -1,6 +1,7 @@
 ---
 title: "Sceny"
 weight: 4
+icon: "film"
 ---
 
 Sceny to zaplanowane sekwencje akcji wykonywanych na wybranych podmiotach (`Kanałach`, `Grupach kanałów`, innych `Scenach` lub `Harmonogramach`) z opcjonalną możliwością odstępów czasowych pomiędzy działaniami.

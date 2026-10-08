@@ -2,6 +2,7 @@
 title: "Kanały ogólnego przeznaczenia (KPOP i KLOP)"
 linkTitle: "KPOP i KLOP"
 weight: 5
+description: "Kanał pomiarowy i licznikowy ogólnego przeznaczenia"
 ---
 
 ## Ogólny kanał pomiarowy

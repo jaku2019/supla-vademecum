@@ -1,6 +1,7 @@
 ---
 title: "Aplikacje"
 weight: 1
+icon: "puzzle"
 ---
 
 W sekcji aplikacje przedstawione są aplkacje, które są natywnie wyposażone w możliwość integracji z Suplą. Instrukcje dotyczące integracji poszczgólnych z nich znajdziesz poniżej.

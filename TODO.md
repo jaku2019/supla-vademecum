@@ -58,7 +58,7 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 - [x] CI `build.yml`: build z `--panicOnWarning` na push do `cms` i PR do `main`; hook ostrzega o brakującym zdjęciu
 - [x] README: instrukcja dla redaktorów
 - [ ] Sprawdzić pełną konfigurację w CMS (grupy, komponenty pól, widok drzewa w Integracjach z podfolderem `HA/`)
-- [ ] Karty na stronach sekcji (`kanaly/_index.md`, `automatyka/_index.md`, `integracje/_index.md`) są pisane ręcznie – nowa podstrona nie pojawi się w nich sama. Propozycja: shortcode generujący karty z podstron (podtytuł z `description` we frontmatterze)
+- [x] Karty na stronach sekcji generowane z podstron – shortcode `{{< podstrony >}}` (`description` = podtytuł, `icon` = ikona); w CMS pola „Opis na karcie” i „Ikona na karcie”
 - [ ] `gallery-item` nie rozpoznaje ścieżek `/cloud/...` – nadpisać shortcode, jeśli galerie będą edytowane w CMS
 - [ ] Merge `hextra-migration` → `main`, potem `cms` → `main`; ustawić ochronę gałęzi `main` (wymagany „Build check”)
 

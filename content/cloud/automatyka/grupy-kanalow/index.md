@@ -1,6 +1,7 @@
 ---
 title: "Grupy kanałów"
 weight: 2
+icon: "collection"
 ---
 
 Grupy kanałów dają możliwość scalenia kilku kanałów tego samego typu w całość, co może być pomocne na przykład przy ustawianiu harmonogramu, sceny lub sterowania w aplikacji.

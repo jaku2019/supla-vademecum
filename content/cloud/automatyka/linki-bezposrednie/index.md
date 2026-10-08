@@ -1,6 +1,7 @@
 ---
 title: "Linki bezpośrednie"
 weight: 3
+icon: "link"
 ---
 
 Dowolny podmiot Clouda (`Kanał`, `Grupa kanałów`, `Scena` lub `Harmonogram`) może być kontrolowany za pomocą specjalnie generowanego linku bezpośredniego, umożliwiającego interakcję bez konieczności logowania na konto Supla.

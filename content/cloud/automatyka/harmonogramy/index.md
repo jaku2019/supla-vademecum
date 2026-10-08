@@ -1,6 +1,7 @@
 ---
 title: "Harmonogramy"
 weight: 1
+icon: "clock"
 ---
 
 Harmonogramy umożliwiają zaplanowanie wykonania akcji przez wybrane kanały, grupy kanałów lub sceny. 

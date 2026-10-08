@@ -14,7 +14,7 @@ Tekst, zdjęcia i nowe podstrony można edytować w przeglądarce w [Pages CMS](
 2. W menu po lewej wybierz stronę (grupa **Strony**) albo sekcję (**Automatyka**, **Kanały**, **Integracje**).
 3. Każde `Save` to osobny commit na gałęzi `cms`. Na stronie zmiany pojawią się dopiero po zatwierdzeniu przez administratora (Pull Request `cms` → `main`).
 
-**Nowa strona** – w sekcji wybierz pozycję „podstrony” / „typy kanałów” i dodaj wpis. Z tytułu powstaje adres strony (np. „Nowy czujnik” → `nowy-czujnik/index.md`), więc wybierz go starannie. Pole **Kolejność w menu** decyduje o pozycji w menu bocznym (mniejsza liczba = wyżej; bez numeru strona trafia na koniec sekcji). Nowych sekcji nie da się dodać z CMS.
+**Nowa strona** – w sekcji wybierz pozycję „podstrony” / „typy kanałów” i dodaj wpis. Z tytułu powstaje adres strony (np. „Nowy czujnik” → `nowy-czujnik/index.md`), więc wybierz go starannie. Pole **Kolejność w menu** decyduje o pozycji w menu bocznym (mniejsza liczba = wyżej; bez numeru strona trafia na koniec sekcji). Strona sama pojawi się jako karta na stronie sekcji – podtytuł i ikonę karty ustawisz w polach **Opis na karcie** i **Ikona na karcie**. Nowych sekcji nie da się dodać z CMS.
 
 **Zdjęcia** – przycisk obrazka w pasku edytora. Okno wyboru otwiera folder strony lub sekcji; nazwa pliku zostanie zamieniona na bezpieczną (bez spacji i polskich znaków). Po wstawieniu zmień opis zdjęcia – domyślnie jest nim nazwa pliku.
 
@@ -76,6 +76,12 @@ Kilka zdjęć można pokazać jako galerię (z powiększeniem i przewijaniem):
 
 > [!CAUTION]
 > Ostrzeżenie
+```
+
+Karty z linkami do wszystkich podstron sekcji (na stronie `_index.md` sekcji; tytuł karty z `linkTitle`/`title`, podtytuł z `description`, ikona z `icon` we frontmatterze podstrony):
+
+```md
+{{< podstrony >}}
 ```
 
 Rozwijana odpowiedź (np. w FAQ):

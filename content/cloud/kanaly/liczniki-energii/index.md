@@ -1,6 +1,7 @@
 ---
 title: "Liczniki energii"
 weight: 6
+description: "Licznik impulsów, licznik energii elektrycznej"
 ---
 
 ## Licznik impulsów

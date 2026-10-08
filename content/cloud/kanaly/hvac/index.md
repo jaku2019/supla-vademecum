@@ -2,6 +2,7 @@
 title: "Ogrzewanie, wentylacja, klimatyzacja (HVAC)"
 linkTitle: "HVAC – termostaty"
 weight: 4
+description: "Termostat, termostat różnicowy, ciepła woda"
 ---
 
 ## Termostat

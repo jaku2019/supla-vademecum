@@ -1,6 +1,7 @@
 ---
 title: Czujniki binarne
 weight: 7
+description: "Czujniki otwarcia, braku cieczy, karty hotelowej, alarmu, poczty"
 ---
 ## Czujnik otwarcia furtki
 

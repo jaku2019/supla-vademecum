@@ -1,6 +1,7 @@
 ---
 title: "Czujniki pomiarowe"
 weight: 8
+description: "Temperatura, wilgotność, ciśnienie, waga, odległość"
 ---
 
 ## Czujnik temperatury

@@ -1,6 +1,7 @@
 ---
 title: Przekaźnik
 weight: 1
+description: "Furtka, bramy, drzwi, włączniki, automat schodowy"
 ---
 ## Otwieranie furtki
 

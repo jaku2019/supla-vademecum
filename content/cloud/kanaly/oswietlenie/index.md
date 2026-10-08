@@ -2,6 +2,7 @@
 title: "Ściemniacz i oświetlenie RGB"
 linkTitle: "Ściemniacz i RGB"
 weight: 3
+description: "Ściemniacz, oświetlenie RGB"
 ---
 
 ## Ściemniacz

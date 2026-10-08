@@ -1,0 +1,22 @@
+{{- /*
+  Karty z podstronami bieżącej sekcji – nowa strona dodana w Pages CMS pojawia
+  się tu sama. Kolejność jak w menu (weight).
+
+  Z frontmattera podstrony: tytuł karty = linkTitle (lub title),
+  podtytuł = description, ikona = icon (nazwa ikony Hextry, np. "clock").
+
+  @param {number} cols Liczba kolumn (domyślnie 3).
+
+  @example {{< podstrony >}}
+*/ -}}
+{{- $karty := "" -}}
+{{- range .Page.Pages.ByWeight -}}
+  {{- $karty = printf "%s%s" $karty (partial "shortcodes/card" (dict
+    "page"     .
+    "link"     .RelPermalink
+    "title"    .LinkTitle
+    "subtitle" .Description
+    "icon"     .Params.icon
+  )) -}}
+{{- end -}}
+{{- partial "shortcodes/cards" (dict "cols" (.Get "cols" | default 3) "content" ($karty | safeHTML)) -}}

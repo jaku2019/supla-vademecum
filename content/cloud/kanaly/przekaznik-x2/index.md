@@ -1,6 +1,7 @@
 ---
 title: "Przekaźnik x2"
 weight: 2
+description: "Rolety, okno dachowe, markiza, ekran projekcyjny"
 ---
 
 > [!NOTE]
