@@ -58,6 +58,10 @@
   --supla-tile-border: #00d151;
   --supla-tile-selected-border: #000000;
 
+  /* karty Hextry (.hextra-card) – delikatna zieleń po najechaniu */
+  --supla-card-hover-bg: #f5fdf8;
+  --supla-card-hover-shadow: 0 4px 6px -1px rgb(0 209 81 / 0.08), 0 2px 4px -2px rgb(0 209 81 / 0.08);
+
   /* Kolor główny Hextry = zieleń Supli #00d151 (hsl 143° 100% 41%) */
   --primary-hue: 143deg;
   --primary-saturation: 100%;
@@ -99,6 +103,8 @@
   --supla-tile-text-muted: #9fd9b3;
   --supla-tile-border: #1d5a35;
   --supla-tile-selected-border: #00d151;
+  --supla-card-hover-bg: #17261d;
+  --supla-card-hover-shadow: none;
 
   --primary-hue: 143deg;
   --primary-saturation: 100%;
@@ -196,10 +202,13 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--supla-surface);
   border: 2px solid var(--supla-border);
   border-radius: var(--supla-radius);
-  transition: border-color var(--supla-duration), transform var(--supla-duration);
+  transition: border-color var(--supla-duration), background-color var(--supla-duration),
+    box-shadow var(--supla-duration), transform var(--supla-duration);
 }
 .hextra-card:hover {
   border-color: var(--supla-green);
+  background: var(--supla-card-hover-bg);
+  box-shadow: var(--supla-card-hover-shadow);
 }
 .hextra-card:active {
   transform: scale(0.98);
