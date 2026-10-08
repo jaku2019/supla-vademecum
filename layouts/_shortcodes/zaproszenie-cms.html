@@ -1,0 +1,65 @@
+{{- /*
+  Formularz prośby o zaproszenie do Pages CMS (strona content/edytuj-w-cms).
+
+  Adres e-mail redaktora trafia przez FormSubmit (AJAX, JSON) do administratora,
+  który zaprasza go w Pages CMS (Settings → Collaborators) – zaproszenie
+  wysyła już sam Pages CMS. Adres formularza: params.cmsZaproszenie.formularz.
+  Strona, z której przyszedł redaktor, jest w parametrze ?strona=.
+
+  @example {{< zaproszenie-cms >}}
+*/ -}}
+{{- $formularz := site.Params.cmsZaproszenie.formularz -}}
+{{- if not $formularz -}}
+  {{- warnf "zaproszenie-cms: brak params.cmsZaproszenie.formularz w hugo.yaml (%s)" .Position -}}
+{{- end -}}
+<form class="cms-zaproszenie" method="POST" action="{{ replace $formularz "/ajax/" "/" }}" data-ajax="{{ $formularz }}">
+  <label for="cms-email">Twój adres e-mail</label>
+  <div class="cms-zaproszenie-wiersz">
+    <input id="cms-email" type="email" name="email" required autocomplete="email" placeholder="jan.kowalski@example.com">
+    <button type="submit"{{ if not $formularz }} disabled{{ end }}>Poproś o zaproszenie</button>
+  </div>
+  <input type="hidden" name="strona" value="">
+  <input type="hidden" name="_subject" value="Vademecum Supla: prośba o zaproszenie do Pages CMS">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  {{- /* pułapka na boty – FormSubmit odrzuca zgłoszenia z wypełnionym polem */}}
+  <input type="text" name="_honey" class="cms-zaproszenie-pulapka" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <p class="cms-zaproszenie-status" role="status" aria-live="polite">
+    {{- if not $formularz }}Formularz jest chwilowo niedostępny – napisz na <a href="https://forum.supla.org">forum.supla.org</a>.{{ end -}}
+  </p>
+</form>
+<script>
+(function () {
+  var form = document.currentScript.previousElementSibling;
+  var status = form.querySelector(".cms-zaproszenie-status");
+  var przycisk = form.querySelector("button");
+  form.elements.strona.value = new URLSearchParams(location.search).get("strona") || "";
+
+  form.addEventListener("submit", function (e) {
+    if (!form.dataset.ajax || !window.fetch) return; // zwykłe wysłanie formularza
+    e.preventDefault();
+    var dane = {};
+    new FormData(form).forEach(function (v, k) { dane[k] = v; });
+    przycisk.disabled = true;
+    status.className = "cms-zaproszenie-status";
+    status.textContent = "Wysyłanie…";
+    fetch(form.dataset.ajax, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(dane)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (wynik) {
+        if (String(wynik.success) !== "true") throw new Error(wynik.message);
+        form.reset();
+        status.classList.add("cms-zaproszenie-ok");
+        status.textContent = "Dziękujemy! Zaproszenie do edycji przyjdzie na " + dane.email + ".";
+      })
+      .catch(function () {
+        przycisk.disabled = false;
+        status.classList.add("cms-zaproszenie-blad");
+        status.textContent = "Nie udało się wysłać. Spróbuj ponownie za chwilę.";
+      });
+  });
+})();
+</script>
