@@ -5,3 +5,7 @@ resources/_gen/
 
 # Materiały źródłowe (nie publikujemy)
 *.docx
+
+# Tokeny designu Supli (źródło stylu w assets/css/custom.css)
+supla-theme.css
+supla-theme.scss
