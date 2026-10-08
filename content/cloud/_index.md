@@ -22,7 +22,6 @@ Temat aplikacji został szerzej poruszony w odpowiednim dziale strony.
 Język Clouda można zmienić wybierając pożądany z listy widocznej w lewym dolnym rogu strony.
 
 ![język](jezyk.png)
-{data-zoomable="true"}
 
 > [!WARNING]
 > Niezrozumiałe zapisy w Cloudzie mogą wynikać z ustawienia języka Clouda na inny niż polski i automatycznego tłumaczenia przez przeglądarkę. W przypadku wystąpienia niezrozumiałych/nieskładnych informacji zaleca się weryfikację języka Clouda.

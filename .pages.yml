@@ -1,0 +1,73 @@
+# Konfiguracja Pages CMS (https://pagescms.org) – ETAP 0: prototyp do testu.
+# Zdjęcia zostają obok stron (page bundle'e w content/). CMS wstawia ścieżkę
+# absolutną, np. /cloud/lokalizacje/utworz.png – zamienia ją na zasób bundle'a
+# hook layouts/_markup/render-image.html (partial zasob-tresci.html).
+
+media:
+  input: content
+  output: /
+  extensions: [png, jpg, jpeg, webp, gif, svg]
+
+content:
+  # --- Strony stałe (tylko edycja) ---
+  - name: wstep
+    label: Wstęp
+    type: file
+    path: content/cloud/_index.md
+    fields:
+      - { name: title, label: Tytuł, type: string, required: true }
+      - { name: linkTitle, label: Tytuł w menu, type: string }
+      - { name: cascade, type: object, hidden: true, fields: [{ name: type, type: string }] }
+      - { name: body, label: Treść, type: rich-text, options: { format: markdown } }
+
+  - name: lokalizacje
+    label: Lokalizacje
+    type: file
+    path: content/cloud/lokalizacje/index.md
+    fields:
+      - { name: title, label: Tytuł, type: string, required: true }
+      - { name: linkTitle, label: Tytuł w menu, type: string }
+      - { name: weight, label: Kolejność w menu, type: number }
+      - { name: body, label: Treść, type: rich-text, options: { format: markdown } }
+
+  - name: faq
+    label: FAQ
+    type: file
+    path: content/cloud/faq/index.md
+    fields:
+      - { name: title, label: Tytuł, type: string, required: true }
+      - { name: linkTitle, label: Tytuł w menu, type: string }
+      - { name: weight, label: Kolejność w menu, type: number }
+      - { name: body, label: Treść, type: rich-text, options: { format: markdown } }
+
+  - name: kanaly-lista
+    label: Kanały – lista
+    type: file
+    path: content/cloud/kanaly/_index.md
+    fields:
+      - { name: title, label: Tytuł, type: string, required: true }
+      - { name: linkTitle, label: Tytuł w menu, type: string }
+      - { name: weight, label: Kolejność w menu, type: number }
+      - { name: aliases, type: string, list: true, hidden: true }
+      - { name: body, label: Treść, type: rich-text, options: { format: markdown } }
+
+  # --- Sekcja z dodawaniem stron (test: czy nowa strona powstaje jako slug/index.md) ---
+  - name: kanaly
+    label: Kanały
+    type: collection
+    path: content/cloud/kanaly
+    exclude: [_index.md]
+    filename: "{primary}/index.md"
+    view:
+      layout: tree
+      node:
+        filename: index.md
+        hideDirs: others
+      fields: [title, weight]
+      primary: title
+      sort: weight
+    fields:
+      - { name: title, label: Tytuł, type: string, required: true }
+      - { name: linkTitle, label: Tytuł w menu, type: string }
+      - { name: weight, label: Kolejność w menu, type: number }
+      - { name: body, label: Treść, type: rich-text, options: { format: markdown } }

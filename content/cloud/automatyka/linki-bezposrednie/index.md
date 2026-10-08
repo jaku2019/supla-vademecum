@@ -22,7 +22,6 @@ Dokonane zmiany należy zatwierdzić przyciskiem `Zapisz zmiany`.
 Dodatkowo istnieje możliwość podglądu, z jakim kanałem powiązany jest link oraz historia wykonań akcji linku.
 
 ![Linki bezpośrednie](link_bezp.png)
-{data-zoomable="true"}
 
 > [!CAUTION]
 > Po utworzeniu linku i opuszczeniu strony zostanie on ukryty. Każdy kto zdobędzie do niego dostęp, będzie mógł wykonać zdefiniowane akcje. Usunięcie linku odbiera możliwość jego użycia.

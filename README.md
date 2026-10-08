@@ -37,12 +37,7 @@ Umieść plik w katalogu rozdziału (obok `index.md`) i wstaw go w tekście sam�
 ![Opis zdjęcia](szczegoly.png)
 ```
 
-Jeśli chcesz, aby zdjęcie dało się powiększyć, dodaj w **następnej linii** atrybut `{data-zoomable="true"}` (zdjęcie musi być w osobnym akapicie – z pustą linią przed nim):
-
-```md
-![Opis zdjęcia](szczegoly.png)
-{data-zoomable="true"}
-```
+Każde zdjęcie w treści można powiększyć kliknięciem – nie trzeba nic dodawać.
 
 Kilka zdjęć można pokazać jako galerię (z powiększeniem i przewijaniem):
 

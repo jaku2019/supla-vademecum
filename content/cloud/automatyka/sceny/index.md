@@ -21,4 +21,3 @@ Dodatkowo istnieje możliwość dostosowania następujących opcji:
 * **Ikona** - użytkownik może zmienić ikonę.
 
 ![Sceny](sceny.png)
-{data-zoomable="true"}

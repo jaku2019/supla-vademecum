@@ -102,7 +102,6 @@ W ramach tej funkcji można łatwo kontrolować temperaturę CWU w domu.
 Dobrze ilustruje to poniższa grafika:
 
 ![Histereza – nastawa środkowa i górna](histereza.png)
-{data-zoomable="true"}
 
 - **Minimalny czas włączenia przed ponownym wyłączeniem ogrzewania** - kiedy temperatura znajdzie się na “granicy histerezy” termostat może włączać się i wyłączać co chwilę, ustawiony czas pozwoli stworzyć “margines” dla takich sytuacji (min. 0s maks. 600s=10min)
 - **Minimalny czas wyłączenia przed ponownym włączeniem ogrzewania** - kiedy temperatura znajdzie się na “granicy histerezy” termostat może włączać się i wyłączać co chwilę, ustawiony czas pozwoli stworzyć “margines” dla takich sytuacji (min. 0s maks. 600s=10min)

@@ -82,22 +82,18 @@ W przypadku SRW-01 zapoznaj się z materiałem wideo:
 6. Zapisz zmiany
 
 ![Generowanie linku](skroty_link.png)
-{data-zoomable="true"}
 
 7. Otwórz aplikację Skróty na swoim urządzeniu z iOS i utwórz nowy skrót klikając `+`
 
 ![Utwórz skrót](skroty1.png)
-{data-zoomable="true"}
 
 8. Dotknij `Dodaj czynność`, a następnie - `WWW`
 
 ![Dodaj czynność](skroty2.png)
-{data-zoomable="true"}
 
 9. Dalej wybierz `Pobierz zawartość URL` i wklej link do otwierania bramy w pole `URL` (Metoda - `GET`). W "Pobierz zawart..." wpisz `Open the gate`
 
 ![URL](skroty3.png)
-{data-zoomable="true"}
 
 10. Zapisz zmiany i w analogiczny sposób utwórz sktót `Close the gate` z linkiem do zamykania  bramy
 11. Przetestuj działanie skrótu mówiąc "Siri, open the gate" lub "Siri, close the gate".

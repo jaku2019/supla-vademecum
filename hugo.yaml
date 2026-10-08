@@ -28,7 +28,7 @@ markup:
     parser:
       attribute:
         block: true
-      # pozwala przekazać atrybuty ({data-zoomable=true}) do hooka obrazków
+      # obrazek w osobnym akapicie renderowany bez otaczającego <p>
       wrapStandAloneImageWithinParagraph: false
   highlight:
     noClasses: false
@@ -90,10 +90,9 @@ params:
     enable: true
     base: https://github.com/jaku2019/supla-vademecum/edit/main/content
 
-  # Zoom włączany per zdjęcie atrybutem {data-zoomable=true}
-  # (patrz layouts/_markup/render-image.html)
+  # Zoom dla wszystkich zdjęć w treści (bez atrybutów – edytor Pages CMS ich nie obsługuje)
   imageZoom:
-    enable: false
+    enable: true
 
   highlight:
     copy:

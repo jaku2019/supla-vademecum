@@ -1,0 +1,21 @@
+{{- /*
+  Zamienia ścieżkę absolutną względem katalogu content (tak wstawia ją Pages CMS,
+  np. "/cloud/lokalizacje/utworz.png") na zasób page bundle'a.
+  Szuka strony od najgłębszego katalogu w górę, więc działa też dla podkatalogów
+  bundle'a ("/cloud/integracje/aplikacje/HA/HA_A1.png").
+  Zwraca zasób albo false.
+*/ -}}
+{{- $sciezka := strings.TrimPrefix "/" . -}}
+{{- $czesci := split (path.Dir $sciezka) "/" -}}
+{{- $zasob := false -}}
+{{- range $i, $_ := $czesci -}}
+  {{- if not $zasob -}}
+    {{- $katalog := delimit (first (sub (len $czesci) $i) $czesci) "/" -}}
+    {{- with site.GetPage $katalog -}}
+      {{- with .Resources.Get (strings.TrimPrefix (printf "%s/" $katalog) $sciezka) -}}
+        {{- $zasob = . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $zasob -}}

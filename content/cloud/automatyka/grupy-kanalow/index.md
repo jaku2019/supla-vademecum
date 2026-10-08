@@ -18,4 +18,3 @@ Dokonane zmiany należy zatwierdzić przyciskiem `Zapisz zmiany`.
 Ponadto można dodać kolejne kanały do grupy, jak i wykonać określoną akcję na wszystkich kanałach w grupie. Z widoku `Grupy kanałów` można utworzyć dla wybranej grupy harmonogram, scenę oraz link bezpośredni. Dodatkowo grupy kanałów mogą zostać użyte w reakcjach.
 
 ![Grupy kanałów](grupy_kan.png)
-{data-zoomable="true"}

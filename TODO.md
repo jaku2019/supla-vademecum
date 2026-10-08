@@ -45,9 +45,20 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 - [ ] Sprawdzić, czy pozostałe rozdziały docx (Moja Supla, Smartfony, Automatyka, Konto, Funkcje Clouda…) nie są nowsze niż treść na stronie
 - [ ] `Supla Cloud.docx` leży w katalogu repo, nie jest commitowany – zdecydować: `.gitignore` czy przenieść poza repo
 
+## Etap 5 – Pages CMS (gałąź `cms`)
+- [x] Etap 0: prototyp `.pages.yml` (Wstęp, Lokalizacje, FAQ, Kanały – lista + kolekcja Kanały), media = `content/` (zdjęcia zostają w bundle'ach)
+- [x] Hook obrazków rozpoznaje ścieżki z CMS (`/cloud/...`) jako zasoby bundle'a (`layouts/_partials/zasob-tresci.html`)
+- [x] Zoom dla wszystkich zdjęć (wymóg edytora)
+- [ ] Test „wczytaj i zapisz” w CMS: diff po zapisie bez zmian (galerie, details, cards, alerty, tabele, `<ins>`) → wybór edytora (rich-text / code)
+- [ ] Test: czy nowa strona w kolekcji powstaje jako `slug/index.md`
+- [ ] `gallery-item` nie rozpoznaje ścieżek `/cloud/...` – nadpisać shortcode, jeśli galerie będą edytowane w CMS
+- [ ] Pełna konfiguracja: wszystkie strony stałe + kolekcje Automatyka, Kanały, Integracje
+- [ ] CI: build Hugo dla PR-ów z gałęzi `cms`
+- [ ] README: instrukcja dla redaktorów
+
 ## Później / propozycje
 - [ ] **Optymalizacja zdjęć** – rozszerzyć `layouts/_markup/render-image.html` o przetwarzanie obrazów Hugo (WebP, resize do szerokości treści, `width`/`height`); zoom ma pokazywać oryginał. Galerie już same generują miniatury WebP.
-- [ ] Decyzja: czy wszystkie zdjęcia mają być powiększalne (wtedy `params.imageZoom.enable: true` i można usunąć atrybuty)
+- [x] Wszystkie zdjęcia powiększalne (`params.imageZoom.enable: true`, atrybuty `{data-zoomable}` usunięte) – decyzja z 2026-10-08, pod Pages CMS
 - [x] Galerie zostają jako karuzele (`carousel`) – decyzja z 2026-10-07
 - [ ] PR z `i18n/pl.yaml` do upstreamu `imfing/hextra`
 - [ ] Link-checker w CI (lychee / htmltest)

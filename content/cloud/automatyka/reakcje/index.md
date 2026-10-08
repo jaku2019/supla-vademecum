@@ -26,4 +26,3 @@ W sekcji `Warunki aktywności` użytkownik ma możliwość ustawienia, kiedy rea
 > Jeśli zostanie ustawiony więcej niż jeden warunek aktywności, to reakcja będzie aktywna tylko wtedy, gdy wszystkie warunki będą spełnione jednocześnie.
 
 ![Reakcje](reakcje.png)
-{data-zoomable="true"}

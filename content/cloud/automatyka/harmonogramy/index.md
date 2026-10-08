@@ -19,4 +19,3 @@ Nowy harmonogram można utworzyć klikając przycisk `Utwórz nowy harmonogram` 
 Dokonane zmiany należy zatwierdzić przyciskiem `Zapisz zmiany`.
 
 ![Harmonogramy](harmonogramy.png)
-{data-zoomable="true"}

@@ -4,12 +4,6 @@
 {{- if not (eq .Page.Params.imageZoom nil) -}}
   {{- $enableImageZoom = .Page.Params.imageZoom -}}
 {{- end -}}
-{{- /* Vademecum: zoom per zdjęcie – atrybut {data-zoomable=true} w linii pod obrazkiem */ -}}
-{{- $attrs := .Attributes -}}
-{{- with index .Attributes "data-zoomable" -}}
-  {{- $enableImageZoom = true -}}
-  {{- $attrs = merge $attrs (dict "data-zoomable" "") -}}
-{{- end -}}
 {{- $dest := .Destination -}}
 {{- $url := urls.Parse $dest -}}
 
@@ -20,8 +14,9 @@
 
 {{- if and $dest $isLocal -}}
   {{- if $startsWithSlash -}}
-    {{- with or (.PageInner.Resources.Get $url.Path) (resources.Get $url.Path) -}}
-      {{/* Images under assets directory */}}
+    {{- /* Vademecum: ścieżka z Pages CMS ("/cloud/...") wskazuje zasób page bundle'a */ -}}
+    {{- with or (.PageInner.Resources.Get $url.Path) (resources.Get $url.Path) (partial "zasob-tresci.html" $url.Path) -}}
+      {{/* Images under assets directory or page bundles */}}
       {{- $query := cond $url.RawQuery (printf "?%s" $url.RawQuery) "" -}}
       {{- $fragment := cond $url.Fragment (printf "#%s" $url.Fragment) "" -}}
       {{- $dest = printf "%s%s%s" .RelPermalink $query $fragment -}}
@@ -44,7 +39,7 @@
 {{- end -}}
 
 {{- $attributes := "" -}}
-{{- range $key, $value := $attrs -}}
+{{- range $key, $value := .Attributes -}}
   {{- if $value -}}
     {{- $pair := printf "%s=%q" $key ($value | transform.HTMLEscape) -}}
     {{- $attributes = printf "%s %s" $attributes $pair -}}

@@ -27,7 +27,6 @@ Widok kanału składa się zazwyczaj z czterech lub pięciu sekcji (4 dla sensor
 > Po zapisaniu zmiany któregoś z ustawień kanału urządzenia zresetują swoje połączenie z Cloudem.
 
 ![Widok kanału](widok_kanalu.png)
-{data-zoomable="true"}
 
 Pod wymienionymi sekcjami w zależności od rodzaju kanału znajdują się odpowiednie karty. Poniżej zamieszczono spis dostępnych kart i ich funkcji.
 
@@ -41,7 +40,6 @@ Pod wymienionymi sekcjami w zależności od rodzaju kanału znajdują się odpow
 - **Aberracje napięcia** - wyświetla historię zmierzonych aberracji napięcia.
 
 ![Karty](kanal_karty.png)
-{data-zoomable="true"}
 
 ## Typy kanałów
 

@@ -8,7 +8,6 @@ Identyfikatory dostępu służą do zarządzania dostępem do kanałów przez ur
 Nowy Identyfikator dostępu można utworzyć klikając przycisk `Utwórz nowy Identyfikator dostępu` znajdujący się w prawym górnym rogu. Do identyfikatora można przypisać wybrane lokalizacje i aplikacje klienckie (wybrana aplikacja może być powiązana z maksymalnie jednym identyfikatorem).
 
 ![Utwórz nowy identyfikator dostępu](utworz.png)
-{data-zoomable="true"}
 
 Do dostosowania są następujące opcje:
 1. **Podpis** - nazwa, która wyświetla się na liście identyfikatorów
@@ -17,4 +16,3 @@ Do dostosowania są następujące opcje:
 4. **Harmonogram aktywności** - grafik określający zakres dni tygodnia i godzin, w których identyfikator jest aktywny.
 
 ![Szczegóły identyfikatora dostępu](edycja.png)
-{data-zoomable="true"}
