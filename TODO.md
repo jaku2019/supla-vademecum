@@ -52,13 +52,15 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 - [x] Test „wczytaj i zapisz” w CMS → edytor **rich-text** (galerie, details, cards, alerty, tabele przetrwały)
 - [x] Treść dostosowana do edytora: `<ins>` → pogrubienie (59×), przypisy `\*` → zdania, link z kodem w FAQ, lista z niewciętą kontynuacją w FAQ
 - [x] Zdjęcia: domyślny folder wgrywania = katalog strony/sekcji (`options.path`), `rename: safe`; hook obsługuje też pliki w `content/`
-- [ ] Sprawdzić w CMS, czy `options.path` (ścieżka od korzenia repo) faktycznie ustawia domyślny folder
-- [ ] Test: czy nowa strona w kolekcji powstaje jako `slug/index.md`
-- [ ] Redaktorzy: nie używać `\*`, `<ins>` ani kodu wewnątrz linków – edytor je gubi
+- [x] `options.path` działa (domyślny folder = sekcja; strona może mieć zdjęcia w folderze sekcji)
+- [x] Nowa strona w kolekcji powstaje jako `slug/index.md` i pojawia się w menu
+- [x] Pełna konfiguracja: grupa „Strony” (8 stron stałych) + Automatyka, Kanały, Integracje (strona sekcji + podstrony), wspólne pola przez `components`
+- [x] CI `build.yml`: build z `--panicOnWarning` na push do `cms` i PR do `main`; hook ostrzega o brakującym zdjęciu
+- [x] README: instrukcja dla redaktorów
+- [ ] Sprawdzić pełną konfigurację w CMS (grupy, komponenty pól, widok drzewa w Integracjach z podfolderem `HA/`)
+- [ ] Karty na stronach sekcji (`kanaly/_index.md`, `automatyka/_index.md`, `integracje/_index.md`) są pisane ręcznie – nowa podstrona nie pojawi się w nich sama. Propozycja: shortcode generujący karty z podstron (podtytuł z `description` we frontmatterze)
 - [ ] `gallery-item` nie rozpoznaje ścieżek `/cloud/...` – nadpisać shortcode, jeśli galerie będą edytowane w CMS
-- [ ] Pełna konfiguracja: wszystkie strony stałe + kolekcje Automatyka, Kanały, Integracje
-- [ ] CI: build Hugo dla PR-ów z gałęzi `cms`
-- [ ] README: instrukcja dla redaktorów
+- [ ] Merge `hextra-migration` → `main`, potem `cms` → `main`; ustawić ochronę gałęzi `main` (wymagany „Build check”)
 
 ## Później / propozycje
 - [ ] **Optymalizacja zdjęć** – rozszerzyć `layouts/_markup/render-image.html` o przetwarzanie obrazów Hugo (WebP, resize do szerokości treści, `width`/`height`); zoom ma pokazywać oryginał. Galerie już same generują miniatury WebP.

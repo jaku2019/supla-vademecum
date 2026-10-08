@@ -22,6 +22,9 @@
       {{- $dest = printf "%s%s%s" .RelPermalink $query $fragment -}}
     {{- else -}}
       {{/* Images under static directory */}}
+      {{- if not (fileExists (printf "static%s" $url.Path)) -}}
+        {{- warnf "%s: brak zdjęcia %q" .Page.File.Path $url.Path -}}
+      {{- end -}}
       {{- $dest = (relURL (strings.TrimPrefix "/" $dest)) -}}
     {{- end -}}
   {{- else -}}
