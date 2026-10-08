@@ -8,7 +8,7 @@ Roboczy notatnik. `[x]` = zrobione, `[ ]` = do zrobienia, `[~]` = w toku / czę�
 - [x] `hugo.yaml`, Hextra v0.13.0 jako moduł Hugo (`go.mod`)
 - [x] `i18n/pl.yaml` – polskie tłumaczenie interfejsu Hextry (+ tytuły alertów)
 - [x] Motyw: zielony kolor Supli (`assets/css/custom.css`), logo, favicon (`layouts/_partials/favicons.html`)
-- [x] Polska strona 404 (`layouts/404.html`; w CI kopiowana z `/pl/404.html` do katalogu głównego)
+- [x] Polska strona 404 (`layouts/404.html`; w CI kopiowana z `/pl/404.html` do katalogu głównegoo)
 
 ## Etap 2 – treść
 - [x] Strony → page bundle'e (`content/cloud/.../index.md` + obrazy obok), historia zachowana przez `git mv`
