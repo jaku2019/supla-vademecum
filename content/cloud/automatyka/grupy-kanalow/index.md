@@ -1,5 +1,6 @@
 ---
 title: "Grupy kanałów"
+description: "Grupy kanałów łączą kilka kanałów tego samego typu, np. rolety, żeby sterować nimi razem w aplikacji, harmonogramach i scenach."
 weight: 2
 icon: "collection"
 ---

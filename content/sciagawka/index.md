@@ -1,5 +1,6 @@
 ---
 title: Ściągawka redaktora
+description: "Ściągawka redaktora: jak w edytorze Pages CMS wstawić ramki z uwagami, rozwijane odpowiedzi, zakładki, kroki i karty motywu Hextra."
 width: wide
 # Strona ukryta: link tylko w README. Nie trafia do menu, list stron,
 # wyszukiwarki, sitemapy, llms.txt ani do wyszukiwarek internetowych.

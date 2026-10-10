@@ -1,0 +1,16 @@
+{{- /*
+  Znaczki „Pobierz z Google Play” i „Pobierz w App Store” z linkami do aplikacji
+  SUPLA – te same co na supla.org (assets/img/sklepy).
+
+  @example {{< sklepy >}}
+*/ -}}
+{{- $sklepy := slice
+  (dict "plik" "img/sklepy/google-play.svg" "link" "https://play.google.com/store/apps/details?id=org.supla.android" "alt" "Pobierz aplikację SUPLA z Google Play")
+  (dict "plik" "img/sklepy/app-store.svg" "link" "https://apps.apple.com/app/id996384706" "alt" "Pobierz aplikację SUPLA z App Store")
+-}}
+<div class="sklepy not-prose">
+  {{- range $sklepy }}
+    {{- $plik := resources.Get .plik }}
+  <a href="{{ .link }}" target="_blank" rel="noopener"><img src="{{ $plik.RelPermalink }}" alt="{{ .alt }}" height="56"></a>
+  {{- end }}
+</div>

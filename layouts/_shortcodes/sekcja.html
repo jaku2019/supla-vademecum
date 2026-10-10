@@ -2,21 +2,25 @@
   Sekcja strony głównej: nagłówek, opcjonalny lead i treść (shortcode'y albo
   Markdown – wtedy wywołuj z %: {{% sekcja %}}).
 
-  @param {string} tytul
+  @param {string} tytul  bez tytułu sekcja nie ma nagłówka (np. gdy ma go karuzela)
   @param {string} opis   lead pod nagłówkiem
   @param {string} id     kotwica
   @param {string} link   opcjonalny link „Zobacz wszystkie” obok nagłówka (ścieżka w content/)
   @param {string} linkTekst
+  @param {bool}   pas    tło sekcji lekko inne, na całą szerokość ekranu (pasy jak na supla.org)
+  @param {bool}   srodek wyśrodkowany nagłówek i lead
 */ -}}
 {{- $link := "" -}}
 {{- with .Get "link" }}{{ with site.GetPage . }}{{ $link = .RelPermalink }}{{ end }}{{ end -}}
-<section class="sekcja"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+<section class="sekcja{{ if .Get "pas" }} sekcja-pas{{ end }}{{ if .Get "srodek" }} sekcja-srodek{{ end }}"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  {{- with .Get "tytul" }}
   <div class="sekcja-naglowek">
     <div>
-      <h2>{{ .Get "tytul" }}</h2>
-      {{- with .Get "opis" }}<p class="sekcja-opis">{{ . }}</p>{{ end }}
+      <h2>{{ . }}</h2>
+      {{- with $.Get "opis" }}<p class="sekcja-opis">{{ . }}</p>{{ end }}
     </div>
     {{- with $link }}<a class="sekcja-link" href="{{ . }}">{{ $.Get "linkTekst" | default "Zobacz wszystkie" }} →</a>{{ end }}
   </div>
+  {{- end }}
   <div class="sekcja-tresc">{{ .Inner }}</div>
 </section>

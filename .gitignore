@@ -9,3 +9,6 @@ resources/_gen/
 # Tokeny designu Supli (źródło stylu w assets/css/custom.css)
 supla-theme.css
 supla-theme.scss
+
+# Pakiet ikon SUPLA (wybrane ikony są w data/icons.yaml)
+supla-icons/

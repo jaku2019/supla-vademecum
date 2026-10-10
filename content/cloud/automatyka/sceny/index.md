@@ -1,5 +1,6 @@
 ---
 title: "Sceny"
+description: "Sceny to sekwencje akcji na kanałach, grupach, harmonogramach i innych scenach, z opóźnieniami od 250 ms do 60 minut między krokami."
 weight: 4
 icon: "film"
 ---

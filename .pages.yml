@@ -36,7 +36,11 @@ components:
   opis-karty:
     label: Opis na karcie
     type: string
-    description: Krótki podtytuł na karcie na stronie sekcji (np. „Termostat, termostat różnicowy, ciepła woda”). Może zostać pusty.
+    description: Krótki podtytuł na karcie na stronie sekcji (np. „Termostat, termostat różnicowy, ciepła woda”). Pokazuje go też Google w wynikach wyszukiwania. Może zostać pusty.
+  opis-strony:
+    label: Opis w wyszukiwarce
+    type: string
+    description: Jedno–dwa zdania (do ok. 155 znaków) o tym, co jest na stronie – pokazuje je Google pod tytułem w wynikach wyszukiwania.
   ikona-karty:
     label: Ikona na karcie
     type: select
@@ -67,6 +71,12 @@ components:
         - { name: globe-alt, label: Glob }
         - { name: code, label: Kod }
         - { name: sparkles, label: Gwiazdki }
+        - { name: supla-brama, label: SUPLA – brama przesuwna }
+        - { name: supla-roleta, label: SUPLA – roleta }
+        - { name: supla-swiatlo, label: SUPLA – światło }
+        - { name: supla-ogrzewanie, label: SUPLA – termostat }
+        - { name: supla-alarm, label: SUPLA – alarm }
+        - { name: supla-energia, label: SUPLA – licznik energii }
 
 content:
   # --- Strony stałe: tylko edycja ---
@@ -80,6 +90,7 @@ content:
         path: content/cloud/_index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: cascade, type: object, hidden: true, fields: [{ name: type, type: string }] }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud, rename: safe } }
@@ -90,6 +101,7 @@ content:
         path: content/cloud/moja-supla/index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/moja-supla, rename: safe } }
@@ -100,6 +112,7 @@ content:
         path: content/cloud/smartfony/index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/smartfony, rename: safe } }
@@ -110,6 +123,7 @@ content:
         path: content/cloud/lokalizacje/index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/lokalizacje, rename: safe } }
@@ -120,6 +134,7 @@ content:
         path: content/cloud/identyfikatory/index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/identyfikatory, rename: safe } }
@@ -130,6 +145,7 @@ content:
         path: content/cloud/moje-konto/index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/moje-konto, rename: safe } }
@@ -140,6 +156,7 @@ content:
         path: content/cloud/funkcje-clouda/index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/funkcje-clouda, rename: safe } }
@@ -150,6 +167,7 @@ content:
         path: content/cloud/faq/index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/faq, rename: safe } }
@@ -167,6 +185,7 @@ content:
         path: content/cloud/automatyka/_index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: sidebar, type: object, hidden: true, fields: [{ name: open, type: boolean }] }
@@ -202,6 +221,7 @@ content:
         path: content/cloud/kanaly/_index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: aliases, type: string, list: true, hidden: true }
@@ -237,6 +257,7 @@ content:
         path: content/cloud/integracje/_index.md
         fields:
           - { name: title, component: tytul }
+          - { name: description, component: opis-strony }
           - { name: linkTitle, component: tytul-menu }
           - { name: weight, component: kolejnosc }
           - { name: body, label: Treść, type: rich-text, options: { format: markdown, path: content/cloud/integracje, rename: safe } }

@@ -1,5 +1,6 @@
 ---
 title: "Funkcje Clouda"
+description: "Funkcje SUPLA Cloud: wyzwalacze akcji z przycisków urządzeń, szczegółowe dane serwera, zmiana ikon oraz ustawienia integracji z Alexą i Google Home."
 weight: 22
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Smartfony"
+description: "Smartfony w SUPLA Cloud: jak zarejestrować telefon z aplikacją SUPLA, zmienić jego nazwę i zarządzać dostępem do konta."
 weight: 12
 ---
 

@@ -20,12 +20,12 @@ cechy:
 Wychodząc z domu, jednym poleceniem gasisz światła i opuszczasz rolety. Później z telefonu sprawdzasz temperaturę, uruchamiasz ogrzewanie przed powrotem albo upewniasz się, że brama jest zamknięta. Nie musisz automatyzować całego domu. Zacznij od jednej potrzeby:
 
 {{< cards cols="3" >}}
-  {{< card title="Bramy, furtki i drzwi" icon="home" subtitle="Otwieraj bramę z telefonu albo za pomocą Android Auto lub Apple CarPlay. Jeśli urządzenie ma odpowiedni czujnik, w aplikacji sprawdzisz, czy brama jest otwarta lub zamknięta." >}}
-  {{< card title="Rolety, żaluzje i markizy" icon="view-boards" subtitle="Steruj jedną osłoną lub całą grupą. Ustawiaj pozycję i harmonogramy." >}}
-  {{< card title="Oświetlenie i zasilanie" icon="light-bulb" subtitle="Włączaj światła, gniazdka i inne odbiorniki. Reguluj jasność, barwę bieli lub kolor oświetlenia." >}}
-  {{< card title="Ogrzewanie i komfort" icon="fire" subtitle="Steruj temperaturą i urządzeniami grzewczymi. Dopasuj ich pracę do rytmu dnia." >}}
-  {{< card title="Czujniki i bezpieczeństwo" icon="shield-check" subtitle="Monitoruj temperaturę, wilgotność, ruch, otwarcie drzwi i okien lub zalanie. Otrzymuj powiadomienia i uruchamiaj reakcje." >}}
-  {{< card title="Energia i fotowoltaika" icon="lightning-bolt" subtitle="Obserwuj zużycie i produkcję energii. Wykorzystuj pomiary w automatyzacjach." >}}
+  {{< card title="Bramy, furtki i drzwi" icon="supla-brama" subtitle="Otwieraj bramę z telefonu albo za pomocą Android Auto lub Apple CarPlay. Jeśli urządzenie ma odpowiedni czujnik, w aplikacji sprawdzisz, czy brama jest otwarta lub zamknięta." >}}
+  {{< card title="Rolety, żaluzje i markizy" icon="supla-roleta" subtitle="Steruj jedną osłoną lub całą grupą. Ustawiaj pozycję i harmonogramy." >}}
+  {{< card title="Oświetlenie i zasilanie" icon="supla-swiatlo" subtitle="Włączaj światła, gniazdka i inne odbiorniki. Reguluj jasność, barwę bieli lub kolor oświetlenia." >}}
+  {{< card title="Ogrzewanie i komfort" icon="supla-ogrzewanie" subtitle="Steruj temperaturą i urządzeniami grzewczymi. Dopasuj ich pracę do rytmu dnia." >}}
+  {{< card title="Czujniki i bezpieczeństwo" icon="supla-alarm" subtitle="Monitoruj temperaturę, wilgotność, ruch, otwarcie drzwi i okien lub zalanie. Otrzymuj powiadomienia i uruchamiaj reakcje." >}}
+  {{< card title="Energia i fotowoltaika" icon="supla-energia" subtitle="Obserwuj zużycie i produkcję energii. Wykorzystuj pomiary w automatyzacjach." >}}
 {{< /cards >}}
 
 Zakres funkcji zależy od urządzenia i instalacji.

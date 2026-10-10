@@ -1,5 +1,6 @@
 ---
 title: "Reakcje"
+description: "Reakcje wykonują akcję automatycznie, gdy spełniony jest warunek, np. zmiana stanu czujnika – także tylko w wybranych godzinach lub po zmroku."
 weight: 5
 icon: "lightning-bolt"
 ---

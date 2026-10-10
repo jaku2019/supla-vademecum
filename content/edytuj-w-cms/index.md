@@ -1,5 +1,6 @@
 ---
 title: Edytuj w Pages CMS
+description: "Jak poprawić stronę w przeglądarce, w edytorze Pages CMS – bez znajomości Markdowna i bez konta na GitHubie."
 # Strona ukryta: prowadzi do niej tylko link „Edytuj prościej w CMS-ie”
 # pod „Edytuj na GitHubie”. Nie trafia do menu, list stron, wyszukiwarki,
 # sitemapy, llms.txt ani do wyszukiwarek internetowych.

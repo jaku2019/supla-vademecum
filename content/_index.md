@@ -5,7 +5,7 @@ description: Steruj urządzeniami wielu producentów i sprawdzaj, co dzieje się
 layout: hextra-home
 ---
 
-{{< hextra/hero-container imageClass="hero-image" image="../pulpit_cloud.png" imageTitle="Pulpit SUPLA Cloud" imageWidth="520" imageHeight="340" >}}
+{{< hextra/hero-container class="hero" imageClass="hero-image" image="../pulpit_cloud.png" imageTitle="Pulpit SUPLA Cloud" imageWidth="520" imageHeight="340" >}}
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline style="background: none; color: var(--supla-text);" >}}
   <span class="hero-name">supla</span><br />Nareszcie w domu.
@@ -35,8 +35,11 @@ layout: hextra-home
 
 {{< statystyki >}}
 
-{{% sekcja tytul="Miej wszystko pod kontrolą" opis="Nawet gdy wyjeżdżasz na wakacje" %}}
-<div class="dwie-kolumny">
+{{% sekcja pas=true %}}
+<div class="dwie-kolumny dwie-kolumny-karuzela">
+
+{{< karuzela >}}
+
 <div class="sekcja-proza">
 
 Wychodzisz z domu, jednym kliknięciem gasisz światło, zamykasz bramę i masz to z głowy.
@@ -49,19 +52,17 @@ Na co dzień po prostu działa. A jeśli chcesz, możesz dopasować system do si
 
 **Sterujesz swoim domem, bez zamykania się w jednym systemie.**
 
-</div>
+{{< sklepy >}}
 
-{{< zastepnik tytul="Podgląd aplikacji SUPLA" ikona="device-mobile" >}}
-Zrzuty ekranu aplikacji mobilnej (pulpit, rolety, termostat) – do dodania jako zdjęcia.
-{{< /zastepnik >}}
+</div>
 </div>
 {{% /sekcja %}}
 
-{{< sekcja tytul="Dlaczego warto wybrać ekosystem SUPLA?" opis="Opinie użytkowników SUPLI zebrane w ankiecie przeprowadzonej z okazji 10-lecia platformy." >}}
+{{< sekcja srodek=true tytul="Dlaczego warto wybrać ekosystem SUPLA?" opis="Poniżej przedstawiamy opinie użytkowników SUPLI zebrane podczas ankiety przeprowadzonej z okazji 10-lecia platformy." >}}
 {{< opinie >}}
 {{< /sekcja >}}
 
-{{< sekcja tytul="Zużycie energii na żywo" opis="Podgląd zbiorczej mocy pobieranej z sieci i oddawanej do sieci przez użytkowników SUPLI korzystających z wybranych modeli liczników energii." id="energia" >}}
+{{< sekcja pas=true tytul="Zużycie energii na żywo" opis="Podgląd zbiorczej mocy pobieranej z sieci i oddawanej do sieci przez użytkowników SUPLI korzystających z wybranych modeli liczników energii." id="energia" >}}
 {{< energia >}}
 {{< /sekcja >}}
 
@@ -73,6 +74,6 @@ Zrzuty ekranu aplikacji mobilnej (pulpit, rolety, termostat) – do dodania jako
 {{< /cards >}}
 {{< /sekcja >}}
 
-{{< sekcja tytul="Aktualności" link="/aktualnosci" >}}
-{{< najnowsze-aktualnosci liczba="6" >}}
+{{< sekcja pas=true tytul="Aktualności" link="/aktualnosci" >}}
+{{< najnowsze-aktualnosci liczba="8" >}}
 {{< /sekcja >}}

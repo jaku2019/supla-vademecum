@@ -1,0 +1,43 @@
+{{- /*
+  Karuzela zdjęć z nagłówkiem nad zdjęciem – nagłówek i podtytuł zmieniają się
+  razem ze zdjęciem, jak w sekcji „Miej wszystko pod kontrolą” na supla.org:
+  zmiana co 8 s, kropki na zdjęciu (kliknięcie liczy 8 s od nowa), zdjęcie
+  wysuwa się i przenika. Slajdy z data/supla.yaml (karuzela).
+  Bez JS widać pierwszy slajd. Przy prefers-reduced-motion – bez animacji
+  i bez samoczynnej zmiany; fokus na kropkach wstrzymuje zmianę.
+  Skrypt w assets/js/karuzela.js, nie w <script> w szablonie: Hugo wycina
+  z niego komentarze, a zostawione puste linie w Markdownie kończą blok HTML.
+*/ -}}
+{{- $slajdy := hugo.Data.supla.karuzela -}}
+<div class="karuzela not-prose">
+  <div class="karuzela-naglowek">
+    {{- with index $slajdy 0 }}
+    <h2 class="karuzela-tytul">{{ .tytul }}</h2>
+    <p class="karuzela-podtytul">{{ .podtytul }}</p>
+    {{- end }}
+  </div>
+  <div class="karuzela-kadr">
+    {{- range $i, $s := $slajdy }}
+      {{- with resources.Get $s.zdjecie }}
+        {{- $duze := .Process "Resize 960x webp q80" }}
+        {{- $male := .Process "Resize 480x webp q80" }}
+    <img class="karuzela-slajd" src="{{ $duze.RelPermalink }}"
+      srcset="{{ $male.RelPermalink }} 480w, {{ $duze.RelPermalink }} 960w"
+      sizes="(min-width: 960px) 34rem, 100vw"
+      width="{{ $duze.Width }}" height="{{ $duze.Height }}" alt="{{ $s.alt }}"
+      data-tytul="{{ $s.tytul }}" data-podtytul="{{ $s.podtytul }}"
+      loading="lazy"{{ if $i }} hidden{{ end }}>
+      {{- else }}
+        {{- errorf "karuzela: brak zdjęcia assets/%s" $s.zdjecie }}
+      {{- end }}
+    {{- end }}
+    <div class="karuzela-kropki" hidden>
+    {{- range $i, $s := $slajdy }}
+      <button type="button" aria-label="Przejdź do slajdu {{ add $i 1 }}"{{ if not $i }} aria-current="true"{{ end }}></button>
+    {{- end }}
+    </div>
+  </div>
+</div>
+{{- with resources.Get "js/karuzela.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end }}

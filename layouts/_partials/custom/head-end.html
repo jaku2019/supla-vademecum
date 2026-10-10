@@ -1,3 +1,26 @@
+{{- /* Favicony modułu (tylko ICO – SVG ładowały się wolno):
+       supla.org – w HTML oficjalny favicon.ico (biały znak na zielonym), który
+       widzą Google i przeglądarki bez JS; skrypt podmienia go na sam znak:
+       czarny przy jasnym trybie przeglądarki, biały przy ciemnym (także przy
+       zmianie trybu). Vademecum – znak w żółtym kwadracie, ten sam w obu
+       trybach. apple-touch-icon – ekran główny iOS. */ -}}
+{{- $modul := partial "modul.html" . }}
+{{- if eq $modul "vademecum" }}
+<link rel="icon" href="{{ "favicon-vademecum.ico" | relURL }}" sizes="16x16 32x32 48x48">
+{{- else }}
+<link rel="icon" id="favicon" href="{{ "favicon.ico" | relURL }}" sizes="32x32 48x48"
+  data-jasny="{{ "favicon-supla-jasny.ico" | relURL }}" data-ciemny="{{ "favicon-supla-ciemny.ico" | relURL }}">
+<script>
+(() => {
+  const ikona = document.getElementById("favicon");
+  const tryb = matchMedia("(prefers-color-scheme: dark)");
+  const ustaw = () => { ikona.href = tryb.matches ? ikona.dataset.ciemny : ikona.dataset.jasny; };
+  ustaw();
+  tryb.addEventListener("change", ustaw);
+})();
+</script>
+{{- end }}
+<link rel="apple-touch-icon" href="{{ printf "apple-touch-icon-%s.png" $modul | relURL }}">
 {{- /* Fonty Supli (Quicksand – nagłówki, Inter – tekst), hostowane lokalnie
        w static/fonts (fontsource, licencja OFL). Tu, a nie w custom.css,
        bo adresy muszą uwzględniać podkatalog strony (relURL). */ -}}
@@ -28,3 +51,15 @@
 {{- /* cały znacznik jako safeHTML – w <script> o nieznanym typie html/template
        zamieniłby cudzysłowy JSON-a na encje */ -}}
 {{ printf "<script type=\"speculationrules\">%s</script>" ($reguly | jsonify) | safeHTML }}
+{{- /* Dane strukturalne dla Google (strona główna): nazwa witryny nad adresem
+       w wynikach i organizacja z logo (min. 112 px) oraz profilami. */ -}}
+{{- if .IsHome }}
+{{- $profile := slice }}
+{{- range site.Params.spolecznosc }}{{ $profile = $profile | append .url }}{{ end }}
+{{- $dane := slice
+  (dict "@context" "https://schema.org" "@type" "WebSite" "name" "SUPLA" "alternateName" "supla.org" "url" .Permalink "inLanguage" "pl")
+  (dict "@context" "https://schema.org" "@type" "Organization" "name" "SUPLA" "url" "https://www.supla.org/"
+    "logo" ("apple-touch-icon-supla.png" | absURL) "sameAs" $profile)
+}}
+{{ printf "<script type=\"application/ld+json\">%s</script>" ($dane | jsonify) | safeHTML }}
+{{- end }}

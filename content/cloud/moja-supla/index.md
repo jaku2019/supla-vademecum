@@ -1,5 +1,6 @@
 ---
 title: "Moja Supla"
+description: "Moja Supla to lista urządzeń przypisanych do konta: jak zarejestrować nowe urządzenie, sprawdzić jego dane i zmienić konfigurację kanałów."
 weight: 11
 ---
 

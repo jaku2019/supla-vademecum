@@ -1,5 +1,6 @@
 ---
 title: Lista dostępnych kanałów
+description: "Kanały w SUPLA Cloud: z czego składa się widok kanału, jak zmienić jego lokalizację i ikonę oraz jakie typy kanałów są dostępne."
 linkTitle: Kanały - lista
 weight: 21
 aliases:

@@ -1,5 +1,6 @@
 ---
 title: "Aplikacje"
+description: "Jak połączyć konto SUPLA z aplikacjami Call Supla, Google, SUPLA Icons i SUPLA Scripts oraz z Home Assistantem przez MQTT."
 weight: 1
 icon: "puzzle"
 ---

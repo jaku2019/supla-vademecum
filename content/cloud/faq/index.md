@@ -1,5 +1,6 @@
 ---
 title: FAQ - pytania i odpowiedzi
+description: "Częste pytania o SUPLĘ: tryb konfiguracji modułów Zamel, Nice i Varilight, aktualizacje, brama w Google Home i Siri, zmiana routera."
 linkTitle: FAQ
 weight: 2
 ---

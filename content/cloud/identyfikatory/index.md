@@ -1,5 +1,6 @@
 ---
 title: "Identyfikatory dostępu"
+description: "Identyfikatory dostępu ograniczają aplikacjom mobilnym dostęp do wybranych lokalizacji oraz do ustalonych dni i godzin."
 weight: 14
 ---
 

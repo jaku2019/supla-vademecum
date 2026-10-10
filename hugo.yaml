@@ -16,6 +16,14 @@ module:
   imports:
     - path: github.com/imfing/hextra
 
+# Wersja testowa na github.io zawiera kopię treści supla.org – poza wynikami
+# wyszukiwania (Hextra: params.noindex → <meta name="robots" content="noindex">),
+# żeby nie konkurowała z supla.org jako duplikat. USUNĄĆ przy przeniesieniu
+# na docelową domenę.
+cascade:
+  - params:
+      noindex: true
+
 enableGitInfo: true
 enableEmoji: true
 enableRobotsTXT: true
@@ -118,6 +126,10 @@ menu:
     - { parent: prawne, name: Data Act, pageRef: /data-act, weight: 2 }
 
 params:
+  # obrazek do udostępnień (og:image, karta X) – 1200 × 630 px, static/
+  images:
+    - og_supla.png
+
   navbar:
     displayTitle: true
     # napis obok logo (layouts/_partials/navbar-title.html); tytuł strony w <title> bez zmian

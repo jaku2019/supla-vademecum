@@ -1,5 +1,6 @@
 ---
 title: Wprowadzenie
+description: "Wprowadzenie do SUPLA Cloud: jak założyć darmowe konto na cloud.supla.org, dodać telefon z aplikacją SUPLA i zmienić język Clouda."
 linkTitle: Wstęp
 cascade:
   type: docs

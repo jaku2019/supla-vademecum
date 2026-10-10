@@ -1,2 +1,3 @@
-{{- /* Vademecum: projekt ma tylko favicon.ico – nie linkujemy nieistniejących wariantów Hextry */ -}}
-<link rel="icon shortcut" href="{{ "favicon.ico" | relURL }}" sizes="32x32" />
+{{- /* Vademecum: favicony są w custom/head-end.html – zależą od modułu strony
+       (supla.org / Vademecum), a Hextra wywołuje ten partial przez partialCached,
+       czyli raz dla całej witryny. */ -}}

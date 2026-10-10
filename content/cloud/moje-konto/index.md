@@ -1,5 +1,6 @@
 ---
 title: "Konto"
+description: "Ustawienia konta SUPLA Cloud: integracje przez API i MQTT, bezpieczeństwo i tokeny dostępowe, strefa czasowa, powiadomienia e-mail i limity."
 linkTitle: "Moje konto"
 weight: 16
 ---

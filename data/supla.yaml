@@ -1,6 +1,27 @@
 # Liczby i opinie pokazywane na stronie głównej i na stronie „O SUPLI”
 # (shortcode'y {{< statystyki >}} i {{< opinie >}}). Edytowalne w Pages CMS.
 
+# Karuzela „Miej wszystko pod kontrolą” na stronie głównej ({{< karuzela >}}):
+# nagłówek i podtytuł zmieniają się razem ze zdjęciem (co 8 s, jak na supla.org).
+# Zdjęcia w assets/img/karuzela, kwadratowe.
+karuzela:
+  - tytul: Miej wszystko pod kontrolą
+    podtytul: Nawet gdy wyjeżdżasz na wakacje
+    zdjecie: img/karuzela/1-pod-kontrola.jpg
+    alt: Widok aplikacji SUPLA pokazujący zdalny dostęp do funkcji domu
+  - tytul: Sprawdzasz i reagujesz od razu
+    podtytul: Twój dom zawsze pod ręką
+    zdjecie: img/karuzela/2-reagujesz.jpg
+    alt: Ekran aplikacji SUPLA z podglądem i sterowaniem urządzeniami domowymi
+  - tytul: Jedna aplikacja, wiele możliwości
+    podtytul: Steruj domem, gdziekolwiek jesteś
+    zdjecie: img/karuzela/3-jedna-aplikacja.jpg
+    alt: Interfejs aplikacji SUPLA z listą funkcji i sterowaniem smart home
+  - tytul: Zaczynasz od jednej rzeczy
+    podtytul: Rozbudowujesz system stopniowo
+    zdjecie: img/karuzela/4-stopniowo.jpg
+    alt: Widok aplikacji SUPLA pokazujący rozwijanie systemu o kolejne elementy
+
 statystyki:
   glowna:
     - { liczba: "10+", opis: lat rozwoju platformy SUPLA }
@@ -19,22 +40,22 @@ opinie:
     tytul: Od pilota do jednego kliknięcia
     tresc: Pilot zawsze był w innym aucie albo bateria była rozładowana. Telefon mam zawsze przy sobie. Jedno kliknięcie i brama otwarta – wtedy przepadłem.
     autor: Marek
-    ikona: home
+    ikona: supla-brama
   - temat: Rolety
     tytul: Wygoda, bezpieczeństwo, automatyzacja
     tresc: Chciałem sterować roletami z telefonu. SRW-01 był pierwszym urządzeniem. Teraz nie wyobrażam sobie domu bez automatycznych harmonogramów.
     autor: Tomasz
-    ikona: clock
+    ikona: supla-roleta
   - temat: Oświetlenie
     tytul: Mała zmiana, wielki efekt
     tresc: Babcia nie używa smartfona, ale potrafi zadzwonić na „magiczny numer” i włączyć światła na podwórku. I to wszystko za darmo.
     autor: Anna
-    ikona: light-bulb
+    ikona: supla-swiatlo
   - temat: Ogrzewanie i energia
     tytul: Kontrola, oszczędności, spokój
     tresc: Zbyt wysokie rachunki za prąd zmotywowały mnie do montażu MEW-01. Udało się zmniejszyć zużycie o prawie 8%.
     autor: Piotr
-    ikona: lightning-bolt
+    ikona: supla-energia
   - temat: DIY
     tytul: Bo „zrobiłem to sam”
     tresc: SUPLA daje coś, czego nie mają zamknięte systemy – mogę kupić gotowe urządzenia albo zbudować własne. Wszystko działa w jednym ekosystemie.

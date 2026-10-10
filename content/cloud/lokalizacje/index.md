@@ -1,5 +1,6 @@
 ---
 title: Lokalizacje
+description: "Lokalizacje grupują kanały i grupy kanałów w listy widoczne w aplikacji SUPLA i pozwalają ograniczać do nich dostęp."
 weight: 13
 ---
 Lokalizacje to zbiory, do których można przypisywać wybrane kanały oraz grupy kanałów. 

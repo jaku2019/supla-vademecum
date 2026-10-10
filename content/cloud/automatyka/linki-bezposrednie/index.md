@@ -1,5 +1,6 @@
 ---
 title: "Linki bezpośrednie"
+description: "Linki bezpośrednie sterują kanałem, grupą, sceną lub harmonogramem bez logowania do konta – z okresem działania i limitem wykonań."
 weight: 3
 icon: "link"
 ---

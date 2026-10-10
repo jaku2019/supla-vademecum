@@ -1,5 +1,6 @@
 ---
 title: "Harmonogramy"
+description: "Harmonogramy planują akcje kanałów, grup i scen: w wybrane dni tygodnia, co określony czas, jednorazowo albo w notacji crontab."
 weight: 1
 icon: "clock"
 ---
