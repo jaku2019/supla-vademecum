@@ -9,13 +9,18 @@
 */ -}}
 {{- $link := .link | default "" -}}
 {{- $zewn := hasPrefix $link "http" -}}
-{{- /* gotowy adres w obrębie strony (np. .RelPermalink kanału RSS) zostaje bez zmian */ -}}
-{{- if and (hasPrefix $link "/") (not (hasPrefix $link "//")) (not (hasPrefix $link ("" | relURL))) -}}
+{{- if and (hasPrefix $link "/") (not (hasPrefix $link "//")) -}}
   {{- $url := urls.Parse $link -}}
   {{- with site.GetPage (strings.TrimSuffix "/" $url.Path) -}}
     {{- $link = printf "%s%s" .RelPermalink (cond (ne $url.Fragment "") (printf "#%s" $url.Fragment) "") -}}
   {{- else -}}
-    {{- warnf "przycisk %q prowadzi do nieistniejącej strony %q" .tekst $link -}}
+    {{- /* gotowy adres w obrębie strony (np. .RelPermalink kanału RSS) zostaje
+           bez zmian; porównanie z relLangURL („/pl/” albo „/podkatalog/pl/”),
+           a nie relURL – przy stronie w katalogu głównym domeny relURL to „/”,
+           czyli każda ścieżka, i przyciski traciły /pl/ */ -}}
+    {{- if not (hasPrefix $link ("" | relLangURL)) -}}
+      {{- warnf "przycisk %q prowadzi do nieistniejącej strony %q" .tekst $link -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 <a class="przycisk przycisk-{{ .styl | default "glowny" }}" href="{{ $link | safeURL }}"{{ if $zewn }} target="_blank" rel="noopener"{{ end }}>
