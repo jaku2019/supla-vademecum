@@ -1,6 +1,8 @@
 {{- /*
-  Kopia sidebar.html z Hextry v0.13.0 z jedną zmianą – menu mobilne pokazuje
-  pozycje bieżącego modułu (partial menu-modulu.html) zamiast zawsze menu „main”.
+  Kopia sidebar.html z Hextry v0.13.0 ze zmianami w menu mobilnym:
+  - pokazuje pozycje bieżącego modułu (partial menu-modulu.html) zamiast
+    zawsze menu „main”,
+  - na supla.org pozycje są płaskie – bez rozwijania sekcji na podstrony.
 */ -}}
 {{- $context := .context -}}
 
@@ -174,6 +176,11 @@
               <li class="[word-break:break-word] hx:mt-5 hx:mb-2 hx:px-2 hx:py-1.5 hx:text-sm hx:font-semibold hx:text-gray-900 hx:first:mt-0 hx:dark:text-gray-100">
                 <span class="hx:cursor-default">{{ index $entry "title" }}</span>
               </li>
+            {{- else if ne (partial "modul.html" $page) "vademecum" -}}
+              {{- /* supla.org: same pozycje paska, bez drzewa podstron i spisu
+                     nagłówków; pozycja aktywna także na podstronach sekcji */ -}}
+              {{- $active := or (eq (strings.TrimSuffix "/" $pageURL) (strings.TrimSuffix "/" $item.RelPermalink)) ($item.IsAncestor $page) -}}
+              <li>{{ template "sidebar-item-link" dict "active" $active "open" false "title" (index $entry "title") "link" $item.RelPermalink }}</li>
             {{- else -}}
               {{- $active := eq (strings.TrimSuffix "/" $pageURL) (strings.TrimSuffix "/" $item.RelPermalink) -}}
               {{- $shouldOpen := or ($item.Params.sidebar.open) ($item.IsAncestor $page) $active | default true }}

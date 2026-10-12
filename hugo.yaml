@@ -93,8 +93,8 @@ menu:
     - name: GUI Generic
       pageRef: /gui-generic
       weight: 4
-    - name: Forum
-      url: https://forum.supla.org/
+    - name: Blog
+      pageRef: /blog
       weight: 5
 
   # Kolumny stopki (layouts/_partials/custom/footer.html)
@@ -162,7 +162,7 @@ params:
   # Moduł Vademecum: sekcje content/, w których pasek pokazuje menu „vademecum”
   # i napis „vademecum supla” (layouts/_partials/modul.html)
   vademecum:
-    sekcje: [cloud, aplikacja, supla-device, gui-generic, sciagawka, edytuj-w-cms]
+    sekcje: [cloud, aplikacja, supla-device, gui-generic, blog, sciagawka, edytuj-w-cms]
     przedrostek: vademecum
     start: /cloud
 
