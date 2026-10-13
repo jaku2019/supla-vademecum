@@ -1,4 +1,7 @@
-baseURL: https://jaku2019.github.io/supla-vademecum/
+# Gałąź supla-org: wdrożenie na Cloudflare Pages. Adres musi być pełny (z domeną) –
+# og:image, og:url, canonical i sitemap muszą być bezwzględne, inaczej Facebook
+# i inne serwisy nie pobiorą podglądu linku.
+baseURL: https://supla.polibudex.com.pl/
 title: SUPLA
 
 # Jedyny (na razie) język – polski. Treść trafia pod /pl/,
