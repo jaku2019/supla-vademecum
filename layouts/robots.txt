@@ -1,0 +1,24 @@
+{{- /*
+  robots.txt: wszystko dozwolone, a boty serwisów społecznościowych wymienione
+  wprost – Facebook Sharing Debugger bez wpisu dla facebookexternalhit zgłasza
+  podgląd (og:image) jako zablokowany przez robots.txt.
+*/ -}}
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}
