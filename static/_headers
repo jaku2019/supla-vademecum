@@ -1,0 +1,6 @@
+# Cloudflare: nagłówki HTTP. Fonty bez tego miały max-age=0 – przy każdej
+# stronie przeglądarka pytała serwer, czy się nie zmieniły, a tekst do tego
+# czasu był w czcionce zastępczej. Nazwy plików nie mają hasha, więc 30 dni,
+# a nie rok – po podmianie pliku najlepiej zmienić też jego nazwę.
+/fonts/*
+  Cache-Control: public, max-age=2592000

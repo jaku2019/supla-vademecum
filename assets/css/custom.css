@@ -12,8 +12,8 @@
    ============================================================================= */
 
 :root {
-  --supla-font-special: "Quicksand", sans-serif;
-  --supla-font-default: "Inter", sans-serif;
+  --supla-font-special: "Quicksand", "Quicksand fallback", sans-serif;
+  --supla-font-default: "Inter", "Inter fallback", sans-serif;
   --supla-radius: 3px;
   --supla-radius-md: 4px;
   --supla-radius-lg: 5px;
